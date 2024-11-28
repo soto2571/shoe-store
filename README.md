@@ -1,1 +1,1 @@
-Shoe stoe website
+Shoe store website
