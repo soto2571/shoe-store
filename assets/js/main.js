@@ -58,3 +58,40 @@ const shadowHeader = () =>{
                        : header.classList.remove('shadow-header')
 }
 window.addEventListener('scroll', shadowHeader)
+
+/*=============== Show more button ===============*/
+// JavaScript for "Show More/Less" functionality
+const showMoreButton = document.getElementById('show-more');
+const productGrid = document.getElementById('product-grid');
+const productCards = Array.from(productGrid.children); // Get all product cards
+
+// Initially hide all but the first 10 products
+const initialCount = 10;
+productCards.forEach((card, index) => {
+  if (index >= initialCount) {
+    card.style.display = 'none';
+  }
+});
+
+// Toggle "Show More" and "Show Less"
+let isShowingMore = false; // Tracks current state
+
+showMoreButton.addEventListener('click', () => {
+  if (!isShowingMore) {
+    // Show all products
+    productCards.forEach((card) => {
+      card.style.display = 'block';
+    });
+    showMoreButton.textContent = 'Show Less'; // Update button text
+    isShowingMore = true;
+  } else {
+    // Show only the initial products
+    productCards.forEach((card, index) => {
+      if (index >= initialCount) {
+        card.style.display = 'none';
+      }
+    });
+    showMoreButton.textContent = 'Show More'; // Update button text
+    isShowingMore = false;
+  }
+});

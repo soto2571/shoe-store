@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
       <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+      <link rel="shortcut icon" href="assets/img/logoSmall.png" type="image/x-icon">
 
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
@@ -27,6 +27,13 @@
             </a>
 
             <div class="nav__menu" id="nav-menu">
+               <!-- Search bar for phones-->
+               <div class="nav__search-mobile">
+                  <input type="text" class="nav__search-input" placeholder="Search for shoes or brands...">
+                  <button class="nav__search-button">
+                    <i class="ri-search-line"></i>
+                  </button>
+                </div>
                <ul class="nav__list">
                   <li class="nav__item">
                      <a href="#" class="nav__link">Men</a>
@@ -50,6 +57,14 @@
                   <i class="ri-close-line"></i>
                </div>
             </div>
+
+            <!-- Search Bar -->
+             <div class="nav__search">
+               <input type="text" class="nav__search-input" placeholder="Search for a shoes or brand...">
+               <button class="nav__search-button">
+                  <i class="ri-search-line"></i>
+               </button>
+             </div>
                <!--Toggle buttom-->
                <div class="nav__toggle" id="nav-toggle">
                   <i class="ri-apps-2-fill"></i>
@@ -120,6 +135,110 @@
             </div>
          </section>
       </main>
+
+      <!--==================== BRAND CARDS SECTION ====================-->
+      <section class="brand-section">
+         <div class="container">
+            <h2 class="section-title">Shop by Brands</h2>
+            <div class="brand-cards">
+               <!-- Nike -->
+                <div class="brand-card">
+                  <img src="assets/img/nikeadd.jpg" alt="Nike" class="brand-card__image">
+                  <h3 class="brand-card__title">Nike</h3>
+                  <p class="brand-card__description">Explore the latest Nike shoes with innovative designs.</p>
+                  <a href="#" class="brand-card__button">Shop Nike</a>
+                </div>
+                <!-- Adidas -->
+                <div class="brand-card">
+                  <img src="assets/img/adiadd.webp" alt="Adidas" class="brand-card__image">
+                  <h3 class="brand-card__title">Adidas</h3>
+                  <p class="brand-card__description">Check out Adidas footwear for all your needs.</p>
+                  <a href="#" class="brand-card__button">Shop Adidas</a>
+                </div>
+                  <!-- New Balance -->
+                <div class="brand-card">
+                  <img src="assets/img/newbalance.jpg" alt="New_Balance" class="brand-card__image">
+                  <h3 class="brand-card__title">New Balance</h3>
+                  <p class="brand-card__description">Discover New Balance shoes, blending comfort and style.</p>
+                  <a href="#" class="brand-card__button">Shop New Balance</a>
+                </div>
+            </div>
+         </div>
+      </section>
+
+      <!--==================== SHOES ====================-->
+
+      <section class="product-section">
+         <div class="container">
+           <h2 class="section-title">Our Shoe Collection</h2>
+           <div class="product-grid" id="product-grid">
+             <!-- Example Product Cards -->
+             <div class="product-card" data-id="1">
+               <img src="assets/img/bad-bu.webp" alt="Shoes" class="product-image">
+               <h3 class="product-name">Adidas Response Bad Bunny</h3>
+               <p class="product-price">$120.00</p>
+             </div>
+             <div class="product-card" data-id="2">
+               <img src="assets/img/yezy.webp" alt="Shoes" class="product-image">
+               <h3 class="product-name">Adidas Yeezy</h3>
+               <p class="product-price">$150.00</p>
+             </div>
+             <div class="product-card" data-id="3">
+               <img src="assets/img/dunk-low.jpg" alt="New Balance 574" class="product-image">
+               <h3 class="product-name">Nike Dunk Low</h3>
+               <p class="product-price">$90.00</p>
+             </div>
+               <div class="product-card" data-id="1">
+                 <img src="assets/img/bad-bu.webp" alt="Shoes" class="product-image">
+                 <h3 class="product-name">Adidas Response Bad Bunny</h3>
+                 <p class="product-price">$120.00</p>
+               </div>
+               <div class="product-card" data-id="2">
+                 <img src="assets/img/new-balance-550-white-green.png" alt="Shoes" class="product-image">
+                 <h3 class="product-name">Adidas Yeezy</h3>
+                 <p class="product-price">$150.00</p>
+               </div>
+               <div class="product-card" data-id="3">
+                 <img src="assets/img/WMNS+NIKE+DUNK+LOW.png" alt="New Balance 574" class="product-image">
+                 <h3 class="product-name">Nike Dunk Low</h3>
+                 <p class="product-price">$90.00</p>
+               </div>
+               <div class="product-card" data-id="1">
+                  <img src="assets/img/new-balance-550-white-green.png" alt="Shoes" class="product-image">
+                  <h3 class="product-name">Adidas Response Bad Bunny</h3>
+                  <p class="product-price">$120.00</p>
+                </div>
+                <div class="product-card" data-id="2">
+                  <img src="assets/img/custom-nike-dunk-low-by-you-su24.png" alt="Shoes" class="product-image">
+                  <h3 class="product-name">Adidas Yeezy</h3>
+                  <p class="product-price">$150.00</p>
+                </div>
+                <div class="product-card" data-id="3">
+                  <img src="assets/img/dunk-low.jpg" alt="New Balance 574" class="product-image">
+                  <h3 class="product-name">Nike Dunk Low</h3>
+                  <p class="product-price">$90.00</p>
+                </div>
+                  <div class="product-card" data-id="1">
+                    <img src="assets/img/yezy.webp" alt="Shoes" class="product-image">
+                    <h3 class="product-name">Adidas Response Bad Bunny</h3>
+                    <p class="product-price">$120.00</p>
+                  </div>
+                  <div class="product-card" data-id="2">
+                    <img src="assets/img/custom-nike-dunk-low-by-you-su24.png" alt="Shoes" class="product-image">
+                    <h3 class="product-name">Adidas Yeezy</h3>
+                    <p class="product-price">$150.00</p>
+                  </div>
+                  <div class="product-card" data-id="3">
+                    <img src="assets/img/bad-bu.webp" alt="New Balance 574" class="product-image">
+                    <h3 class="product-name">Nike Dunk Low</h3>
+                    <p class="product-price">$90.00</p>
+                  </div>
+               
+           </div>
+           <!-- Show More Button -->
+           <button class="show-more-button" id="show-more">Show More</button>
+         </div>
+       </section>
 
       <!--=============== SWIPER JS ===============-->
       <script src="assets/js/swiper-bundle.min.js"></script>
