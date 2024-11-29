@@ -237,7 +237,7 @@ img {
 
 /* Add shadow header */
 .shadow-header{
-  box-shadow: 0 1px 16px hsla(0, 0%, 75%, 0.576);
+  box-shadow: 0 1px 16px hsla(0, 100%, 50%, 0.692);
 }
 
 /*=============== HOME ===============*/
@@ -322,7 +322,7 @@ img {
   height: 250px;
   background: linear-gradient(180deg,
     rgb(175, 41, 41),
-    hsla(0, 0%, 96%));
+    hsl(0, 40%, 5%));
   border-radius: 50%;
   position: absolute;
   inset: 0;
@@ -484,8 +484,8 @@ img {
 }
 
 .show-more-button:hover {
-  background-color: var(--black-color-light);
-  color: var(--title-color);
+  background-color: white;
+  color: red;
 }
 
 .product-card {
@@ -494,6 +494,128 @@ img {
 }
 .product-card[style*="display: none"] {
   opacity: 0;
+}
+/*=============== Newsletter ===============*/
+/* Newsletter */
+.newsletter {
+  color: var(--white-color);
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border-radius: 1rem;
+  margin: 2rem auto;
+}
+
+.newsletter__img {
+  display: block; /* Make the image a block-level element */
+  margin: 0 auto 1.5rem; /* Center the image and add spacing below it */
+  max-width: 200px; /* Adjust the size */
+}
+
+.newsletter__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 1rem;
+}
+
+.newsletter__description {
+  font-size: var(--normal-font-size);
+  margin-bottom: 1.5rem;
+}
+
+.newsletter__form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.newsletter__input {
+  padding: 0.75rem 1rem;
+  width: 70%;
+  max-width: 400px;
+  border: none;
+  border-radius: 2rem;
+  font-size: var(--normal-font-size);
+}
+
+.newsletter__button {
+  padding: 0.75rem 2rem;
+  background-color: var(--white-color);
+  color: var(--body-color);
+  border: none;
+  border-radius: 2rem;
+  font-size: var(--normal-font-size);
+  cursor: pointer;
+  font-weight: var(--font-bold);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.newsletter__button:hover {
+  background-color: var(--black-color-light);
+  color: var(--white-color);
+}
+/*=============== FOOTER ===============*/
+
+.footer {
+  background-color: rgb(231, 49, 49);
+  color: var(--white-color);
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 1rem;
+  color: var(--title-color);
+}
+
+.footer__description {
+  font-size: var(--normal-font-size);
+  line-height: 1.5;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__link {
+  color: var(--black-color-light);
+  text-decoration: none;
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.footer__link:hover {
+  color: var(--white-color);
+}
+
+.footer__social-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.footer__social-link {
+  font-size: 1.5rem;
+  color: var(--black-color-light);
+  transition: color 0.3s;
+}
+
+.footer__social-link:hover {
+  color: var(--title-color);
+}
+
+.footer__copyright {
+  font-size: var(--small-font-size);
+  color: var(--black-color-light);
 }
 
 /*=============== BREAKPOINTS ===============*/
@@ -592,5 +714,31 @@ img {
   }
   .home__social-link{
     font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home__container {
+    grid-template-columns: 1fr; /* Make it a single-column layout */
+    justify-items: center; /* Center-align content horizontally */
+    padding: 5rem 1rem; /* Add padding for better spacing */
+  }
+
+  .home__data {
+    text-align: center; /* Ensure all text content stays centered */
+  }
+
+  .home__title {
+    font-size: 1.75rem; /* Adjust font size for small screens */
+    margin-bottom: 1rem;
+  }
+
+  .home__description {
+    font-size: 1rem; /* Smaller font size for descriptions */
+    margin-bottom: 2rem;
+  }
+
+  .home__social {
+    margin-top: 1rem; /* Add spacing for social links */
   }
 }

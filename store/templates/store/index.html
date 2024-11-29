@@ -3,18 +3,18 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+      {% load static %}
       <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/logoSmall.png" type="image/x-icon">
+      <link rel="shortcut icon" href="{% static 'img/logoSmall.png' %}" type="image/x-icon">
 
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
 
       <!--=============== SWIPER CSS ===============-->
-      <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+      <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
       <title>Choco HypeWear</title>
    </head>
@@ -23,7 +23,7 @@
       <header class="header shadow-header" id="header">
          <nav class="nav container">
             <a href="#" class="nav__logo">
-               <img src="assets/img/logoMedi.png" alt="image">
+               <img src="{% static 'img/logoMedi.png' %}" alt="image">
             </a>
 
             <div class="nav__menu" id="nav-menu">
@@ -102,15 +102,15 @@
                   <div class="home__swiper swiper">
                      <div class="swiper-wrapper">
                         <article class="home__article swiper-slide">
-                           <img src="assets/img/dunk-low.jpg" alt="image" class="home__shoe">
+                           <img src="{% static 'img/dunk-low.jpg' %}" alt="image" class="home__shoe">
                         </article>
 
                         <article class="home__article swiper-slide">
-                           <img src="assets/img/bad-bu.webp" alt="image" class="home__shoe">
+                           <img src="{% static 'img/bad-bu.webp' %}" alt="image" class="home__shoe">
                         </article>
 
                         <article class="home__article swiper-slide">
-                           <img src="assets/img/yezy.webp" alt="image" class="home__shoe">
+                           <img src="{% static 'img/shoe-2.png' %}" alt="image" class="home__shoe">
                         </article>
                      </div>
                </div>
@@ -143,21 +143,21 @@
             <div class="brand-cards">
                <!-- Nike -->
                 <div class="brand-card">
-                  <img src="assets/img/nikeadd.jpg" alt="Nike" class="brand-card__image">
+                  <img src="{% static 'img/nikeadd.jpg' %}" alt="Nike" class="brand-card__image">
                   <h3 class="brand-card__title">Nike</h3>
                   <p class="brand-card__description">Explore the latest Nike shoes with innovative designs.</p>
                   <a href="#" class="brand-card__button">Shop Nike</a>
                 </div>
                 <!-- Adidas -->
                 <div class="brand-card">
-                  <img src="assets/img/adiadd.webp" alt="Adidas" class="brand-card__image">
+                  <img src="{% static 'img/adiadd.webp' %}" alt="Adidas" class="brand-card__image">
                   <h3 class="brand-card__title">Adidas</h3>
                   <p class="brand-card__description">Check out Adidas footwear for all your needs.</p>
                   <a href="#" class="brand-card__button">Shop Adidas</a>
                 </div>
                   <!-- New Balance -->
                 <div class="brand-card">
-                  <img src="assets/img/newbalance.jpg" alt="New_Balance" class="brand-card__image">
+                  <img src="{% static 'img/newbalance.jpg' %}" alt="New_Balance" class="brand-card__image">
                   <h3 class="brand-card__title">New Balance</h3>
                   <p class="brand-card__description">Discover New Balance shoes, blending comfort and style.</p>
                   <a href="#" class="brand-card__button">Shop New Balance</a>
@@ -170,80 +170,69 @@
 
       <section class="product-section">
          <div class="container">
-           <h2 class="section-title">Our Shoe Collection</h2>
-           <div class="product-grid" id="product-grid">
-             <!-- Example Product Cards -->
-             <div class="product-card" data-id="1">
-               <img src="assets/img/bad-bu.webp" alt="Shoes" class="product-image">
-               <h3 class="product-name">Adidas Response Bad Bunny</h3>
-               <p class="product-price">$120.00</p>
+             <h2 class="section-title">Our Shoe Collection</h2>
+             <div class="product-grid" id="product-grid">
+                 {% for product in products %}
+                 <div class="product-card" data-id="{{ product.id }}">
+                     <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                     <h3 class="product-name">{{ product.name }}</h3>
+                     <p class="product-price">${{ product.price }}</p>
+                 </div>
+                 {% endfor %}
              </div>
-             <div class="product-card" data-id="2">
-               <img src="assets/img/yezy.webp" alt="Shoes" class="product-image">
-               <h3 class="product-name">Adidas Yeezy</h3>
-               <p class="product-price">$150.00</p>
-             </div>
-             <div class="product-card" data-id="3">
-               <img src="assets/img/dunk-low.jpg" alt="New Balance 574" class="product-image">
-               <h3 class="product-name">Nike Dunk Low</h3>
-               <p class="product-price">$90.00</p>
-             </div>
-               <div class="product-card" data-id="1">
-                 <img src="assets/img/bad-bu.webp" alt="Shoes" class="product-image">
-                 <h3 class="product-name">Adidas Response Bad Bunny</h3>
-                 <p class="product-price">$120.00</p>
-               </div>
-               <div class="product-card" data-id="2">
-                 <img src="assets/img/new-balance-550-white-green.png" alt="Shoes" class="product-image">
-                 <h3 class="product-name">Adidas Yeezy</h3>
-                 <p class="product-price">$150.00</p>
-               </div>
-               <div class="product-card" data-id="3">
-                 <img src="assets/img/WMNS+NIKE+DUNK+LOW.png" alt="New Balance 574" class="product-image">
-                 <h3 class="product-name">Nike Dunk Low</h3>
-                 <p class="product-price">$90.00</p>
-               </div>
-               <div class="product-card" data-id="1">
-                  <img src="assets/img/new-balance-550-white-green.png" alt="Shoes" class="product-image">
-                  <h3 class="product-name">Adidas Response Bad Bunny</h3>
-                  <p class="product-price">$120.00</p>
-                </div>
-                <div class="product-card" data-id="2">
-                  <img src="assets/img/custom-nike-dunk-low-by-you-su24.png" alt="Shoes" class="product-image">
-                  <h3 class="product-name">Adidas Yeezy</h3>
-                  <p class="product-price">$150.00</p>
-                </div>
-                <div class="product-card" data-id="3">
-                  <img src="assets/img/dunk-low.jpg" alt="New Balance 574" class="product-image">
-                  <h3 class="product-name">Nike Dunk Low</h3>
-                  <p class="product-price">$90.00</p>
-                </div>
-                  <div class="product-card" data-id="1">
-                    <img src="assets/img/yezy.webp" alt="Shoes" class="product-image">
-                    <h3 class="product-name">Adidas Response Bad Bunny</h3>
-                    <p class="product-price">$120.00</p>
-                  </div>
-                  <div class="product-card" data-id="2">
-                    <img src="assets/img/custom-nike-dunk-low-by-you-su24.png" alt="Shoes" class="product-image">
-                    <h3 class="product-name">Adidas Yeezy</h3>
-                    <p class="product-price">$150.00</p>
-                  </div>
-                  <div class="product-card" data-id="3">
-                    <img src="assets/img/bad-bu.webp" alt="New Balance 574" class="product-image">
-                    <h3 class="product-name">Nike Dunk Low</h3>
-                    <p class="product-price">$90.00</p>
-                  </div>
-               
-           </div>
-           <!-- Show More Button -->
-           <button class="show-more-button" id="show-more">Show More</button>
+         </div>
+     </section>
+
+       <!--==================== NEWSLETTER ====================-->
+       <section class="newsletter">
+         <img src="{% static 'img/logoBigg.png' %}" alt="Newsletter" class="newsletter__img">
+         <div class="container">
+           <h2 class="newsletter__title">Subscribe to Our Newsletter</h2>
+           <p class="newsletter__description">Get the latest updates on new arrivals and special offers.</p>
+           <form class="newsletter__form">
+             <input type="email" class="newsletter__input" placeholder="Enter your email" required>
+             <button type="submit" class="newsletter__button">Subscribe</button>
+           </form>
          </div>
        </section>
 
+      <!--==================== FOOTER ====================-->
+      <footer class="footer">
+         <div class="container">
+           <div class="footer__grid">
+             <!-- About -->
+             <div class="footer__about">
+               <h3 class="footer__title">About Us</h3>
+               <p class="footer__description">Choco HypeWear is your one-stop shop for premium footwear from top brands.</p>
+             </div>
+             <!-- Links -->
+             <div class="footer__links">
+               <h3 class="footer__title">Quick Links</h3>
+               <ul class="footer__list">
+                 <li><a href="#" class="footer__link">Home</a></li>
+                 <li><a href="#" class="footer__link">Shop</a></li>
+                 <li><a href="#" class="footer__link">Contact</a></li>
+                 <li><a href="#" class="footer__link">FAQs</a></li>
+               </ul>
+             </div>
+             <!-- Social Media -->
+             <div class="footer__social">
+               <h3 class="footer__title">Follow Us</h3>
+               <ul class="footer__social-list">
+                 <li><a href="#" class="footer__social-link"><i class="ri-facebook-circle-fill"></i></a></li>
+                 <li><a href="#" class="footer__social-link"><i class="ri-instagram-fill"></i></a></li>
+                 <li><a href="#" class="footer__social-link"><i class="ri-twitter-fill"></i></a></li>
+               </ul>
+             </div>
+           </div>
+           <p class="footer__copyright">&copy; 2024 Choco HypeWear. All rights reserved.</p>
+         </div>
+       </footer>
+
       <!--=============== SWIPER JS ===============-->
-      <script src="assets/js/swiper-bundle.min.js"></script>
+      <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
 
       <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
+      <script src="{% static 'js/main.js' %}"></script>
    </body>
 </html>
