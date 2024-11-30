@@ -116,13 +116,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
+STATIC_URL = '/static/'  # URL to access static files
+
+STATICFILES_DIRS = [  # Directories where Django looks for static files
+    BASE_DIR / 'static',
 ]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Destination for collectstatic
+STATIC_VERSION = '1.0.1'  # Update this version whenever you modify your static files
+TEMPLATES[0]['OPTIONS']['debug'] = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

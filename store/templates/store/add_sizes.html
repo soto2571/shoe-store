@@ -1,0 +1,15 @@
+<h2>Add Sizes for {{ product.name }}</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Size</button>
+</form>
+
+<h3>Existing Sizes</h3>
+<ul>
+    {% for size in sizes %}
+    <li>{{ size.size }} - ${{ size.price }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'owner_dashboard' %}">Back to Dashboard</a>

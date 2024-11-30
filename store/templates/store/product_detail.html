@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="product-detail-bg">
+        <section class="home">
+        <div class="home__container container">
+            <!-- Product Info -->
+            <div class="home__data">
+                <h1 class="home__title">{{ product.brand }}</h1>
+                <p class="product-price home__subtitle">${{ product.price }}</p>
+                
+                <p class="home__description">
+                    {{ product.name }}
+                </p>
+                
+
+                <form action="{% url 'add_to_cart' product.id %}" method="post">
+                    {% csrf_token %}
+
+                    <!-- Size Selection -->
+                    <div class="product-sizes">
+                        <p class="product-price">Price: $<span id="price-display">{{ product.lowest_price }}</span></p>
+                        <div class="size-options">
+                            {% for size in product.sizes.all %}
+                            <label class="size-pill">
+                                <input 
+                                    type="radio" 
+                                    name="size" 
+                                    value="{{ size.size }}" 
+                                    data-price="{{ size.price }}" 
+                                    onclick="updatePrice(this)" 
+                                    required>
+                                {{ size.size }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="quantity-container">
+                        <button type="button" class="quantity-btn" onclick="decreaseQuantity('quantity')">-</button>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1" readonly>
+                        <button type="button" class="quantity-btn" onclick="increaseQuantity('quantity')">+</button>
+                    </div>
+
+                    <!-- Add to Cart Button -->
+                    <button type="submit" class="add-to-cart-button">
+                        <i class="ri-shopping-cart-line"></i> Add to Cart
+                    </button>
+                </form>
+            </div>
+
+            <!-- Product Image -->
+            <div class="home__images">
+                <div class="home__circle"></div>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="home_shoe">
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <script>
+        function updatePrice(element) {
+            const price = element.getAttribute("data-price");
+            document.getElementById("price-display").textContent = price;
+        }
+    
+        function decreaseQuantity(id) {
+            const input = document.getElementById(id);
+            if (input.value > 1) {
+                input.value = parseInt(input.value) - 1;
+                document.getElementById("quantity-input").value = input.value;
+            }
+        }
+    
+        function increaseQuantity(id) {
+            const input = document.getElementById(id);
+            input.value = parseInt(input.value) + 1;
+            document.getElementById("quantity-input").value = input.value;
+        }
+    </script>
+</body>
+</html>

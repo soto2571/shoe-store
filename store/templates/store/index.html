@@ -14,7 +14,7 @@
       <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
 
       <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+      <link rel="stylesheet" href="{% static 'css/styles.css' %}?v={{ STATIC_VERSION }}">
 
       <title>Choco HypeWear</title>
    </head>
@@ -65,10 +65,17 @@
                   <i class="ri-search-line"></i>
                </button>
              </div>
+
+             <div class="nav__cart">
+               <a href="{% url 'cart_view' %}">
+                   <i class="ri-shopping-cart-line"></i>
+               </a>
+           </div>
                <!--Toggle buttom-->
                <div class="nav__toggle" id="nav-toggle">
                   <i class="ri-apps-2-fill"></i>
                </div>
+                        
          </nav>
       </header>
 
@@ -167,16 +174,28 @@
       </section>
 
       <!--==================== SHOES ====================-->
-
+     
       <section class="product-section">
          <div class="container">
              <h2 class="section-title">Our Shoe Collection</h2>
              <div class="product-grid" id="product-grid">
                  {% for product in products %}
                  <div class="product-card" data-id="{{ product.id }}">
-                     <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                     <!-- Product Image -->
+                     <a href="{% url 'product_detail' product.id %}">
+                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                     </a>
+     
+                     <!-- Product Details -->
                      <h3 class="product-name">{{ product.name }}</h3>
-                     <p class="product-price">${{ product.price }}</p>
+                     <p class="product-price" id="price-{{ product.id }}">
+                         ${{ product.price }}
+                     </p>
+     
+                     <!-- View Product Button -->
+                     <a href="{% url 'product_detail' product.id %}" class="view-product-button">
+                         View Product
+                     </a>
                  </div>
                  {% endfor %}
              </div>

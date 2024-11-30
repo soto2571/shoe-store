@@ -5,6 +5,13 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('owner-dashboard/', views.owner_dashboard, name='owner_dashboard'),
     path('add-product/', views.add_product, name='add_product'),
+    path('add-sizes/<int:product_id>/', views.add_sizes, name='add_sizes'),
     path('edit-product/<int:pk>/', views.edit_product, name='edit_product'),
     path('delete-product/<int:pk>/', views.delete_product, name='delete_product'),
+    path('cart/', views.cart_view, name='cart_view'),
+    path('add-to-cart/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
+    path('remove-from-cart/<int:product_id>/', views.remove_from_cart, name='remove_from_cart'),
+    path('update-cart/<int:product_id>/', views.update_cart, name='update_cart'),
+    path('clear-cart/', views.clear_cart, name='clear_cart'),
+    path('product/<int:product_id>/', views.product_detail, name='product_detail'),
 ]

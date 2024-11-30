@@ -4,14 +4,14 @@
     <tr>
         <th>Name</th>
         <th>Price</th>
-        <th>Stock</th>
+        <th>Total Stock:</th>
         <th>Actions</th>
     </tr>
     {% for product in products %}
     <tr>
         <td>{{ product.name }}</td>
         <td>${{ product.price }}</td>
-        <td>{{ product.stock }}</td>
+        <td>{{ product.total_stock }}</td>
         <td>
             <a href="{% url 'edit_product' product.id %}">Edit</a>
             <a href="{% url 'delete_product' product.id %}">Delete</a>
