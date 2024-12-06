@@ -15,6 +15,7 @@
 
       <!--=============== CSS ===============-->
       <link rel="stylesheet" href="{% static 'css/styles.css' %}?v={{ STATIC_VERSION }}">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
       <title>Choco HypeWear</title>
    </head>
@@ -188,14 +189,14 @@
      
                      <!-- Product Details -->
                      <h3 class="product-name">{{ product.name }}</h3>
-                     <p class="product-price" id="price-{{ product.id }}">
-                         ${{ product.price }}
+                     <p class="product-price uno" id="price-{{ product.id }}">
+                         {% if product.lowest_price %}
+                             ${{ product.lowest_price }}
+                         {% else %}
+                             Price not available
+                         {% endif %}
                      </p>
-     
-                     <!-- View Product Button -->
-                     <a href="{% url 'product_detail' product.id %}" class="view-product-button">
-                         View Product
-                     </a>
+   
                  </div>
                  {% endfor %}
              </div>

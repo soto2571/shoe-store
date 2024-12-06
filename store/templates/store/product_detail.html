@@ -6,19 +6,23 @@
     <title>{{ product.name }}</title>
 
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v={{ STATIC_VERSION }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="product-detail-bg">
         <section class="home">
-        <div class="home__container container">
+        <div class="home__container one container">
             <!-- Product Info -->
             <div class="home__data">
-                <h1 class="home__title">{{ product.brand }}</h1>
-                <p class="product-price home__subtitle">${{ product.price }}</p>
+                <h1 class="home__title one">{{ product.brand }}</h1>
+                <h1 class="home__title four">
+                    {{ product.name }}
+                 </h1>
                 
                 <p class="home__description">
-                    {{ product.name }}
+                    Select a size and quantity to add to your cart. <br>
                 </p>
                 
 
@@ -26,30 +30,41 @@
                     {% csrf_token %}
 
                     <!-- Size Selection -->
-                    <div class="product-sizes">
-                        <p class="product-price">Price: $<span id="price-display">{{ product.lowest_price }}</span></p>
-                        <div class="size-options">
-                            {% for size in product.sizes.all %}
-                            <label class="size-pill">
-                                <input 
-                                    type="radio" 
-                                    name="size" 
-                                    value="{{ size.size }}" 
-                                    data-price="{{ size.price }}" 
-                                    onclick="updatePrice(this)" 
-                                    required>
-                                {{ size.size }}
-                            </label>
-                            {% endfor %}
+                <div class="product-sizes">
+                    <p class="product-price detalles">Price: $<span id="price-display">{{ product.lowest_price }}</span></p>
+                    <p class="product-size-title">Sizes</p>
+                    <div class="size-options">
+                        {% for size in product.sizes.all %}
+                        <div class="size-pill">
+                            <input
+                                type="radio"
+                                name="size"
+                                id="size-{{ size.size }}"
+                                value="{{ size.size }}"
+                                data-price="{{ size.price }}"
+                                onclick="updatePrice(this)"
+                                required>
+                            <label for="size-{{ size.size }}">{{ size.size }}</label>
                         </div>
+                        {% endfor %}
                     </div>
+                </div>
 
-                    <!-- Quantity -->
+                <!-- Quantity -->
+                <div class="product-quantity">
+                    <p class="product-quantity-title">Quantity</p> <!-- New heading for Quantity -->
                     <div class="quantity-container">
-                        <button type="button" class="quantity-btn" onclick="decreaseQuantity('quantity')">-</button>
-                        <input type="number" id="quantity" name="quantity" value="1" min="1" readonly>
-                        <button type="button" class="quantity-btn" onclick="increaseQuantity('quantity')">+</button>
+                        <button type="button" class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                        <input 
+                            type="text" 
+                            id="quantity" 
+                            name="quantity" 
+                            class="quantity-input" 
+                            value="1" 
+                            readonly>
+                        <button type="button" class="quantity-btn" onclick="increaseQuantity()">+</button>
                     </div>
+                </div>
 
                     <!-- Add to Cart Button -->
                     <button type="submit" class="add-to-cart-button">
@@ -60,7 +75,7 @@
 
             <!-- Product Image -->
             <div class="home__images">
-                <div class="home__circle"></div>
+                
                 <img src="{{ product.image.url }}" alt="{{ product.name }}" class="home_shoe">
             </div>
         </div>
@@ -68,24 +83,25 @@
     </div>
 
     <script>
-        function updatePrice(element) {
-            const price = element.getAttribute("data-price");
-            document.getElementById("price-display").textContent = price;
-        }
-    
-        function decreaseQuantity(id) {
-            const input = document.getElementById(id);
-            if (input.value > 1) {
-                input.value = parseInt(input.value) - 1;
-                document.getElementById("quantity-input").value = input.value;
-            }
-        }
-    
-        function increaseQuantity(id) {
-            const input = document.getElementById(id);
-            input.value = parseInt(input.value) + 1;
-            document.getElementById("quantity-input").value = input.value;
-        }
+       // Update displayed price based on selected size
+function updatePrice(element) {
+    const price = element.getAttribute("data-price");
+    document.getElementById("price-display").textContent = price;
+}
+
+// Decrease quantity
+function decreaseQuantity() {
+    const input = document.getElementById("quantity");
+    if (parseInt(input.value) > 1) {
+        input.value = parseInt(input.value) - 1;
+    }
+}
+
+// Increase quantity
+function increaseQuantity() {
+    const input = document.getElementById("quantity");
+    input.value = parseInt(input.value) + 1;
+}
     </script>
 </body>
 </html>

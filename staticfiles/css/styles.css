@@ -7,12 +7,12 @@
 
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --black-color: hsl(0, 0%, 96%);
+  --black-color: hsl(0, 0%, 5%);
   --black-color-light: hsl(0, 0%, 70%);
   --white-color: hsl(0, 0%, 100%);
-  --title-color: hsl(0, 0%, 96%);
+  --title-color: hsl(0, 0%, 5%);
   --text-color: hsl(0, 0%, 55%);
-  --body-color: hsl(0, 0%, 5%);
+  --body-color: hsl(0, 0%, 96%);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -504,8 +504,10 @@ img {
 
 .product-price {
   font-size: 1rem;
-  color: var(--body-color);
   margin-bottom: 1rem;
+}
+.uno{
+  color: black;
 }
 
 .show-more-button {
@@ -537,10 +539,12 @@ img {
 
 /*=============== SHOE SIZE ===============*/
 .product-price {
-  font-size: 1.2rem;
+  font-size: 3.2rem;
   font-weight: bold;
   margin: 10px 0;
-  color: #333;
+}
+.detalles {
+  color: white;
 }
 
 select {
@@ -551,7 +555,6 @@ select {
   font-size: 1rem;
 }
 
-/*=============== SHOE DETAILS ===============*/
 /*=============== PRODUCT DETAIL ===============*/
 .home__container {
   position: relative;
@@ -562,20 +565,26 @@ select {
   align-items: center;
 }
 
-.home__title {
+.home__title{
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--title-color);
+}
+.one{
+  color: red;
+}
+.four{
+  color: white;
 }
 
 .product-price {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-}
+  font-family: 'Roboto', sans-serif;}
 
 .home__description {
   font-size: 1rem;
   margin-bottom: 2rem;
+  color: var(--title-color)
 }
 
 .product-sizes {
@@ -586,67 +595,86 @@ select {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  color: rgba(255, 101, 101, 0.66);
 }
 
 .size-pill {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
+  position: relative; /* Positioning for the radio button */
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #f8f8f8; /* Default background */
+  border: 1px solid #ccc; /* Default border */
   border-radius: 20px;
-  padding: 5px 15px;
-  cursor: pointer;
   font-size: 1rem;
+  color: #333; /* Default text color */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transitions */
 }
 
 .size-pill input {
-  display: none;
+  position: absolute;
+  opacity: 0; /* Fully hide the radio input */
+  z-index: -1; /* Remove it from clickable space */
 }
 
-.size-pill input:checked + span {
-  background-color: #007bff;
-  color: white;
-  border-color: #007bff;
+.size-pill input:checked + label {
+  
+  color: #fc0000; /* White text when selected */
+  border-color: #007bff; /* Match border with background */
+}
+
+.size-pill input:focus + label {
+  outline: none; /* Remove focus outline */
+}
+
+.size-pill label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Make it fill the pill */
+  width: 100%; /* Make it fill the pill */
 }
 
 .quantity-container {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
 }
 
 .quantity-btn {
-  background-color: #007bff;
-  color: white;
+  background-color: #ffffff; /* Black buttons */
+  color: rgb(255, 0, 0);
   border: none;
-  padding: 5px 15px;
-  font-size: 1rem;
+  padding: 10px 15px;
   cursor: pointer;
-  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
 }
 
 .quantity-btn:hover {
-  background-color: #0056b3;
+  background-color: #ffffff; /* Lighter black when hovered */
 }
 
 .quantity-btn:active {
-  background-color: #003f8c;
+  background-color: #666; /* Even lighter when clicked */
 }
 
-.quantity-container input {
-  width: 60px;
+.quantity-input {
+  width: 50px;
   text-align: center;
+  border: none;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  color: #333;
 }
 
 .add-to-cart-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #ff1313;
   color: white;
   border: none;
   border-radius: 5px;
@@ -655,11 +683,11 @@ select {
 }
 
 .add-to-cart-button:hover {
-  background-color: #0056b3;
+  background-color: #ff1313b9;
 }
 
 .home_shoe {
-  width: 350px;
+  width: 750px;
   margin-inline: auto;
   display: block;
 }
@@ -672,8 +700,172 @@ select {
   position: absolute;
   inset: 0;
   margin: auto;
+  z-index: -1;
 }
 
+.product-size-title,
+.product-quantity-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--text-color); /* Adjust color if needed */
+}
+
+/* Full Background Image */
+.product-detail-bg {
+  background-image: url("../img/store-background.jpeg"); /* Path to your store background image */
+  background-size: cover; /* Ensure the image covers the entire background */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full viewport width */
+  display: flex; /* For child elements */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+/* Add a translucent overlay for readability */
+.product-detail-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Black overlay with 50% opacity */
+  z-index: 0; /* Send it behind the content */
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 768px) {
+  .home__container {
+    grid-template-columns: 1fr; /* Stack content vertically */
+    text-align: center; /* Center-align text content */
+    padding-block: 4rem 2rem; /* Reduce padding */
+    gap: 2rem; /* Reduce gap */
+  }
+
+  .home__data {
+    margin: 0 auto;
+  }
+
+  .home__images {
+    margin: 0 auto;
+  }
+
+  .home__title {
+    font-size: 1.8rem; /* Adjust font size */
+  }
+
+  .product-price {
+    font-size: 1.2rem; /* Adjust font size */
+  }
+
+  .home__description {
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .quantity-container {
+    justify-content: center; /* Center-align quantity selector */
+  }
+
+  .add-to-cart-button {
+    margin: 1rem auto;
+  }
+
+  .home_shoe {
+    width: 90%; /* Shrink image width */
+    margin: 0 auto; /* Center-align image */
+  }
+
+  .size-options {
+    justify-content: center; /* Center-align size pills */
+  }
+}
+
+/* Adjust for very small screens (phones) */
+@media (max-width: 480px) {
+  .home__container {
+    padding-block: 2rem 1rem; /* Further reduce padding */
+    gap: 1rem; /* Further reduce gap */
+  }
+
+  .home__title {
+    font-size: 1.5rem; /* Adjust font size */
+  }
+
+  .product-price {
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .home_shoe {
+    width: 100%; /* Make image occupy the full width */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .quantity-container {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center items horizontally */
+    gap: 5px; /* Spacing between buttons and input */
+    margin-bottom: 1rem; /* Spacing below the container */
+    border: 1px solid #ccc; /* Border for visual separation */
+    border-radius: 5px; /* Rounded corners */
+    padding: 2px; /* Add padding for better spacing */
+    flex-wrap: nowrap; /* Prevent wrapping to vertical */
+    background-color: #fff; /* Background color */
+  }
+  
+  .quantity-btn {
+    background-color: #ffffff; /* Button background */
+    color: rgb(255, 0, 0); /* Button text color */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Add padding for touch-friendly buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Font size for the buttons */
+    transition: background-color 0.3s; /* Smooth hover effect */
+  }
+  
+  .quantity-btn:hover {
+    background-color: #ffd0d0; /* Lighter background on hover */
+  }
+  
+  .quantity-input {
+    width: 20px; /* Fixed width for the input */
+    text-align: center; /* Center-align text */
+    border: none; /* Remove border */
+    font-size: 1rem; /* Font size for the input */
+    color: #333; /* Text color */
+  }
+  
+  /* Responsive Fix for Smaller Screens */
+  @media screen and (max-width: 320px) {
+    .quantity-container {
+      gap: 2px; /* Reduce gap on very small screens */
+      padding: 2px; /* Reduce padding */
+    }
+  
+    .quantity-btn {
+      padding: 8px 10px; /* Adjust button size for smaller screens */
+      font-size: 0.9rem; /* Slightly smaller text */
+    }
+  
+    .quantity-input {
+      width: 20px; /* Narrow input for smaller screens */
+      font-size: 0.9rem; /* Slightly smaller text */
+    }
+  }
+
+  .quantity-input {
+    margin: 0.5rem auto; /* Center the input */
+    text-align: center;
+  }
+
+  .add-to-cart-button {
+    width: 100%; /* Make button full-width */
+    margin: 1rem 0; /* Add spacing */
+  }
+}
 /*=============== Newsletter ===============*/
 /* Newsletter */
 .newsletter {
@@ -798,126 +990,183 @@ select {
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* For small devices */
-@media screen and (max-width: 320px){
-  .container{
-    margin-inline: 1rem;
+
+@media screen and (max-width: 768px) {
+  .home__container {
+    grid-template-columns: 1fr; /* Single column for better stacking */
+    padding-block: 4rem 2rem; /* Reduce padding for smaller screens */
+    text-align: center; /* Center-align all content */
   }
-  
-  .home__title{
-    font-size: 2rem;
+
+  .home__data {
+    padding: 1rem; /* Add padding to prevent text cutoff */
   }
-  .home__circle{
-    width: 220px;
-    height: 220px;
+
+  .home__title {
+    font-size: 1.8rem; /* Smaller font size for titles */
+    word-wrap: break-word; /* Ensure title doesn't overflow */
+    line-height: 1.2; /* Adjust spacing between lines */
+  }
+
+  .two {
+    font-size: 1.8rem; /* Match font size for consistent appearance */
+    line-height: 1.2;
+  }
+
+  .home__description {
+    font-size: 1rem; /* Adjust font size for readability */
+    margin-bottom: 1.5rem; /* Reduce spacing */
+  }
+
+  .home__circle {
+    width: 180px; /* Reduce size of the circle */
+    height: 180px;
+  }
+
+  .home_shoe {
+    width: 250px; /* Ensure the shoe fits well */
+    margin-inline: auto; /* Center-align the shoe */
+  }
+
+  .home__social {
+    position: static; /* Move social links to a static position */
+    margin-top: 1rem; /* Add margin for spacing */
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between social links */
   }
 }
 
-/* For medium devices */
-@media screen and (min-width: 576px){
-  .nav__menu{
-    width: 60%;
+/* Very Small Devices: Max width 320px */
+@media screen and (max-width: 320px) {
+  .home__container {
+    padding: 2rem 1rem; /* Reduce padding for extra-small screens */
   }
 
-  .home__container{
-    grid-template-columns: 350px;
-    justify-content: center;
+  .home__title {
+    font-size: 1.5rem; /* Further reduce font size */
   }
-  .home__data{
-    text-align: center
+
+  .home__description {
+    font-size: 0.875rem; /* Smaller text size for descriptions */
+  }
+
+  .home__circle {
+    width: 150px; /* Smaller circle */
+    height: 150px;
+  }
+
+  .home_shoe {
+    width: 200px; /* Adjust shoe image size */
+  }
+
+  .home__social {
+    flex-direction: column; /* Stack social links vertically */
+    row-gap: 1rem; /* Add space between items */
   }
 }
 
 /* For large devices */
-@media screen and (min-width: 1023px){
-  .nav{
+@media screen and (min-width: 1023px) {
+  .nav {
     height: calc(var(--header-height) + 2rem);
   }
+
   .nav__toggle,
-  .nav__close{
+  .nav__close {
     display: none;
   }
-  .nav__menu{
+
+  .nav__menu {
     width: initial;
   }
-  .nav__list{
+
+  .nav__list {
     flex-direction: row;
     column-gap: 4rem;
   }
 
-  .home__container{
+  .home__container {
     height: 100vh;
     grid-template-columns: repeat(2, 400px);
     place-items: center;
     column-gap: 2rem;
   }
-  .home__data{
-    text-align: initial;
+
+  .home__data {
+    text-align: left; /* Align left for readability */
   }
-  .home__social{
+
+  .home__social {
     align-content: center;
     top: 0;
     bottom: 0;
   }
+
+  .home__circle {
+    width: 450px; /* Slightly smaller circle */
+    height: 450px;
+  }
+
+  .home__shoe {
+    width: 500px; /* Keep shoe larger */
+  }
 }
 
-@media screen and (min-width: 1152px){
-  .container{
+/* For very large devices */
+@media screen and (min-width: 1152px) {
+  .container {
     margin-inline: auto;
   }
 
-  .home__container{
-    grid-template-columns: 430px 600px;
-    column-gap: 4.5rem;
-  }
-  .home__title{
-    margin-bottom: 1.25;
-  }
-  .home__description{
-    margin-bottom: 3rem;
-    font-size: var(--normal-font-size);
-  }
-  .home__shoe{
-    width: 600px;
-  }
-  .home__circle{
-    width: 500px;
-    height: 500px;
-  }
-}
-
-@media screen and (min-width: 1248px){
-  .home__social{
-    right: -3rem;
-    row-gap: 2rem;
-  }
-  .home__social-link{
-    font-size: 1.5rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
   .home__container {
-    grid-template-columns: 1fr; /* Make it a single-column layout */
-    justify-items: center; /* Center-align content horizontally */
-    padding: 5rem 1rem; /* Add padding for better spacing */
-  }
-
-  .home__data {
-    text-align: center; /* Ensure all text content stays centered */
+    grid-template-columns: 430px 550px; /* Wider layout */
+    column-gap: 4.5rem;
   }
 
   .home__title {
-    font-size: 1.75rem; /* Adjust font size for small screens */
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 2.5rem; /* Balanced title size */
   }
 
   .home__description {
-    font-size: 1rem; /* Smaller font size for descriptions */
+    margin-bottom: 3rem;
+    font-size: var(--normal-font-size);
+  }
+
+  .home__circle {
+    width: 400px; /* Balanced size */
+    height: 400px;
+  }
+
+  .home__shoe {
+    width: 600px;
+  }
+}
+
+/* For extra-large devices */
+@media screen and (min-width: 1400px) {
+  .home__container {
+    grid-template-columns: 500px 700px; /* Wide layout */
+    column-gap: 6rem; /* Increase spacing */
+  }
+
+  .home__title {
+    font-size: 4rem; /* Larger font */
     margin-bottom: 2rem;
   }
 
-  .home__social {
-    margin-top: 1rem; /* Add spacing for social links */
+  .home__description {
+    font-size: 1.25rem; /* Bigger description font */
+    margin-bottom: 3.5rem;
+  }
+
+  .home__circle {
+    width: 550px; /* Balanced circle size */
+    height: 550px;
+  }
+
+  .home__shoe {
+    width: 850px; /* Larger shoe size */
   }
 }

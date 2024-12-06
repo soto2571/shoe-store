@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %} <!-- Load the static template tag -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v={{ STATIC_VERSION }}">
-    <title>Your Cart</title>
+    <title>Thank You</title>
     <style>
         body {
             background-color: #000; /* Black background */
@@ -19,7 +17,7 @@
             margin: 0;
             height: 100vh; /* Full viewport height */
         }
-        .cart-container {
+        .thank-you-container {
             text-align: center;
             background-color: #1a1a1a; /* Dark gray container */
             padding: 2rem;
@@ -28,20 +26,35 @@
             width: 90%; /* Default width for smaller screens */
             max-width: 600px;
         }
-        
+        .check-icon {
+            background-color: #4caf50; /* Green */
+            color: #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 1rem;
+        }
         h1 {
             font-size: 2rem;
             margin-bottom: 1rem;
         }
-        .cart-summary {
-            background-color: #fff; /* White background for cart summary */
+        .confirmation {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .receipt-container {
+            background-color: #fff; /* White background for receipt */
             color: #000; /* Black text */
             padding: 1rem;
             border-radius: 10px;
             text-align: left;
             margin-bottom: 1.5rem;
         }
-        .cart-summary h2 {
+        .receipt-container h2 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             text-align: center;
@@ -56,8 +69,11 @@
             border-bottom: 1px solid #ccc; /* Optional: Adds a divider between items */
         }
 
-       
-        
+        .item img {
+            width: 50px; /* Adjust image size */
+            height: auto;
+            margin-right: 15px; /* Space between image and text */
+        }
 
         .item .details {
             flex: 1; /* Ensures the text spans properly in the middle */
@@ -65,52 +81,60 @@
             margin-right: 15px; /* Space between text and price */
         }
 
-        .item .actions {
-            text-align: right; /* Align actions to the right */
-        }
-
-        .total {
-            font-size: 1.2rem;
+        .item .price {
+            text-align: right; /* Align price to the right */
             font-weight: bold;
-            text-align: right;
         }
 
+        @media (min-width: 768px) {
+            .item img {
+                width: 75px; /* Slightly larger on medium screens */
+            }
+            .item {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .item img {
+                width: 100px; /* Larger size for large screens */
+            }
+        }
         a {
             text-decoration: none;
             color: #fff;
-            background-color: #4caf50; /* Green for checkout button */
+            background-color: #ff1313;
             padding: 0.75rem 1.5rem;
             border-radius: 5px;
             font-size: 1rem;
             font-weight: bold;
             transition: background-color 0.3s ease;
         }
-        a.remove-button {
-            color: #ff1313;
-            background-color: transparent;
-            font-size: 0.9rem;
-        }
-        a.checkout-button:hover {
-            background-color: #3e8e41; /* Slightly darker green */
+        a:hover {
+            background-color: #e01111;
         }
 
         /* Media Queries */
         @media (min-width: 768px) {
-            .cart-container {
+            .thank-you-container {
                 max-width: 800px; /* Larger width for medium screens */
                 padding: 3rem;
             }
-            .cart-icon {
-                
+            .check-icon {
+                width: 60px;
+                height: 60px;
                 font-size: 30px;
             }
             h1 {
                 font-size: 2.5rem;
             }
-            .cart-summary {
+            .confirmation {
+                font-size: 1.2rem;
+            }
+            .receipt-container {
                 padding: 2rem;
             }
-            .cart-summary h2 {
+            .receipt-container h2 {
                 font-size: 1.5rem;
             }
             .item {
@@ -123,17 +147,21 @@
         }
 
         @media (min-width: 1024px) {
-            .cart-container {
+            .thank-you-container {
                 max-width: 1000px; /* Even larger width for large screens */
             }
-            .cart-icon {
-                
+            .check-icon {
+                width: 80px;
+                height: 80px;
                 font-size: 40px;
             }
             h1 {
                 font-size: 3rem;
             }
-            .cart-summary h2 {
+            .confirmation {
+                font-size: 1.5rem;
+            }
+            .receipt-container h2 {
                 font-size: 1.8rem;
             }
             .item {
@@ -143,32 +171,21 @@
     </style>
 </head>
 <body>
-    <img src="{% static 'img/logoMedi.png' %}" alt="Cart Icon" class="cart-icon">
-<div class="cart-container">
-    <h1>Your Cart</h1>
-    <div class="cart-summary">
-        
-        {% if cart_items %}
-            {% for item in cart_items %}
-            <h2>Cart Items</h2>
+    <div class="thank-you-container">
+        <div class="check-icon">&#10004;</div> <!-- Checkmark Icon -->
+        <h1>Thank You!</h1>
+        <p class="confirmation"><strong>Confirmation Number:</strong> {{ confirmation_number }}</p>
+        <div class="receipt-container">
+            <h2>Receipt</h2>
+            {% for item in purchased_items %}
             <div class="item">
                 <img src="{{ item.image_url }}" alt="{{ item.name }}"> <!-- Product image -->
-                <span class="details">{{ item.product.name }} (Size: {{ item.size }})</span>
-                <span class="details">${{ item.total_price }} x {{ item.quantity }}</span>
-                <a href="{% url 'remove_from_cart' item.product.id %}?size={{ item.size }}" class="remove-button">Remove</a>
+                <span>{{ item.name }} (Size: {{ item.size }})</span>
+                <span>${{ item.price }} x {{ item.quantity }}</span>
             </div>
             {% endfor %}
-            <div class="total">
-                Total: ${{ cart_total }}
-            </div>
-            <a href="{% url 'checkout' %}" class="checkout-button">Proceed to Checkout</a>
-        {% else %}
-            <h2>Cart is Empty</h2>
-        {% endif %}
-        
+        </div>
+        <a href="{% url 'index' %}">Back to Home</a>
     </div>
-    <a href="{% url 'index' %}" class="checkout-button">Keep Shoping</a>
-
-</div>
 </body>
 </html>

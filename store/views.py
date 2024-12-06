@@ -4,6 +4,10 @@ from .forms import ProductForm, ProductSizeForm
 from django.shortcuts import get_object_or_404
 from django.forms import modelformset_factory
 from django.contrib import messages
+import stripe
+from django.conf import settings
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def index(request):
     if 'cart' not in request.session:
@@ -26,14 +30,40 @@ def owner_dashboard(request):
     return render(request, 'store/owner_dashboard.html', {'products': products})
 
 def add_product(request):
+    ProductSizeFormSet = modelformset_factory(
+        ProductSize,
+        form=ProductSizeForm,
+        extra=3,  # Allows 3 empty forms for new sizes
+        can_delete=True,
+    )
+
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
-            product = form.save()
-            return redirect('add_sizes', product_id=product.id)
+        product_form = ProductForm(request.POST, request.FILES)
+        size_formset = ProductSizeFormSet(request.POST)
+
+        if product_form.is_valid() and size_formset.is_valid():
+            product = product_form.save()
+
+            # Save each size with the product reference
+            sizes = size_formset.save(commit=False)
+            for size in sizes:
+                size.product = product
+                size.save()
+
+            # Handle deleted sizes
+            for deleted in size_formset.deleted_objects:
+                deleted.delete()
+
+            return redirect('owner_dashboard')
     else:
-        form = ProductForm()
-    return render(request, 'store/add_product.html', {'form': form})
+        product_form = ProductForm()
+        size_formset = ProductSizeFormSet(queryset=ProductSize.objects.none())  # Start with no sizes
+
+    return render(request, 'store/add_product.html', {
+        'product_form': product_form,
+        'size_formset': size_formset,
+    })
+
 
 def add_sizes(request, product_id):
     product = get_object_or_404(Product, id=product_id)
@@ -57,8 +87,8 @@ def edit_product(request, pk):
         ProductSize,
         form=ProductSizeForm,
         fields=['size', 'price', 'stock'],
-        extra=0,
-        can_delete=True,
+        extra=1,  # Allow one extra blank form for adding new sizes
+        can_delete=True,  # Allow sizes to be deleted
     )
 
     if request.method == 'POST':
@@ -72,15 +102,19 @@ def edit_product(request, pk):
             instances = size_formset.save(commit=False)
 
             for instance in instances:
-                instance.product = product
+                instance.product = product  # Associate size with the product
                 instance.save()
-
 
             # Handle deleted sizes
             for deleted in size_formset.deleted_objects:
                 deleted.delete()
+
             return redirect('owner_dashboard')
         
+        # Debugging for errors
+        else:
+            print(f"Product Form Errors: {product_form.errors}")
+            print(f"Size Formset Errors: {size_formset.errors}")
     else:
         product_form = ProductForm(instance=product)
         size_formset = ProductSizeFormSet(queryset=product.sizes.all())
@@ -141,16 +175,14 @@ def add_to_cart(request, product_id):
         if key in cart:
             cart[key]['quantity'] += quantity
         else:
+            product = product_size.product
             cart[key] = {
                 'product_id': product_id,
                 'size': size,
                 'price': float(product_size.price),
                 'quantity': quantity,
+                'image_url': product_size.product.image.url, 
             }
-
-        # Reduce stock
-        product_size.stock -= quantity
-        product_size.save()
 
         request.session['cart'] = cart
         messages.success(request, "Product added to cart!")
@@ -207,3 +239,112 @@ def clear_cart(request):
 def product_detail(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     return render(request, 'store/product_detail.html', {'product': product})
+
+
+### Checkout ###
+
+def create_checkout_session(request):
+    cart = request.session.get('cart', {})
+    if not cart:
+        messages.error(request, "Your cart is empty!")
+        return redirect('cart_view')
+
+    line_items = []
+    for key, item in cart.items():
+        # Get the product
+        product = Product.objects.get(id=item['product_id'])
+        
+        # Generate the absolute image URL
+        image_url = request.build_absolute_uri(product.image.url)
+        print(f"Image URL: {image_url}")
+
+        line_items.append({
+            'price_data': {
+                'currency': 'usd',
+                'product_data': {
+                    'name': f"Product: {product.name} | Size: {item['size']}",
+                    'images': [image_url],  # Add the image URL here
+                },
+                'unit_amount': int(item['price'] * 100),  # Stripe requires the price in cents
+            },
+            'quantity': item['quantity'],
+        })
+
+    try:
+        checkout_session = stripe.checkout.Session.create(
+            payment_method_types=['card'],
+            line_items=line_items,
+            mode='payment',
+            success_url=request.build_absolute_uri('/checkout/success/') + "?session_id={CHECKOUT_SESSION_ID}",
+            cancel_url=request.build_absolute_uri('/cart/'),
+            shipping_address_collection={
+                'allowed_countries': ['US', 'PR'],
+            }
+        )
+        return redirect(checkout_session.url, code=303)
+    except Exception as e:
+        print(f"Error in create_checkout_session: {e}")
+        messages.error(request, "Unable to create checkout session. Try again later.")
+        return redirect('cart_view')
+        
+
+def checkout_success(request):
+    # Retrieve the session ID from the request
+    session_id = request.GET.get('session_id')
+    if not session_id:
+        print("Missing session_id in request.GET")
+        messages.error(request, "Missing session ID.")
+        return redirect('cart_view')
+
+    try:
+        checkout_session = stripe.checkout.Session.retrieve(session_id)
+        print(f"Retrieved checkout session: {checkout_session}")
+        payment_intent_id = checkout_session.payment_intent
+        payment_intent = stripe.PaymentIntent.retrieve(payment_intent_id)
+        confirmation_number = payment_intent.id
+    except stripe.error.StripeError as e:
+        print(f"Stripe error: {e.user_message}")
+        messages.error(request, "Failed to retrieve payment details.")
+        return redirect('cart_view')
+
+    # Process the purchased items
+    cart = request.session.get('cart', {})
+    if not cart:
+        messages.error(request, "Your cart is empty. Nothing to process.")
+        return redirect('cart_view')
+
+    purchased_items = []  # List to hold purchased item details
+
+    for key, item in cart.items():
+        try:
+            product_size = ProductSize.objects.get(product_id=item['product_id'], size=item['size'])
+        except ProductSize.DoesNotExist:
+            messages.error(request, "An item in your cart could not be found.")
+            return redirect('cart_view')
+
+        if product_size.stock < item['quantity']:
+            messages.error(request, f"Insufficient stock for {product_size.product.name} (Size: {product_size.size}).")
+            return redirect('cart_view')
+
+        product_size.stock -= item['quantity']
+        product_size.save()
+
+        # Add item details to purchased_items
+        purchased_items.append({
+            'name': product_size.product.name,
+            'size': product_size.size,
+            'price': item['price'],
+            'quantity': item['quantity'],
+            'image_url': product_size.product.image.url,  # Add image URL
+        })
+
+    # Clear the cart
+    request.session['cart'] = {}
+
+    # Pass purchased items and confirmation number to the template
+    context = {
+        'purchased_items': purchased_items,
+        'confirmation_number': confirmation_number,
+    }
+
+    return render(request, 'store/checkout_success.html', context)

@@ -1,6 +1,32 @@
-<h2>Add Product</h2>
+<h2>Add New Product</h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Save Product</button>
+    {{ product_form.as_p }}
+
+    <h3>Sizes and Prices</h3>
+    <table>
+        {{ size_formset.management_form }}
+        <thead>
+            <tr>
+                <th>Size</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for form in size_formset %}
+            <tr>
+                <td>{{ form.size }}</td>
+                <td>{{ form.price }}</td>
+                <td>{{ form.stock }}</td>
+                <td>{{ form.DELETE }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <button type="submit">Add Product</button>
 </form>
+
+<a href="{% url 'owner_dashboard' %}">Back to Dashboard</a>

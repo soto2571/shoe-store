@@ -4,6 +4,7 @@
     {{ product_form.as_p }}
 
     <h3>Edit Sizes</h3>
+    <p>You can add, update, or delete sizes below:</p>
     <table>
         {{ size_formset.management_form }} <!-- Render the management form -->
         <thead>
@@ -28,7 +29,7 @@
         </tbody>
     </table>
 
-    <button type="submit">Save Changes</button>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
 </form>
 
-<a href="{% url 'owner_dashboard' %}">Back to Dashboard</a>
+<a href="{% url 'owner_dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>

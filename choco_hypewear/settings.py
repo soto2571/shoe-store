@@ -11,16 +11,24 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
+SECRET_KEY = config('SECRET_KEY')
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-@)pm!h)g5tgu)eg=0_ecs4wl)p%nyxqy^0oi_k!ehl8knd7zbd'
+# DEBUG setting from .env file
+DEBUG = config('DEBUG', default=True, cast=bool)
+
+# Stripe keys based on the DEBUG flag
+if DEBUG:
+    STRIPE_PUBLISHABLE_KEY = config('STRIPE_TEST_PUBLISHABLE_KEY')
+    STRIPE_SECRET_KEY = config('STRIPE_TEST_SECRET_KEY')
+else:
+    STRIPE_PUBLISHABLE_KEY = config('STRIPE_LIVE_PUBLISHABLE_KEY')
+    STRIPE_SECRET_KEY = config('STRIPE_LIVE_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -123,8 +131,10 @@ STATICFILES_DIRS = [  # Directories where Django looks for static files
 ]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # Destination for collectstatic
-STATIC_VERSION = '1.0.1'  # Update this version whenever you modify your static files
+STATIC_VERSION = '1.0.8'  # Update this version whenever you modify your static files
 TEMPLATES[0]['OPTIONS']['debug'] = True
+
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
