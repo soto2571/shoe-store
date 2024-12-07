@@ -1,8 +1,10 @@
 from django.urls import path
 from . import views
+from django.contrib.auth.views import LoginView 
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('owner-login/', LoginView.as_view(template_name='store/owner_login.html'), name='login'),
     path('owner-dashboard/', views.owner_dashboard, name='owner_dashboard'),
     path('add-product/', views.add_product, name='add_product'),
     path('add-sizes/<int:product_id>/', views.add_sizes, name='add_sizes'),

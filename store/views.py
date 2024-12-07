@@ -8,6 +8,7 @@ import stripe
 from django.conf import settings
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -69,7 +70,11 @@ def product_detail(request, product_id):
 
 
 ### Owner ###
+def owner_required(user):
+    return user.groups.filter(name='Owner').exists()
 
+@login_required
+@user_passes_test(owner_required, login_url='index')
 def owner_dashboard(request):
     products = Product.objects.all()
     return render(request, 'store/owner_dashboard.html', {'products': products})

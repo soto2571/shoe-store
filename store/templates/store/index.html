@@ -84,8 +84,30 @@
          </nav>
       </header>
 
-      <!--==================== MAIN ====================-->
+
       <main>
+         <!--==================== MAIN SECTION ====================-->
+         <section class="main-section">
+            <div class="main-section__logo">
+               <img src="{% static 'img/newlogoBIG.png' %}" alt="Choco Hypewear Logo" class="main-logo">
+               <p class="main-section__slogan"><span class="slogan-text">Style. Comfort. Confidence.</span></p>
+            </div>
+            <div class="main-section__links">
+               <!-- Choco Merch -->
+               <div class="main-card">
+                  <img src="{% static 'img/shirtback.png' %}" alt="Choco Merch" class="main-card__image">
+                  <p class="main-card__description">Exclusive merchandise for true Choco fans.</p>
+                  <a href="#" class="home__button">BUY MERCH</a>
+               </div>
+
+               <!-- Buy Shoes -->
+               <div class="main-card">
+                  <img src="{% static 'img/shoeback.png' %}" alt="Buy Shoes" class="main-card__image">
+                  <p class="main-card__description">Discover the latest and trendiest footwear.</p>
+                  <a href="#" class="home__button">BUY SHOES</a>
+               </div>
+            </div>
+         </section>
          <!--==================== HOME ====================-->
          <section class="home">
             <div class="home__container container">
@@ -209,7 +231,7 @@
 
        <!--==================== NEWSLETTER ====================-->
        <section class="newsletter">
-         <img src="{% static 'img/logoBigg.png' %}" alt="Newsletter" class="newsletter__img">
+         <img src="{% static 'img/newlogoBIG.png' %}" alt="Newsletter" class="newsletter__img">
          <div class="container">
            <h2 class="newsletter__title">Subscribe to Our Newsletter</h2>
            <p class="newsletter__description">Get the latest updates on new arrivals and special offers.</p>
@@ -228,7 +250,8 @@
              <div class="footer__about">
                <h3 class="footer__title">About Us</h3>
                <p class="footer__description">Choco HypeWear is your one-stop shop for premium footwear from top brands.</p>
-             </div>
+               <a href="{% url 'login' %}" class="owner-login-link">Staff Login</a>
+            </div>
              <!-- Links -->
              <div class="footer__links">
                <h3 class="footer__title">Quick Links</h3>

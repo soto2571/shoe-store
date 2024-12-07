@@ -6,6 +6,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('', include('store.urls')),
+    path('admin/', admin.site.urls),  # This enables the Django admin interface
+
 ]
 
 if settings.DEBUG:

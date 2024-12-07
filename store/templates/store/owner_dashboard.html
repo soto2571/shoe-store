@@ -1,21 +1,68 @@
-<h1>Owner Dashboard</h1>
-<a href="{% url 'add_product' %}">Add Product</a>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Total Stock:</th>
-        <th>Actions</th>
-    </tr>
-    {% for product in products %}
-    <tr>
-        <td>{{ product.name }}</td>
-        <td>${{ product.price }}</td>
-        <td>{{ product.total_stock }}</td>
-        <td>
-            <a href="{% url 'edit_product' product.id %}">Edit</a>
-            <a href="{% url 'delete_product' product.id %}">Delete</a>
-        </td>
-    </tr>
-    {% endfor %}
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body class="dashboard-page">
+    <header class="dashboard-header">
+        <div class="dashboard-header__logo">
+            <h1 class="dashboard-title">Owner Dashboard</h1>
+        </div>
+        <nav class="dashboard-header__nav">
+            <a href="{% url 'index' %}" class="dashboard-nav-link">Go to Store</a>
+        </nav>
+    </header>
+
+    <main class="dashboard-main">
+        <section class="dashboard-section dashboard-overview">
+            <h2 class="dashboard-section-title">Overview</h2>
+            <div class="dashboard-overview-cards">
+                <div class="dashboard-card">
+                    <h3 class="dashboard-card-title">Total Sales</h3>
+                    <p class="dashboard-card-value">${{ total_sales }}</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3 class="dashboard-card-title">Total Products</h3>
+                    <p class="dashboard-card-value">{{ total_products }}</p>
+                </div>
+                <div class="dashboard-card">
+                    <h3 class="dashboard-card-title">Total Orders</h3>
+                    <p class="dashboard-card-value">{{ total_orders }}</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-section dashboard-products">
+            <h2 class="dashboard-section-title">Products</h2>
+            <a href="{% url 'add_product' %}" class="dashboard-add-product-btn">Add Product</a>
+            <table class="dashboard-product-table">
+                <thead>
+                    <tr>
+                        <th class="dashboard-table-header">Name</th>
+                        
+                        <th class="dashboard-table-header">Total Stock</th>
+                        <th class="dashboard-table-header">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td class="dashboard-table-cell">{{ product.name }}</td>
+                        
+                        <td class="dashboard-table-cell">{{ product.total_stock }}</td>
+                        <td class="dashboard-table-cell">
+                            <a href="{% url 'edit_product' product.id %}" class="dashboard-action-link dashboard-edit-link">Edit</a>
+                            <a href="{% url 'delete_product' product.id %}" class="dashboard-action-link dashboard-delete-link">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
