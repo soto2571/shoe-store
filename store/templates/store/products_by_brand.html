@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ brand_name }} Collection</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="head_brand">
+            <h1 class="title__brand_page">{{ brand_name }} <span class="sub">Collection</span></h1>
+            <a href="{% url 'index' %}" class="back-button_brand_page">Back to Home</a>
+          </div>
+    </header>
+    <section class="product-section">
+        <div class="container">
+            <div class="product-grid">
+                {% if products %}
+                {% for product in products %}
+                <div class="product-card">
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                    </a>
+                    <h3>{{ product.name }}</h3>
+                    <p class="product-price">
+                        {% if product.lowest_price %}
+                            ${{ product.lowest_price }}
+                        {% else %}
+                            Price not available
+                        {% endif %}
+                    </p>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p>No products available for this brand.</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -30,10 +30,12 @@
             <div class="nav__menu" id="nav-menu">
                <!-- Search bar for phones-->
                <div class="nav__search-mobile">
-                  <input type="text" class="nav__search-input" placeholder="Search for shoes or brands...">
-                  <button class="nav__search-button">
-                    <i class="ri-search-line"></i>
-                  </button>
+                  <form action="{% url 'search_products' %}" method="get">
+                     <input type="text" name="q" class="nav__search-input" placeholder="Search for shoes or brands..." value="{{ query|default:'' }}" required>
+                        <button class="nav__search-button" type="submit">
+                        <i class="ri-search-line"></i>
+                        </button>
+                     </form>
                 </div>
                <ul class="nav__list">
                   <li class="nav__item">
@@ -61,10 +63,12 @@
 
             <!-- Search Bar -->
              <div class="nav__search">
-               <input type="text" class="nav__search-input" placeholder="Search for a shoes or brand...">
-               <button class="nav__search-button">
-                  <i class="ri-search-line"></i>
-               </button>
+               <form action="{% url 'search_products' %}" method="get">
+                  <input type="text" name="q" class="nav__search-input" placeholder="Search for shoes or brands..." value="{{ query|default:'' }}" required>
+                     <button class="nav__search-button" type="submit">
+                     <i class="ri-search-line"></i>
+                     </button>
+                  </form>
              </div>
 
              <div class="nav__cart">
@@ -154,22 +158,22 @@
                   <img src="{% static 'img/nikeadd.jpg' %}" alt="Nike" class="brand-card__image">
                   <h3 class="brand-card__title">Nike</h3>
                   <p class="brand-card__description">Explore the latest Nike shoes with innovative designs.</p>
-                  <a href="#" class="brand-card__button">Shop Nike</a>
-                </div>
+                  <a href="{% url 'products_by_brand' 'Nike' %}" class="brand-card__button">Shop Nike</a>
+               </div>
                 <!-- Adidas -->
                 <div class="brand-card">
                   <img src="{% static 'img/adiadd.webp' %}" alt="Adidas" class="brand-card__image">
                   <h3 class="brand-card__title">Adidas</h3>
                   <p class="brand-card__description">Check out Adidas footwear for all your needs.</p>
-                  <a href="#" class="brand-card__button">Shop Adidas</a>
-                </div>
+                  <a href="{% url 'products_by_brand' 'Adidas' %}" class="brand-card__button">Shop Adidas</a>
+               </div>
                   <!-- New Balance -->
                 <div class="brand-card">
                   <img src="{% static 'img/newbalance.jpg' %}" alt="New_Balance" class="brand-card__image">
                   <h3 class="brand-card__title">New Balance</h3>
                   <p class="brand-card__description">Discover New Balance shoes, blending comfort and style.</p>
-                  <a href="#" class="brand-card__button">Shop New Balance</a>
-                </div>
+                  <a href="{% url 'products_by_brand' 'New Balance' %}" class="brand-card__button">Shop New Balance</a>
+               </div>
             </div>
          </div>
       </section>

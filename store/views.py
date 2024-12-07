@@ -6,6 +6,8 @@ from django.forms import modelformset_factory
 from django.contrib import messages
 import stripe
 from django.conf import settings
+from django.db.models import Q
+from django.db.models.functions import Lower
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -13,6 +15,7 @@ def index(request):
     if 'cart' not in request.session:
         request.session['cart'] = {}  # Initialize an empty cart
     products = Product.objects.all()
+    brands = Product.objects.values('brand').exclude(brand__isnull=True).exclude(brand__exact='').distinct()    
 
     for product in products:
         product.lowest_price = (
@@ -20,7 +23,49 @@ def index(request):
             if product.sizes.exists()
             else product.price
         )
-    return render(request, 'store/index.html', {'products': products})
+
+    context = {
+        'products': products,
+        'brands': brands,
+    }
+    return render(request, 'store/index.html', context)
+
+### Customer ###
+def product_by_brand(request, brand_name):
+    products = Product.objects.filter(brand__iexact=brand_name)  # Case-insensitive filter
+    context = {
+        'products': products,
+        'brand_name': brand_name.capitalize(),  # Capitalize brand name for display
+    }
+    return render(request, 'store/products_by_brand.html', context)
+
+
+def search_products(request):
+    query = request.GET.get('q', '')
+    query = request.GET.get('q', '').strip()
+    print(f"Search Query: {query}")  # Debug query
+
+    if query:
+        products = Product.objects.annotate(
+            lower_name=Lower('name'),
+            lower_brand=Lower('brand')
+        ).filter(
+            Q(lower_name__icontains=query) | Q(lower_brand__icontains=query)
+        )
+        print(f"Products Found: {products}")  # Debug results
+    else:
+        products = Product.objects.none()
+
+    context = {
+        'products': products,
+        'query': query,
+    }
+    return render(request, 'store/search_results.html', context)
+
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)  # Fetch the product by ID
+    return render(request, 'store/product_detail.html', {'product': product})
+
 
 
 ### Owner ###
@@ -272,7 +317,13 @@ def create_checkout_session(request):
 
     try:
         checkout_session = stripe.checkout.Session.create(
-            payment_method_types=['card'],
+            payment_method_types=[
+                'card',
+                'klarna',
+                'affirm',
+                'afterpay_clearpay',
+                'link',
+                ],
             line_items=line_items,
             mode='payment',
             success_url=request.build_absolute_uri('/checkout/success/') + "?session_id={CHECKOUT_SESSION_ID}",

@@ -406,7 +406,7 @@ img {
 
 .section-title {
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
   margin-bottom: 2rem;
   font-family: var(--second-font);
 }
@@ -463,37 +463,197 @@ img {
   color: red;
 }
 
+/*=============== SECTION SEARCH RESULTS PAGE ===============*/
+.head_brand_search {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  position: relative; /* Required for positioning child elements */
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), var(--body-color)),
+                    url('../img/store-background.jpeg'); /* Add your search-specific image */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  color: #fff; /* Ensure text is readable on any background */
+  height: 300px; /* Default height for smaller screens */
+  display: flex; /* Centers content vertically and horizontally */
+  flex-direction: column; /* Stacks title and button */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevents content from spilling out */
+}
+
+/* Ensure content is above the overlay */
+.head_brand_search h1,
+.head_brand_search .back-button_brand_page {
+  position: relative;
+  z-index: 2; /* Above the overlay */
+}
+
+.sub {
+  color: red; /* Highlight search query in red */
+}
+
+.title__brand_page {
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+}
+
+.back-button_brand_page {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 55px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button_brand_page:hover {
+  background-color: #c7c7c7;
+}
+
+/* Larger screens: Adjust height for better aspect ratio */
+@media (min-width: 768px) {
+  .head_brand_search {
+    height: 600px; /* Increased height for medium screens */
+  }
+  .title__brand_page {
+    font-size: 3.5rem; /* Slightly larger font */
+  }
+  .back-button_brand_page {
+    font-size: 1.3rem; /* Slightly larger button */
+  }
+}
+
+@media (min-width: 1024px) {
+  .head_brand_search {
+    height: 700px; /* Increased height for larger screens */
+  }
+  .title__brand_page {
+    font-size: 4rem; /* Larger font for bigger screens */
+  }
+  .back-button_brand_page {
+    font-size: 1.5rem; /* Larger button */
+    padding: 1rem 2rem; /* Adjust padding for bigger buttons */
+  }
+}
+
+/*=============== SECTION BRAND PAGE ===============*/
+.head_brand {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  position: relative; /* Required for positioning child elements */
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), hsl(0, 0%, 96%)), 
+                    url('../img/brands.webp'); /* Combine gradient and background image */
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  color: #fff; /* Ensure text is readable on any background */
+  height: 300px; /* Default height for smaller screens */
+  display: flex; /* Centers content vertically and horizontally */
+  flex-direction: column; /* Stacks title and button */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevents content from spilling out */
+}
+
+
+
+/* Ensure content is above the overlay */
+.head_brand h1,
+.head_brand .back-button_brand_page {
+  position: relative;
+  z-index: 2; /* Above the overlay */
+}
+.sub{
+  color: red;
+}
+
+.title__brand_page {
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+}
+
+.back-button_brand_page {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 55px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button_brand_page:hover {
+  background-color: #c7c7c7;
+}
+/* Larger screens: Adjust height for better aspect ratio */
+@media (min-width: 768px) {
+  .head_brand {
+    height: 600px; /* Increased height for medium screens */
+  }
+  .title__brand_page {
+    font-size: 3.5rem; /* Slightly larger font */
+  }
+  .back-button_brand_page {
+    font-size: 1.3rem; /* Slightly larger button */
+  }
+}
+
+@media (min-width: 1024px) {
+  .head_brand {
+    height: 700px; /* Increased height for larger screens */
+  }
+  .title__brand_page {
+    font-size: 4rem; /* Larger font for bigger screens */
+  }
+  .back-button_brand_page {
+    font-size: 1.5rem; /* Larger button */
+    padding: 1rem 2rem; /* Adjust padding for bigger buttons */
+  }
+}
+
+
 /*=============== SHOES ===============*/
 /* Product Section */
 .product-section {
   padding: 4rem 0;
   color: var(--title-color);
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-}
-
-.product-card {
-  background-color: var(--body-color);
-  border-radius: 1rem;
-  overflow: hidden;
-  text-align: center;
-  box-shadow: 0 4px 16px hsl(0, 0%, 68%);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 24px hsla(0, 0%, 10%, 0.4);
 }
 
 .product-image {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 300px;
+  object-fit: contain;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.product-image:hover {
+  transform: translateY(-10px);
 }
 
 .product-name {
@@ -938,8 +1098,8 @@ select {
 }
 
 .footer__description {
-  font-size: var(--normal-font-size);
   line-height: 1.5;
+  color: var(--white-color);
 }
 
 .footer__list {
@@ -948,14 +1108,16 @@ select {
 }
 
 .footer__link {
-  color: var(--black-color-light);
+  color: var(--white-color);
   text-decoration: none;
   display: block;
   margin: 0.5rem 0;
+  transition: color 0.3s;
+
 }
 
 .footer__link:hover {
-  color: var(--white-color);
+  color: black;
 }
 
 .footer__social-list {
@@ -967,7 +1129,7 @@ select {
 
 .footer__social-link {
   font-size: 1.5rem;
-  color: var(--black-color-light);
+  color: var(--white-color);
   transition: color 0.3s;
 }
 

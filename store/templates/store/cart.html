@@ -8,8 +8,8 @@
     <title>Your Cart</title>
     <style>
         body {
-            background-color: #000; /* Black background */
-            color: #fff; /* White text */
+            background-color: hsl(0, 0%, 96%); /* Black background */
+            color: #000000; /* White text */
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
@@ -32,7 +32,9 @@
         h1 {
             font-size: 2rem;
             margin-bottom: 1rem;
+            color: white;
         }
+    
         .cart-summary {
             background-color: #fff; /* White background for cart summary */
             color: #000; /* Black text */
@@ -93,6 +95,45 @@
         a.checkout-button:hover {
             background-color: #3e8e41; /* Slightly darker green */
         }
+        .back-arrow {
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            font-size: 1.50rem;
+            color: #ffffff; /* Green for the back link */
+            font-weight: bold;
+            transition: color 0.3s ease;
+            background-color: #1a1a1a;
+        }
+
+        .back-arrow:hover {
+            color: #9ee3a0; /* Slightly darker green on hover */
+        }
+
+        .checkout-button {
+            display: block; /* Ensures it stacks correctly on small screens */
+            text-decoration: none;
+            color: #fff;
+            background-color: #4caf50; /* Red for checkout button */
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem; /* Space between total and button */
+            text-align: center; /* Ensures the button is centered */
+        }
+
+        .checkout-button:hover {
+            background-color: #3e8e41; /* Slightly darker red */
+        }
+
+        .total {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: right;
+            margin-bottom: 1rem; /* Add spacing between total and button */
+        }
 
         /* Media Queries */
         @media (min-width: 768px) {
@@ -119,6 +160,13 @@
             a {
                 font-size: 1.1rem;
                 padding: 1rem 2rem;
+            }
+            .checkout-button {
+                margin-top: 1rem;
+            }
+
+            .total {
+                text-align: left; /* Align total to the left on smaller screens */
             }
         }
 
@@ -167,8 +215,9 @@
         {% endif %}
         
     </div>
-    <a href="{% url 'index' %}" class="checkout-button">Keep Shoping</a>
-
+    <a href="{% url 'index' %}" class="back-arrow">
+        &#8592; Keep Shopping <!-- Left arrow icon -->
+    </a>
 </div>
 </body>
 </html>
