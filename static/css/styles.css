@@ -55,6 +55,9 @@ body {
   background-color: var(--body-color);
   color: var(--text-color);
 }
+html {
+  scroll-behavior: smooth;
+}
 
 ul {
   list-style: none;
@@ -281,53 +284,81 @@ img {
 /*==================== MAIN SECTION ====================*/
 .main-section {
   background-color: #f5f5f5; /* Neutral background */
-  padding: 4rem 2rem;
+  padding: 6rem 2rem; /* Increase padding for breathing space */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem; /* Space between logo and cards */
+  gap: 3rem; /* Increased gap between logo and cards */
+}
+
+/* Logo styling */
+.main-section__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .main-section__logo .main-logo {
-  max-width: 450px; /* Adjust logo size */
-  height: auto;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  max-width: 500px; /* Adjust logo size for large screens */
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px;
 }
 
 .main-section__slogan {
-  font-size: 1.5rem; /* Adjust size for slogan */
-  color: #555; /* Subtle gray color */
+  font-size: 2.75rem; /* Adjust size for slogan */
+  color: #333; /* Slightly darker gray */
   font-style: italic;
   text-align: center;
-  margin-bottom: 50px; /* Space between slogan and cards */
+  margin-bottom: 2rem; /* Space between slogan and cards */
+  animation: slideIn 2s ease-in-out; /* Slogan animation */
 }
 
 /* Links container */
 .main-section__links {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap; /* Ensures stacking on smaller screens */
+  gap: 3rem;
+  flex-wrap: wrap; /* Ensure stacking on smaller screens */
   align-items: stretch; /* Align both cards vertically if heights differ */
 }
 
 /* Card styling */
 .main-card {
   text-align: center;
-  width: 600px; /* Fixed card width */
+  width: 600px; /* Fixed card width for larger screens */
+  max-width: 100%; /* Adjust for smaller screens */
   background-color: var(--body-color); /* White background */
   border-radius: 10px;
-  padding: 1.5rem; /* Add padding inside the card */
+  padding: 2rem;
   transition: transform 0.3s, box-shadow 0.3s;
-  display: flex; /* Make card contents flexible */
-  flex-direction: column; /* Stack image, text, and button */
-  align-items: center; /* Center-align all contents */
-  justify-content: space-between; /* Evenly space items inside */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0; /* Start hidden */
+  animation: fadeIn 1s ease-out 0.5s forwards; /* Fade-in animation with delay */
 }
 
-/* Add hover effect to the card */
+.main-card:nth-child(2) {
+  animation-delay: 0.7s; /* Add a slight delay for the second card */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+  }
+}
+
+/* Hover effect */
 .main-card:hover {
   transform: scale(1.05); /* Slight zoom effect */
 }
@@ -366,38 +397,63 @@ img {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .main-section__logo .main-logo {
+    max-width: 400px; /* Adjust logo size for medium screens */
+  }
+
+  .main-section__links {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .main-card {
+    width: 100%; /* Allow cards to take full width */
+  }
+}
+
 @media (max-width: 768px) {
+  .main-section__logo .main-logo {
+    max-width: 300px; /* Adjust logo size for small screens */
+  }
+
   .main-section__links {
     flex-direction: column; /* Stack cards vertically on small screens */
     gap: 1.5rem;
   }
 
   .main-card {
-    width: 100%; /* Allow cards to take full width on small screens */
     padding: 1rem; /* Reduce padding */
+    margin-top: 50px;
   }
 
   .main-card__image {
     max-height: 200px; /* Adjust image size */
   }
 
-  .main-logo {
-    max-width: 250px; /* Adjust logo size */
+  .main-section__slogan {
+    font-size: 1.5rem; /* Adjust slogan size */
+    margin-bottom: 50px; /* Reduce space between slogan and cards */
   }
 }
+
 .main-section__slogan {
-  animation: slideIn 3s ease-in-out;
+  font-size: 1.25rem; /* Adjust slogan size */
+  margin-bottom: 50px; /* Reduce space between slogan and cards */
+}
+.main-section__slogan {
+animation: slideIn 2s ease-in-out;
 }
 
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0);
+}
 }
 /*=============== HOME ===============*/
 .home__container{
@@ -665,6 +721,37 @@ img {
     padding: 1rem 2rem; /* Adjust padding for bigger buttons */
   }
 }
+
+/*=============== PAGINATION SHOE ===============*/
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.pagination-link {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #333;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.pagination-link:hover {
+  background-color: #555;
+}
+
+.pagination-current {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  color: #000;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+
 
 /*=============== SECTION BRAND PAGE ===============*/
 .head_brand {

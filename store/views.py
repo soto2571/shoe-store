@@ -9,14 +9,19 @@ from django.conf import settings
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.core.paginator import Paginator
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
+
 
 def index(request):
     if 'cart' not in request.session:
         request.session['cart'] = {}  # Initialize an empty cart
-    products = Product.objects.all()
-    brands = Product.objects.values('brand').exclude(brand__isnull=True).exclude(brand__exact='').distinct()    
+
+    # Order the products to ensure consistent pagination
+    products = Product.objects.all().order_by('id')  # Adjust the field to your preference
+
+    brands = Product.objects.values('brand').exclude(brand__isnull=True).exclude(brand__exact='').distinct()
 
     for product in products:
         product.lowest_price = (
@@ -25,8 +30,13 @@ def index(request):
             else product.price
         )
 
+    # Set up pagination
+    paginator = Paginator(products, 5)  # Show 5 products per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
-        'products': products,
+        'page_obj': page_obj,
         'brands': brands,
     }
     return render(request, 'store/index.html', context)

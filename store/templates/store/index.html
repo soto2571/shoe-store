@@ -24,7 +24,7 @@
       <header class="header shadow-header" id="header">
          <nav class="nav container">
             <a href="#" class="nav__logo">
-               <img src="{% static 'img/logoMedi.png' %}" alt="image">
+               <img src="{% static 'img/logos.png' %}" alt="image">
             </a>
 
             <div class="nav__menu" id="nav-menu">
@@ -89,7 +89,7 @@
          <!--==================== MAIN SECTION ====================-->
          <section class="main-section">
             <div class="main-section__logo">
-               <img src="{% static 'img/newlogoBIG.png' %}" alt="Choco Hypewear Logo" class="main-logo">
+               <img src="{% static 'img/logoBiginv.png' %}" alt="Choco Hypewear Logo" class="main-logo">
                <p class="main-section__slogan"><span class="slogan-text">Style. Comfort. Confidence.</span></p>
             </div>
             <div class="main-section__links">
@@ -114,20 +114,15 @@
                <div class="home__data">
 
                   <h1 class="home__title">
-                     CHOCO <br>
+                     BEST <br>
                   </h1>
                   <h1 class="home__title two">
-                     HYPEWEAR
+                     SELLERS
                   </h1>
 
                   <p class="home__description">
-                     Designed to withstand the rigors of adverse 
-                     conditions, the Nike ACC Flyknit Lupinek combines 
-                     flyknit, Flywire and a water-resistant Defender 
-                     Repellent system in the upper.
+                     Discover the best-rated shoes in our store, featuring the latest and hottest items everyone is talking about. Don’t miss out on these top picks that combine style, quality, and popularity!
                   </p>
-
-                  <a href="#" class="home__button">BUY NOW</a>
                </div>
 
                <div class="home__images">
@@ -205,15 +200,12 @@
       <section class="product-section">
          <div class="container">
              <h2 class="section-title">Our Shoe Collection</h2>
-             <div class="product-grid" id="product-grid">
-                 {% for product in products %}
+             <div class="product-grid">
+                 {% for product in page_obj %}
                  <div class="product-card" data-id="{{ product.id }}">
-                     <!-- Product Image -->
                      <a href="{% url 'product_detail' product.id %}">
                          <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
                      </a>
-     
-                     <!-- Product Details -->
                      <h3 class="product-name">{{ product.name }}</h3>
                      <p class="product-price uno" id="price-{{ product.id }}">
                          {% if product.lowest_price %}
@@ -222,16 +214,30 @@
                              Price not available
                          {% endif %}
                      </p>
-   
                  </div>
                  {% endfor %}
+             </div>
+     
+             <!-- Pagination Links -->
+             <div class="pagination">
+                 {% if page_obj.has_previous %}
+                 <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link">Previous</a>
+                 {% endif %}
+     
+                 <span class="pagination-current">
+                     Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                 </span>
+     
+                 {% if page_obj.has_next %}
+                 <a href="?page={{ page_obj.next_page_number }}" class="pagination-link">Next</a>
+                 {% endif %}
              </div>
          </div>
      </section>
 
        <!--==================== NEWSLETTER ====================-->
        <section class="newsletter">
-         <img src="{% static 'img/newlogoBIG.png' %}" alt="Newsletter" class="newsletter__img">
+         <img src="{% static 'img/logoBiginv.png' %}" alt="Newsletter" class="newsletter__img">
          <div class="container">
            <h2 class="newsletter__title">Subscribe to Our Newsletter</h2>
            <p class="newsletter__description">Get the latest updates on new arrivals and special offers.</p>
