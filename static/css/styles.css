@@ -290,14 +290,14 @@ img {
 }
 
 .main-section__logo .main-logo {
-  max-width: 450px;
+  max-width: 450px; /* Adjust logo size */
   height: auto;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .main-section__slogan {
-  font-size: 1.25rem; /* Size for the slogan */
+  font-size: 1.5rem; /* Adjust size for slogan */
   color: #555; /* Subtle gray color */
   font-style: italic;
   text-align: center;
@@ -308,20 +308,26 @@ img {
 .main-section__links {
   display: flex;
   justify-content: center;
-  gap: 2rem; /* Space between the two cards */
-  flex-wrap: wrap; /* Allows stacking on smaller screens */
+  gap: 2rem;
+  flex-wrap: wrap; /* Ensures stacking on smaller screens */
+  align-items: stretch; /* Align both cards vertically if heights differ */
 }
 
 /* Card styling */
 .main-card {
   text-align: center;
-  width: 600px; /* Set fixed width for the cards */
+  width: 600px; /* Fixed card width */
   background-color: var(--body-color); /* White background */
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.5rem; /* Add padding inside the card */
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex; /* Make card contents flexible */
+  flex-direction: column; /* Stack image, text, and button */
+  align-items: center; /* Center-align all contents */
+  justify-content: space-between; /* Evenly space items inside */
 }
 
+/* Add hover effect to the card */
 .main-card:hover {
   transform: scale(1.05); /* Slight zoom effect */
 }
@@ -330,7 +336,7 @@ img {
 .main-card__image {
   width: 100%; /* Ensure image fits the card width */
   height: auto; /* Maintain aspect ratio */
-  max-height: 380px; /* Prevent image from being overly tall */
+  max-height: 300px; /* Prevent overly tall images */
   object-fit: cover; /* Crop image to fit */
   border-radius: 8px; /* Rounded corners for image */
   margin-bottom: 1rem;
@@ -340,34 +346,57 @@ img {
 .main-card__description {
   font-size: 1rem;
   color: #333;
-  margin-bottom: 1rem;
+  margin: 1rem 0; /* Space above and below the text */
+}
+
+/* Button styling */
+.main-card .home__button {
+  background-color: #ff4c4c; /* Bright red for buttons */
+  color: #fff; /* White text */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.main-card .home__button:hover {
+  background-color: #ff1f1f; /* Slightly darker red on hover */
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-  .main-card {
-    width: 100%; /* Allow cards to shrink on smaller screens */
-  }
-}
-
 @media (max-width: 768px) {
   .main-section__links {
-    flex-direction: column; /* Stack cards vertically on smaller screens */
+    flex-direction: column; /* Stack cards vertically on small screens */
     gap: 1.5rem;
   }
 
   .main-card {
-    width: 100%; /* Take full width on smaller screens */
-    padding: 0.75rem; /* Reduce padding for smaller devices */
+    width: 100%; /* Allow cards to take full width on small screens */
+    padding: 1rem; /* Reduce padding */
   }
 
   .main-card__image {
-    max-height: 200px; /* Limit image height for small screens */
-    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Adjust image size */
   }
 
   .main-logo {
-    max-width: 300px; /* Reduce logo size on small devices */
+    max-width: 250px; /* Adjust logo size */
+  }
+}
+.main-section__slogan {
+  animation: slideIn 3s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 /*=============== HOME ===============*/
