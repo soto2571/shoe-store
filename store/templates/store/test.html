@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/test.css">
+<body>
+    <style>
+        .slider-brand {
+            width: 75vw;
+            height: auto;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slider-brand .slide-track-brand {
+            display: flex;
+            gap: 10px; /* Space between slides */
+            animation: scroll 80s linear infinite;
+            -webkit-animation: scroll 80s linear infinite;
+            width: calc((200px + 10px) * 18); /* Adjust width to account for gap */
+        }
+
+        .slider-brand .slide-brand {
+            width: 200px; /* Fixed width for each slide */
+            height: 200px; /* Fixed height for each slide */
+            overflow: hidden; /* Prevents content from spilling out */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Centers content vertically */
+            background-color: #f5f5f5; /* Optional: Add background color for contrast */
+            border-radius: 10px; /* Optional: Rounded corners for slides */
+        }
+
+        .slider-brand .slide-brand img {
+            width: 100%; /* Ensure image fills the container width */
+            height: 100%; /* Ensure image fills the container height */
+            object-fit: contain; /* Preserve aspect ratio and make sure the whole logo fits */
+            border-radius: 10px; /* Optional: Rounded corners for a cleaner look */
+            background-color: #fff; /* Add a background to improve visibility of logos */
+            padding: 10px; /* Add padding to avoid logos touching edges */
+            box-sizing: border-box; /* Ensures padding doesn't affect image dimensions */
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-200px * 18));
+            }
+        }
+
+
+
+
+    </style>
+    <div class="slider-brand">
+        <div class="slide-track-brand">
+            <div class="slide-brand">
+                <img src="/static/img/logoBiginv.png" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/nike1.png" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/adidas1.png" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/jordan1.avif" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/kith1.webp" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/bape1.png" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/billio1.png" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/supreme1.png" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/kobe1.png" alt="Logo">
+            </div>
+
+
+            <div class="slide-brand">
+                <img src="/static/img/logoBiginv.png" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/nike1.png" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/adidas1.png" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/jordan1.avif" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/kith1.webp" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/bape1.png" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/billio1.png" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/supreme1.png" alt="Logo">
+            </div>
+            <div class="slide-brand">
+                <img src="/static/img/kobe1.png" alt="Logo">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

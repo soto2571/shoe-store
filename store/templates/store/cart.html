@@ -197,8 +197,8 @@
     <div class="cart-summary">
         
         {% if cart_items %}
+        <h2>Cart Items</h2>
             {% for item in cart_items %}
-            <h2>Cart Items</h2>
             <div class="item">
                 <img src="{{ item.image_url }}" alt="{{ item.name }}"> <!-- Product image -->
                 <span class="details">{{ item.product.name }} (Size: {{ item.size }})</span>

@@ -281,6 +281,213 @@ img {
   background-color: #e5533d; /* Darker shade on hover */
 }
 
+/*=============== SLIDER MAIN SECTION ===============*/
+/* Full-Screen Slider (Default for smaller devices) */
+.container-slider {
+  width: 100vw;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Adjust height for larger screens */
+@media (min-width: 1024px) {
+  .container-slider {
+    height: 50vh; /* Half viewport height for desktops */
+  }
+}
+
+.slider-wrapper-main {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Matches the container height */
+}
+
+.slider-main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slider-slide {
+  flex: 1 0 100%; /* Each slide takes full width */
+  height: 100%; /* Matches the slider height */
+  position: relative;
+}
+
+/* Image Styling */
+.slider-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+
+/* Content Overlay */
+.slider-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 400px;
+}
+
+.slider-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.slider-description {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.slider-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff4c4c;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.slider-button:hover {
+  background-color: #ff1f1f;
+}
+
+/* Navigation Dots */
+.slider-nav-main {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.slider-nav-main a {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: opacity 250ms ease;
+}
+
+.slider-nav-main a:hover {
+  opacity: 1;
+  background-color: #fff;
+}
+
+/*=============== BRAND SLIDER SECTION ===============*/
+.slider-brand {
+  width: 75vw;
+  height: auto;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider-brand .slide-track-brand {
+  display: flex;
+  gap: 10px; /* Space between slides */
+  animation: scroll 80s linear infinite;
+  -webkit-animation: scroll 80s linear infinite;
+  width: calc((200px + 10px) * 18); /* Adjust width to account for gap */
+}
+
+.slider-brand .slide-brand {
+  width: 200px; /* Fixed width for each slide */
+  height: 200px; /* Fixed height for each slide */
+  overflow: hidden; /* Prevents content from spilling out */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers content vertically */
+  background-color: #f5f5f5; /* Optional: Add background color for contrast */
+  border-radius: 10px; /* Optional: Rounded corners for slides */
+}
+
+.slider-brand .slide-brand img {
+  width: 100%; /* Ensure image fills the container width */
+  height: 100%; /* Ensure image fills the container height */
+  object-fit: contain; /* Preserve aspect ratio and make sure the whole logo fits */
+  border-radius: 10px; /* Optional: Rounded corners for a cleaner look */
+  background-color: hsl(0, 0%, 96%); /* Add a background to improve visibility of logos */
+  padding: 10px; /* Add padding to avoid logos touching edges */
+  box-sizing: border-box; /* Ensures padding doesn't affect image dimensions */
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(calc(-200px * 18));
+  }
+}
+
+/*=============== VIDEO SECTION ===============*/
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Adjust height as needed */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000; /* Fallback background color */
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures video covers the entire section */
+  z-index: 1;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.video-button {
+  background-color: #ff4c4c; /* Button background color */
+  color: #ffffff; /* Button text color */
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.video-button:hover {
+  background-color: #ff1f1f; /* Darker yellow on hover */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+}
+
 /*==================== MAIN SECTION ====================*/
 .main-section {
   background-color: #f5f5f5; /* Neutral background */

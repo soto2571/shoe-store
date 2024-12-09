@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       {% load static %}
       <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="{% static 'img/logoSmall.png' %}" type="image/x-icon">
+      <link rel="shortcut icon" href="{% static 'img/lgoMedi.png' %}" type="image/x-icon">
 
       <!--=============== REMIXICONS ===============-->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
@@ -37,23 +37,7 @@
                         </button>
                      </form>
                 </div>
-               <ul class="nav__list">
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">Men</a>
-                  </li>
-   
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">Women</a>
-                  </li>
-   
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">Popular</a>
-                  </li>
-   
-                  <li class="nav__item">
-                     <a href="#" class="nav__link">Trend</a>
-                  </li>
-               </ul>
+            
    
                <!--Close buttom-->
                <div class="nav__close" id="nav-close">
@@ -86,28 +70,141 @@
 
 
       <main>
-         <!--==================== MAIN SECTION ====================-->
-         <section class="main-section">
-            <div class="main-section__logo">
-               <img src="{% static 'img/logoBiginv.png' %}" alt="Choco Hypewear Logo" class="main-logo">
-               <p class="main-section__slogan"><span class="slogan-text">Style. Comfort. Confidence.</span></p>
+         <!--==================== SLIDER MAIN SECTION ====================-->
+         <section class="container-slider">
+            <div class="slider-wrapper-main">
+                <div class="slider-main">
+                    <!-- Slide 1 -->
+                    <div class="slider-slide">
+                        <img id="img1" src="/static/img/slider11.jpg" alt="Exclusive Collection">
+                        <div class="slider-content">
+                            <h2 class="slider-title">Exclusive Collection</h2>
+                            <p class="slider-description">Discover the best styles for every occasion.</p>
+                            <a href="/collection" class="slider-button">Shop Now</a>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="slider-slide">
+                        <img id="img2" src="/static/img/slider3.webp" alt="Trending Footwear">
+                        <div class="slider-content">
+                            <h2 class="slider-title">Trending Footwear</h2>
+                            <p class="slider-description">Step into comfort and style this season.</p>
+                            <a href="/trending" class="slider-button">Explore Trends</a>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="slider-slide">
+                        <img id="img3" src="/static/img/slider1.jpg" alt="Latest Arrivals">
+                        <div class="slider-content">
+                            <h2 class="slider-title">Latest Arrivals</h2>
+                            <p class="slider-description">Don't miss out on our newest styles.</p>
+                            <a href="/new-arrivals" class="slider-button">Discover Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-nav-main">
+                    <a href="#img1"></a>
+                    <a href="#img2"></a>
+                    <a href="#img3"></a>
+                </div>
             </div>
-            <div class="main-section__links">
-               <!-- Choco Merch -->
-               <div class="main-card">
-                  <img src="{% static 'img/shirtback.png' %}" alt="Choco Merch" class="main-card__image">
-                  <p class="main-card__description">Exclusive merchandise for true Choco fans.</p>
-                  <a href="#" class="home__button">BUY MERCH</a>
-               </div>
+        </section>
 
-               <!-- Buy Shoes -->
-               <div class="main-card">
-                  <img src="{% static 'img/shoeback.png' %}" alt="Buy Shoes" class="main-card__image">
-                  <p class="main-card__description">Discover the latest and trendiest footwear.</p>
-                  <a href="#" class="home__button">BUY SHOES</a>
-               </div>
-            </div>
-         </section>
+        <!--==================== BRANDS SLIDER SECTION ====================-->
+        <div class="slider-brand">
+         <div class="slide-track-brand">
+             <div class="slide-brand">
+                 <img src="/static/img/logoBiginv.png" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/nike1.png" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/adidas1.png" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/jordan1.avif" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/kith1.webp" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/bape1.png" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/billio1.png" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/supreme1.png" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/kobe1.png" alt="Logo">
+             </div>
+ 
+ 
+             <div class="slide-brand">
+                 <img src="/static/img/logoBiginv.png" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/nike1.png" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/adidas1.png" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/jordan1.avif" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/kith1.webp" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/bape1.png" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/billio1.png" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/supreme1.png" alt="Logo">
+             </div>
+             <div class="slide-brand">
+                 <img src="/static/img/kobe1.png" alt="Logo">
+             </div>
+         </div>
+     </div>
+
+     <!--==================== MAIN SECTION ====================-->
+     <section class="main-section">
+            
+      <div class="main-section__links">
+         <!-- Choco Merch -->
+         <div class="main-card">
+            <img src="{% static 'img/shirtback.png' %}" alt="Choco Merch" class="main-card__image">
+            <p class="main-card__description">Exclusive merchandise for true Choco fans.</p>
+            <a href="#" class="home__button">BUY MERCH</a>
+         </div>
+
+         <!-- Buy Shoes -->
+         <div class="main-card">
+            <img src="{% static 'img/shoeback.png' %}" alt="Buy Shoes" class="main-card__image">
+            <p class="main-card__description">Discover the latest and trendiest footwear.</p>
+            <a href="#" class="home__button">BUY SHOES</a>
+         </div>
+      </div>
+   </section>
+
+      <!--==================== VIDEO ====================-->
+      <section class="video-section">
+         <div class="video-container">
+             <video autoplay muted loop playsinline class="background-video">
+                 <source src="/static/img/videoYT 2.mov" type="video/mp4">
+                 Your browser does not support the video tag.
+             </video>
+             <div class="video-overlay">
+                 <a href="https://www.youtube.com/channel/your-channel-link" target="_blank" class="video-button">Watch on YouTube</a>
+             </div>
+         </div>
+     </section>
+
          <!--==================== HOME ====================-->
          <section class="home">
             <div class="home__container container">
@@ -121,7 +218,8 @@
                   </h1>
 
                   <p class="home__description">
-                     Discover the best-rated shoes in our store, featuring the latest and hottest items everyone is talking about. Don’t miss out on these top picks that combine style, quality, and popularity!
+                     Discover the best-rated shoes in our store, featuring the latest and hottest items everyone is talking about. 
+                     Don’t miss out on these top picks that combine style, quality, and popularity!
                   </p>
                </div>
 
