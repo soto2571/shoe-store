@@ -8,9 +8,9 @@ class ProductSizeInline(admin.TabularInline):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductSizeInline]  # Add sizes inline in the product admin page
-    list_display = ['brand', 'name', 'total_stock', 'category']
-    search_fields = ['brand', 'name', 'category']
-    list_filter = ['category']
+    list_display = ['brand', 'name', 'total_stock', 'product_type']
+    search_fields = ['brand', 'name', 'product_type']
+    list_filter = ['product_type']
     ordering = ['name']
 
 # Register ProductSize separately if needed

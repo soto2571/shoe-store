@@ -20,4 +20,6 @@ urlpatterns = [
     path('checkout/', views.create_checkout_session, name='checkout'),
     path('brand/<str:brand_name>/', views.product_by_brand, name='products_by_brand'),
     path('search/', views.search_products, name='search_products'),
+    path('clothing/', views.clothing_view, name='clothing_page'),
+    path('accessories/', views.accessories_view, name='accessories_page'),
 ]

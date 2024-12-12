@@ -36,28 +36,91 @@
             </div>
         </section>
 
+        <!-- Shoes Section -->
         <section class="dashboard-section dashboard-products">
-            <h2 class="dashboard-section-title">Products</h2>
+            <h2 class="dashboard-section-title">Shoes</h2>
             <a href="{% url 'add_product' %}" class="dashboard-add-product-btn">Add Product</a>
             <table class="dashboard-product-table">
                 <thead>
                     <tr>
                         <th class="dashboard-table-header">Name</th>
-                        
                         <th class="dashboard-table-header">Total Stock</th>
                         <th class="dashboard-table-header">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for product in products %}
+                    {% for product in shoes %}
                     <tr>
                         <td class="dashboard-table-cell">{{ product.name }}</td>
-                        
                         <td class="dashboard-table-cell">{{ product.total_stock }}</td>
                         <td class="dashboard-table-cell">
                             <a href="{% url 'edit_product' product.id %}" class="dashboard-action-link dashboard-edit-link">Edit</a>
                             <a href="{% url 'delete_product' product.id %}" class="dashboard-action-link dashboard-delete-link">Delete</a>
                         </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3" class="dashboard-table-cell">No shoes available.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Clothing Section -->
+        <section class="dashboard-section dashboard-products">
+            <h2 class="dashboard-section-title">Clothing</h2>
+            <table class="dashboard-product-table">
+                <thead>
+                    <tr>
+                        <th class="dashboard-table-header">Name</th>
+                        <th class="dashboard-table-header">Total Stock</th>
+                        <th class="dashboard-table-header">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in clothing %}
+                    <tr>
+                        <td class="dashboard-table-cell">{{ product.name }}</td>
+                        <td class="dashboard-table-cell">{{ product.total_stock }}</td>
+                        <td class="dashboard-table-cell">
+                            <a href="{% url 'edit_product' product.id %}" class="dashboard-action-link dashboard-edit-link">Edit</a>
+                            <a href="{% url 'delete_product' product.id %}" class="dashboard-action-link dashboard-delete-link">Delete</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3" class="dashboard-table-cell">No clothing available.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Accessories Section -->
+        <section class="dashboard-section dashboard-products">
+            <h2 class="dashboard-section-title">Accessories</h2>
+            <table class="dashboard-product-table">
+                <thead>
+                    <tr>
+                        <th class="dashboard-table-header">Name</th>
+                        <th class="dashboard-table-header">Total Stock</th>
+                        <th class="dashboard-table-header">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in accessories %}
+                    <tr>
+                        <td class="dashboard-table-cell">{{ product.name }}</td>
+                        <td class="dashboard-table-cell">{{ product.total_stock }}</td>
+                        <td class="dashboard-table-cell">
+                            <a href="{% url 'edit_product' product.id %}" class="dashboard-action-link dashboard-edit-link">Edit</a>
+                            <a href="{% url 'delete_product' product.id %}" class="dashboard-action-link dashboard-delete-link">Delete</a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="3" class="dashboard-table-cell">No accessories available.</td>
                     </tr>
                     {% endfor %}
                 </tbody>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Collection</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="accessories-header">
+            <h1 class="accessories-title">Clothing <span class="accessories-subtitle">Collection</span></h1>
+            <a href="{% url 'index' %}" class="accessories-back-button">Back to Home</a>
+        </div>
+    </header>
+
+    <main class="accessories-page">
+        <aside class="accessories-filter-sidebar">
+            <h3 class="accessories-filter-title">Filter</h3>
+        
+            <!-- Brand Filter -->
+            <div class="accessories-filter-group">
+                <h4>Brand</h4>
+                <select name="brand" id="brand-filter">
+                    <option value="all">All Brands</option>
+                    {% for brand in brands %}
+                    <option value="{{ brand }}">{{ brand }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        
+            <!-- Size Filter -->
+            <div class="accessories-filter-group">
+                <h4>Size</h4>
+                {% for size in sizes %}
+                <label><input type="checkbox" name="size" value="{{ size }}"> {{ size }}</label>
+                {% endfor %}
+            </div>
+        
+
+            <!-- Sort Options -->
+        <h4>Sort by</h4>
+        <select name="sort" onchange="this.form.submit()">
+            <option value="low-to-high" {% if sort_option == 'low-to-high' %}selected{% endif %}>Price: Low to High</option>
+            <option value="high-to-low" {% if sort_option == 'high-to-low' %}selected{% endif %}>Price: High to Low</option>
+        </select>
+            
+        </aside>
+
+        <section class="accessories-product-section">
+            
+            <section class="product-section">
+                <div class="container">
+                    <div class="product-grid">
+                        {% if products %}
+                        {% for product in products %}
+                        <div class="product-card">
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                            </a>
+                            <h3>{{ product.name }}</h3>
+                            <p class="product-price">
+                                {% if product.lowest_price %}
+                                    ${{ product.lowest_price }}
+                                {% else %}
+                                    Price not available
+                                {% endif %}
+                            </p>
+                        </div>
+                        {% endfor %}
+                        {% else %}
+                        <p>No clothing products available.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const filters = document.querySelectorAll('.accessories-filter-sidebar input, .accessories-filter-sidebar select');
+
+    filters.forEach(filter => {
+        filter.addEventListener('change', () => {
+            const url = new URL(window.location.href);
+            
+            // Add filter values to query parameters
+            filters.forEach(f => {
+                if (f.type === 'checkbox' && f.checked) {
+                    url.searchParams.append(f.name, f.value);
+                } else if (f.type === 'range' || f.tagName === 'SELECT') {
+                    url.searchParams.set(f.name, f.value);
+                }
+            });
+
+            // Fetch filtered products
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newProductGrid = doc.querySelector('.product-grid');
+                    document.querySelector('.product-grid').innerHTML = newProductGrid.innerHTML;
+                })
+                .catch(error => console.error('Error fetching filtered products:', error));
+        });
+    });
+});
+    </script>
+</body>
+</html>

@@ -6,10 +6,11 @@ from django.forms import modelformset_factory
 from django.contrib import messages
 import stripe
 from django.conf import settings
-from django.db.models import Q
+from django.db.models import Q, Min, Max, Count
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.paginator import Paginator
+from decimal import Decimal
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -35,9 +36,16 @@ def index(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
+    shoes = Product.objects.filter(product_type='shoes')
+    clothing = Product.objects.filter(product_type='clothing')
+    accessories = Product.objects.filter(product_type='accessories')
+
     context = {
         'page_obj': page_obj,
         'brands': brands,
+        'shoes': shoes,
+        'clothing': clothing,
+        'accessories': accessories,
     }
     return render(request, 'store/index.html', context)
 
@@ -49,6 +57,57 @@ def product_by_brand(request, brand_name):
         'brand_name': brand_name.capitalize(),  # Capitalize brand name for display
     }
     return render(request, 'store/products_by_brand.html', context)
+
+def clothing_view(request):
+    clothing_products = Product.objects.filter(product_type='clothing')
+
+    # Filter by brand
+    brand = request.GET.get('brand')
+    if brand and brand != 'all':
+        clothing_products = clothing_products.filter(brand=brand)
+
+    # Filter by size
+    sizes = request.GET.getlist('size')
+    if sizes:
+        clothing_products = clothing_products.filter(sizes__size__in=sizes).distinct()
+
+    # Sorting logic
+    sort_option = request.GET.get('sort', 'best')  # Default to "best"
+
+    if sort_option == 'low-to-high':
+        clothing_products = clothing_products.annotate(min_price=Min('sizes__price')).order_by('min_price')
+    elif sort_option == 'high-to-low':
+        clothing_products = clothing_products.annotate(max_price=Max('sizes__price')).order_by('-max_price')
+
+    # Filter by price
+    min_price = request.GET.get('min_price')
+    max_price = request.GET.get('max_price')
+    if min_price and max_price:
+        clothing_products = clothing_products.filter(
+            sizes__price__gte=min_price,
+            sizes__price__lte=max_price
+        ).distinct()
+
+    # Populate filters for the sidebar
+    brands = Product.objects.filter(product_type='clothing').values_list('brand', flat=True).distinct()
+    sizes = ProductSize.objects.filter(product__product_type='clothing').values_list('size', flat=True).distinct()
+    price_range = ProductSize.objects.filter(product__product_type='clothing').aggregate(
+        min_price=Min('price'),
+        max_price=Max('price')
+    )
+
+    context = {
+        'products': clothing_products.distinct(),  # Ensure distinct products
+        'brands': brands,
+        'sizes': sizes,
+        'price_range': price_range,
+    }
+
+    return render(request, 'store/clothing.html', context)
+
+def accessories_view(request):
+    accessories_products = Product.objects.filter(product_type='accessories')
+    return render(request, 'store/accessories.html', {'products': accessories_products})
 
 
 def search_products(request):
@@ -73,10 +132,52 @@ def search_products(request):
     }
     return render(request, 'store/search_results.html', context)
 
-def product_detail(request, product_id):
-    product = get_object_or_404(Product, id=product_id)  # Fetch the product by ID
-    return render(request, 'store/product_detail.html', {'product': product})
+def accessories_view(request):
+    accessories_products = Product.objects.filter(product_type='accessories')
 
+    # Filter by brand
+    brand = request.GET.get('brand')
+    if brand and brand != 'all':
+        accessories_products = accessories_products.filter(brand=brand)
+
+    # Filter by size
+    sizes = request.GET.getlist('size')
+    if sizes:
+        accessories_products = accessories_products.filter(sizes__size__in=sizes).distinct()
+
+    # Sorting logic
+    sort_option = request.GET.get('sort', 'best')  # Default to "best"
+
+    if sort_option == 'low-to-high':
+        accessories_products = accessories_products.annotate(min_price=Min('sizes__price')).order_by('min_price')
+    elif sort_option == 'high-to-low':
+        accessories_products = accessories_products.annotate(max_price=Max('sizes__price')).order_by('-max_price')
+    
+    # Filter by price
+    min_price = request.GET.get('min_price')
+    max_price = request.GET.get('max_price')
+    if min_price and max_price:
+        accessories_products = accessories_products.filter(
+            sizes__price__gte=min_price,
+            sizes__price__lte=max_price
+        ).distinct()
+
+    # Populate filters for the sidebar
+    brands = Product.objects.filter(product_type='accessories').values_list('brand', flat=True).distinct()
+    sizes = ProductSize.objects.filter(product__product_type='accessories').values_list('size', flat=True).distinct()
+    price_range = ProductSize.objects.filter(product__product_type='accessories').aggregate(
+        min_price=Min('price'),
+        max_price=Max('price')
+    )
+
+    context = {
+        'products': accessories_products.distinct(),  # Ensure distinct products
+        'brands': brands,
+        'sizes': sizes,
+        'price_range': price_range,
+    }
+
+    return render(request, 'store/accessories.html', context)
 
 
 ### Owner ###
@@ -86,8 +187,16 @@ def owner_required(user):
 @login_required
 @user_passes_test(owner_required, login_url='index')
 def owner_dashboard(request):
-    products = Product.objects.all()
-    return render(request, 'store/owner_dashboard.html', {'products': products})
+    # Query products by type
+    shoes = Product.objects.filter(product_type='shoes')
+    clothing = Product.objects.filter(product_type='clothing')
+    accessories = Product.objects.filter(product_type='accessories')
+    
+    return render(request, 'store/owner_dashboard.html', {
+        'shoes': shoes,
+        'clothing': clothing,
+        'accessories': accessories,
+    })
 
 def add_product(request):
     ProductSizeFormSet = modelformset_factory(
@@ -310,6 +419,8 @@ def create_checkout_session(request):
         return redirect('cart_view')
 
     line_items = []
+    product_total = Decimal(0)  # Keep track of the product total for tax calculation
+
     for key, item in cart.items():
         # Get the product
         product = Product.objects.get(id=item['product_id'])
@@ -318,17 +429,60 @@ def create_checkout_session(request):
         image_url = request.build_absolute_uri(product.image.url)
         print(f"Image URL: {image_url}")
 
+        # Add product line item
+        product_price = Decimal(item['price'])
+        product_total += product_price * item['quantity']  # Update product total
+        
         line_items.append({
             'price_data': {
                 'currency': 'usd',
                 'product_data': {
-                    'name': f"Product: {product.name} | Size: {item['size']}",
+                    'name': f"{product.name} | Size: {item['size']}",
                     'images': [image_url],  # Add the image URL here
                 },
-                'unit_amount': int(item['price'] * 100),  # Stripe requires the price in cents
+                'unit_amount': int(product_price * 100),  # Stripe requires the price in cents
             },
             'quantity': item['quantity'],
         })
+
+    # Calculate tax (11.5% for Puerto Rico)
+    tax_amount = product_total * Decimal(0.115)
+    line_items.append({
+        'price_data': {
+            'currency': 'usd',
+            'product_data': {
+                'name': 'Estimated Taxes: ',
+            },
+            'unit_amount': int(tax_amount * 100),  # Convert to cents
+        },
+        'quantity': 1,
+    })
+
+    # Determine shipping cost based on location
+    # (You can expand this logic for more detailed rates)
+    shipping_cost = Decimal(0)
+    customer_country = request.POST.get('country', 'US')  # Example input from form
+    customer_state = request.POST.get('state', 'PR')  # Example input from form
+
+    if customer_country == 'US':
+        if customer_state == 'PR':  # Puerto Rico
+            shipping_cost = Decimal(12.00)
+        
+        else:
+            shipping_cost = Decimal(20.00)  # Default US shipping
+    
+
+    # Add shipping cost as a line item
+    line_items.append({
+        'price_data': {
+            'currency': 'usd',
+            'product_data': {
+                'name': 'Shipping Cost:',
+            },
+            'unit_amount': int(shipping_cost * 100),  # Convert to cents
+        },
+        'quantity': 1,
+    })
 
     try:
         checkout_session = stripe.checkout.Session.create(
@@ -338,7 +492,7 @@ def create_checkout_session(request):
                 'affirm',
                 'afterpay_clearpay',
                 'link',
-                ],
+            ],
             line_items=line_items,
             mode='payment',
             success_url=request.build_absolute_uri('/checkout/success/') + "?session_id={CHECKOUT_SESSION_ID}",

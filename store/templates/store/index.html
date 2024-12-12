@@ -333,6 +333,33 @@
          </div>
      </section>
 
+<!-- Clothing and Accessories Section -->
+<section class="container-categories">
+   <div class="category-wrapper">
+       <!-- Clothing Card -->
+       <div class="category-card-clothing">
+           <a href="{% url 'clothing_page'%}">
+               <img src="/static/img/kithback.webp" alt="Clothing" class="category-image">
+               <div class="category-overlay">
+                   <h2 class="category-title hover-title">Shop Now</h2>
+               </div>
+               <h2 class="category-title default-title">Clothing</h2>
+           </a>
+       </div>
+
+       <!-- Accessories Card -->
+       <div class="category-card-accessories">
+           <a href="{% url 'accessories_page'%}">
+               <img src="/static/img/accessoriesback.jpg" alt="Accessories" class="category-image">
+               <div class="category-overlay">
+                   <h2 class="category-title hover-title">Shop Now</h2>
+               </div>
+               <h2 class="category-title default-title">Accessories</h2>
+           </a>
+       </div>
+   </div>
+</section>
+
        <!--==================== NEWSLETTER ====================-->
        <section class="newsletter">
          <img src="{% static 'img/logoBiginv.png' %}" alt="Newsletter" class="newsletter__img">

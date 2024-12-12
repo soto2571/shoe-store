@@ -8,11 +8,10 @@ class Product(models.Model):
     brand = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='products/')
-    category = models.CharField(max_length=100, choices=[
-        ('men', 'Men'),
-        ('women', 'Women'),
-        ('popular', 'Popular'),
-        ('trend', 'Trend'),
+    product_type = models.CharField(max_length=100, choices=[
+        ('shoes', 'Shoes'),
+        ('clothing', 'Clothing'),
+        ('accessories', 'Accessories'),
     ])
 
     @property
