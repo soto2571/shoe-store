@@ -1,32 +1,117 @@
-<h2>Add New Product</h2>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ product_form.as_p }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    {% load static %}
+    <style>
+        .add-product-page {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 2rem;
+          background-color: #f4f4f4;
+          color: #333;
+        }
 
-    <h3>Sizes and Prices</h3>
-    <table>
-        {{ size_formset.management_form }}
-        <thead>
-            <tr>
-                <th>Size</th>
-                <th>Price</th>
-                <th>Stock</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for form in size_formset %}
-            <tr>
-                <td>{{ form.size }}</td>
-                <td>{{ form.price }}</td>
-                <td>{{ form.stock }}</td>
-                <td>{{ form.DELETE }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        .add-product-page h2 {
+          font-size: 1.8rem;
+          color: #2c3e50;
+          margin-bottom: 1rem;
+        }
 
-    <button type="submit">Add Product</button>
-</form>
+        .add-product-page form {
+          background-color: #ffffff;
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-<a href="{% url 'owner_dashboard' %}">Back to Dashboard</a>
+        .add-product-page table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 1rem 0;
+        }
+
+        .add-product-page th, .add-product-page td {
+          padding: 1rem;
+          border-bottom: 1px solid #ddd;
+          text-align: left;
+        }
+
+        .add-product-page th {
+          background-color: #333333;
+          color: white;
+          text-transform: uppercase;
+          font-size: 0.9rem;
+        }
+
+        .add-product-page td {
+          color: #333;
+        }
+
+        .add-product-page button[type="submit"] {
+          background-color: #27ae60;
+          color: white;
+          padding: 0.8rem 1.5rem;
+          border: none;
+          border-radius: 4px;
+          font-size: 1rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        .add-product-page button[type="submit"]:hover {
+          background-color: #219150;
+        }
+
+        .add-product-page a {
+          color: #2980b9;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: bold;
+        }
+
+        .add-product-page a:hover {
+          text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<section class="add-product-page">
+    <h2>Add New Product</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ product_form.as_p }}
+
+        <h3>Sizes and Prices</h3>
+        <table>
+            {{ size_formset.management_form }}
+            <thead>
+                <tr>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for form in size_formset %}
+                <tr>
+                    <td>{{ form.size }}</td>
+                    <td>{{ form.price }}</td>
+                    <td>{{ form.stock }}</td>
+                    <td>{{ form.DELETE }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <button type="submit">Add Product</button>
+    </form>
+
+    <a href="{% url 'owner_dashboard' %}">Back to Dashboard</a>
+</section>
+</body>
+</html>

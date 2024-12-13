@@ -18,6 +18,16 @@
     </header>
 
     <main class="dashboard-main">
+        <div class="filter-options">
+            <form method="get">
+                <label for="filter">Filter by:</label>
+                <select name="filter" id="filter" onchange="this.form.submit()">
+                    <option value="current_day" {% if filter_option == 'current_day' %}selected{% endif %}>Today</option>
+                    <option value="last_7_days" {% if filter_option == 'last_7_days' %}selected{% endif %}>Last 7 Days</option>
+                    <option value="last_month" {% if filter_option == 'last_month' %}selected{% endif %}>Last Month</option>
+                </select>
+            </form>
+        </div>
         <section class="dashboard-section dashboard-overview">
             <h2 class="dashboard-section-title">Overview</h2>
             <div class="dashboard-overview-cards">
@@ -126,6 +136,49 @@
                 </tbody>
             </table>
         </section>
+
+        <section class="dashboard-section dashboard-orders">
+            <h2 class="dashboard-section-title">Order Details</h2>
+            
+            <div class="order-dropdown">
+                <label for="order-select">View Order:</label>
+                <select id="order-select" onchange="showOrderDetails(this.value)">
+                    <option value="">Select an order</option>
+                    {% for order in orders %}
+                    <option value="order-{{ forloop.counter }}">
+                        Order ID: {{ order.id }} - ${{ order.amount }} ({{ order.date }})
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+        
+            <div id="order-details-container">
+                {% for order in orders %}
+                <div id="order-{{ forloop.counter }}" class="order-details" style="display: none;">
+                    <h3>Order Details</h3>
+                    <p><strong>Name:</strong> {{ order.name }}</p>
+                    <p><strong>Address:</strong> {{ order.address }}</p>
+                    <p><strong>Email:</strong> {{ order.email }}</p>
+                    <p><strong>Amount:</strong> ${{ order.amount }}</p>
+                    <p><strong>Date:</strong> {{ order.date }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        
+        <script>
+            function showOrderDetails(orderId) {
+                // Hide all order details
+                document.querySelectorAll('.order-details').forEach(detail => {
+                    detail.style.display = 'none';
+                });
+        
+                // Show the selected order details
+                if (orderId) {
+                    document.getElementById(orderId).style.display = 'block';
+                }
+            }
+        </script>
     </main>
 </body>
 </html>

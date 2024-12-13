@@ -11,6 +11,7 @@ from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.paginator import Paginator
 from decimal import Decimal
+from datetime import datetime, timedelta
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -184,6 +185,7 @@ def accessories_view(request):
 def owner_required(user):
     return user.groups.filter(name='Owner').exists()
 
+
 @login_required
 @user_passes_test(owner_required, login_url='index')
 def owner_dashboard(request):
@@ -191,11 +193,75 @@ def owner_dashboard(request):
     shoes = Product.objects.filter(product_type='shoes')
     clothing = Product.objects.filter(product_type='clothing')
     accessories = Product.objects.filter(product_type='accessories')
-    
+
+    # Total products count
+    total_products = Product.objects.count()
+
+    # Get the filter option from the request
+    filter_option = request.GET.get('filter', 'current_day')  # Default to current day
+
+    # Define time ranges
+    now = datetime.now()
+    if filter_option == 'current_day':
+        start_time = now - timedelta(days=1)
+    elif filter_option == 'last_7_days':
+        start_time = now - timedelta(days=7)
+    elif filter_option == 'last_month':
+        start_time = now - timedelta(days=30)
+    else:
+        start_time = None  # Default to show all records if no filter matches
+
+    # Fetch total sales from Stripe
+    try:
+        payment_intents = stripe.PaymentIntent.list(limit=100)  # Adjust limit if needed
+        filtered_payment_intents = [
+            intent for intent in payment_intents['data']
+            if intent['status'] == 'succeeded' and
+               (start_time is None or datetime.fromtimestamp(intent['created']) >= start_time)
+        ]
+
+        total_sales = sum(
+            Decimal(intent['amount_received'] / 100)  # Stripe stores amounts in cents
+            for intent in filtered_payment_intents
+        )
+
+        total_orders = len(filtered_payment_intents)
+
+        # Extract customer details for the dropdown
+        orders = [
+    {
+        'id': intent['id'],
+        'name': intent['shipping']['name'] if intent.get('shipping') else 'N/A',
+        'address': ", ".join(
+            filter(None, [
+                intent['shipping']['address']['line1'] if intent.get('shipping') else '',
+                intent['shipping']['address']['line2'] if intent.get('shipping') else '',
+                intent['shipping']['address']['city'] if intent.get('shipping') else '',
+                intent['shipping']['address']['state'] if intent.get('shipping') else '',
+                intent['shipping']['address']['postal_code'] if intent.get('shipping') else '',
+                intent['shipping']['address']['country'] if intent.get('shipping') else '',
+            ])
+        ) if intent.get('shipping') else 'N/A',
+        'email': intent['receipt_email'] or 'N/A',
+        'amount': Decimal(intent['amount_received'] / 100),
+'date': datetime.fromtimestamp(intent['created']).strftime('%B %d, %Y at %I:%M %p'),    }
+    for intent in filtered_payment_intents
+]
+    except Exception as e:
+        print(f"Error fetching Stripe data: {e}")
+        total_sales = 0
+        total_orders = 0
+        orders = []
+
     return render(request, 'store/owner_dashboard.html', {
         'shoes': shoes,
         'clothing': clothing,
         'accessories': accessories,
+        'total_sales': total_sales,
+        'total_products': total_products,
+        'total_orders': total_orders,
+        'filter_option': filter_option,
+        'orders': orders,
     })
 
 def add_product(request):
@@ -470,7 +536,6 @@ def create_checkout_session(request):
         
         else:
             shipping_cost = Decimal(20.00)  # Default US shipping
-    
 
     # Add shipping cost as a line item
     line_items.append({

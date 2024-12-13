@@ -1,35 +1,125 @@
-<h2>Edit Product: {{ product.name }}</h2>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ product_form.as_p }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    {% load static %}
+    <style>
+        .edit-product-page {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 2rem;
+          background-color: #f4f4f4;
+          color: #333;
+        }
 
-    <h3>Edit Sizes</h3>
-    <p>You can add, update, or delete sizes below:</p>
-    <table>
-        {{ size_formset.management_form }} <!-- Render the management form -->
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Size</th>
-                <th>Price</th>
-                <th>Stock</th>
-                <th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for form in size_formset %}
-            <tr>
-                <td>{{ form.id }}</td> <!-- Ensure ID field is included -->
-                <td>{{ form.size }}</td>
-                <td>{{ form.price }}</td>
-                <td>{{ form.stock }}</td>
-                <td>{{ form.DELETE }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+        .edit-product-page h2 {
+          font-size: 1.8rem;
+          color: #2c3e50;
+          margin-bottom: 1rem;
+        }
 
-    <button type="submit" class="btn btn-primary">Save Changes</button>
-</form>
+        .edit-product-page form {
+          background-color: #ffffff;
+          padding: 1.5rem;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-<a href="{% url 'owner_dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+        .edit-product-page table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 1rem 0;
+        }
+
+        .edit-product-page th, .edit-product-page td {
+          padding: 1rem;
+          border-bottom: 1px solid #ddd;
+          text-align: left;
+        }
+
+        .edit-product-page th {
+          background-color: #333333;
+          color: white;
+          text-transform: uppercase;
+          font-size: 0.9rem;
+        }
+
+        .edit-product-page td {
+          color: #333;
+        }
+
+        .edit-product-page button[type="submit"] {
+          background-color: #27ae60;
+          color: white;
+          padding: 0.8rem 1.5rem;
+          border: none;
+          border-radius: 4px;
+          font-size: 1rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        .edit-product-page button[type="submit"]:hover {
+          background-color: #219150;
+        }
+
+        .edit-product-page a {
+          display: inline-block;
+          margin-top: 1rem;
+          color: #2980b9;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: bold;
+          padding: 0.5rem 1rem;
+          background-color: #ddd;
+          border-radius: 4px;
+          transition: background-color 0.3s ease;
+        }
+
+        .edit-product-page a:hover {
+          background-color: #bbb;
+          text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<section class="edit-product-page">
+    <h2>Edit Product: {{ product.name }}</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ product_form.as_p }}
+
+        <h3>Edit Sizes</h3>
+        <p>You can add, update, or delete sizes below:</p>
+        <table>
+            {{ size_formset.management_form }} <!-- Render the management form -->
+            <thead>
+                <tr>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for form in size_formset %}
+                <tr>
+                    <td>{{ form.size }}</td>
+                    <td>{{ form.price }}</td>
+                    <td>{{ form.stock }}</td>
+                    <td>{{ form.DELETE }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <a href="{% url 'owner_dashboard' %}">Back to Dashboard</a>
+</section>
+</body>
+</html>
