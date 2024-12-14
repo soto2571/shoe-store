@@ -22,4 +22,5 @@ urlpatterns = [
     path('search/', views.search_products, name='search_products'),
     path('clothing/', views.clothing_view, name='clothing_page'),
     path('accessories/', views.accessories_view, name='accessories_page'),
+    path('webhook/', views.stripe_webhook, name='stripe_webhook'),
 ]

@@ -30,6 +30,9 @@ else:
     STRIPE_PUBLISHABLE_KEY = config('STRIPE_LIVE_PUBLISHABLE_KEY')
     STRIPE_SECRET_KEY = config('STRIPE_LIVE_SECRET_KEY')
 
+# Stripe webhook
+STRIPE_WEBHOOK_SECRET = config('STRIPE_WEBHOOK_SECRET')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
