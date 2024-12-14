@@ -14,6 +14,8 @@ from decimal import Decimal
 from datetime import datetime, timedelta
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.core.mail import send_mail
+from decimal import Decimal, ROUND_HALF_UP
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -213,47 +215,53 @@ def owner_dashboard(request):
     else:
         start_time = None  # Default to show all records if no filter matches
 
-    # Fetch total sales from Stripe
     try:
-        payment_intents = stripe.PaymentIntent.list(limit=100)  # Adjust limit if needed
+        # Fetch Stripe payment intents
+        payment_intents = stripe.PaymentIntent.list(limit=100)
         filtered_payment_intents = [
             intent for intent in payment_intents['data']
             if intent['status'] == 'succeeded' and
                (start_time is None or datetime.fromtimestamp(intent['created']) >= start_time)
         ]
 
-        total_sales = sum(
-            Decimal(intent['amount_received'] / 100)  # Stripe stores amounts in cents
+        total_sales = format_price(sum(
+            Decimal(intent['amount_received']) / 100  # Stripe stores amounts in cents
             for intent in filtered_payment_intents
-        )
+        ))
 
         total_orders = len(filtered_payment_intents)
 
         # Extract customer details for the dropdown
         orders = [
-    {
-        'id': intent['id'],
-        'name': intent['shipping']['name'] if intent.get('shipping') else 'N/A',
-        'address': ", ".join(
-            filter(None, [
-                intent['shipping']['address']['line1'] if intent.get('shipping') else '',
-                intent['shipping']['address']['line2'] if intent.get('shipping') else '',
-                intent['shipping']['address']['city'] if intent.get('shipping') else '',
-                intent['shipping']['address']['state'] if intent.get('shipping') else '',
-                intent['shipping']['address']['postal_code'] if intent.get('shipping') else '',
-                intent['shipping']['address']['country'] if intent.get('shipping') else '',
-            ])
-        ) if intent.get('shipping') else 'N/A',
-        'email': intent['receipt_email'] or 'N/A',
-        'amount': Decimal(intent['amount_received'] / 100),
-'date': datetime.fromtimestamp(intent['created']).strftime('%B %d, %Y at %I:%M %p'),    }
-    for intent in filtered_payment_intents
-]
+            {
+                'id': intent['id'],
+                'name': intent['shipping']['name'] if intent.get('shipping') else 'N/A',
+                'address': ", ".join(
+                    filter(None, [
+                        intent['shipping']['address']['line1'] if intent.get('shipping') else '',
+                        intent['shipping']['address']['line2'] if intent.get('shipping') else '',
+                        intent['shipping']['address']['city'] if intent.get('shipping') else '',
+                        intent['shipping']['address']['state'] if intent.get('shipping') else '',
+                        intent['shipping']['address']['postal_code'] if intent.get('shipping') else '',
+                        intent['shipping']['address']['country'] if intent.get('shipping') else '',
+                    ])
+                ) if intent.get('shipping') else 'N/A',
+                'email': intent['receipt_email'] or 'N/A',
+                'amount': format_price(Decimal(intent['amount_received']) / 100),
+                'date': datetime.fromtimestamp(intent['created']).strftime('%B %d, %Y at %I:%M %p'),
+            }
+            for intent in filtered_payment_intents
+        ]
+
+        # Fetch invalid orders
+        invalid_orders = fetch_invalid_orders()
+
     except Exception as e:
         print(f"Error fetching Stripe data: {e}")
-        total_sales = 0
+        total_sales = format_price(0)
         total_orders = 0
         orders = []
+        invalid_orders = []
 
     return render(request, 'store/owner_dashboard.html', {
         'shoes': shoes,
@@ -264,7 +272,53 @@ def owner_dashboard(request):
         'total_orders': total_orders,
         'filter_option': filter_option,
         'orders': orders,
+        'invalid_orders': invalid_orders,  # Pass invalid orders to the template
     })
+
+def format_price(amount):
+    """
+    Helper function to format a price to 2 decimal places.
+    """
+    return Decimal(amount).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
+
+
+def fetch_invalid_orders():
+    """
+    Fetches invalid orders flagged in Stripe metadata.
+    """
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    invalid_orders = []
+
+    try:
+        # Retrieve checkout sessions
+        sessions = stripe.checkout.Session.list(limit=100)  # Adjust limit if needed
+
+        # Filter invalid sessions
+        for session in sessions['data']:
+            if session['metadata'].get('status') == 'invalid':
+                invalid_orders.append({
+                    'id': session['id'],
+                    'name': session.get('customer_details', {}).get('name', 'N/A'),
+                    'email': session.get('customer_details', {}).get('email', 'N/A'),
+                    'address': ", ".join(
+                        filter(None, [
+                            session['shipping_details']['address'].get('line1', ''),
+                            session['shipping_details']['address'].get('line2', ''),
+                            session['shipping_details']['address'].get('city', ''),
+                            session['shipping_details']['address'].get('state', ''),
+                            session['shipping_details']['address'].get('postal_code', ''),
+                            session['shipping_details']['address'].get('country', ''),
+                        ])
+                    ),
+                    'total': session['amount_total'] / 100,  # Stripe uses cents
+                    'date': datetime.fromtimestamp(session['created']).strftime('%B %d, %Y at %I:%M %p'),
+                    'error_message': session['metadata'].get('error_message', 'Unknown Error'),
+                })
+
+    except Exception as e:
+        print(f"Error fetching invalid orders: {e}")
+
+    return invalid_orders
 
 def add_product(request):
     ProductSizeFormSet = modelformset_factory(
@@ -699,15 +753,128 @@ def stripe_webhook(request):
         # Ensure both are available
         if not shipping_address or not shipping_option_id:
             logger.error("Incomplete shipping data. Address or option ID is missing.")
+            stripe.checkout.Session.modify(
+                session['id'],
+                metadata={
+                    "status": "invalid",
+                    "error": "Shipping data is incomplete."
+                }
+            )
+            notify_owner_of_invalid_order(session, "Shipping data is incomplete.")
             return JsonResponse({'error': 'Shipping data is incomplete.'}, status=400)
 
         # Validate the shipping option
         try:
             validate_shipping_option(shipping_address, shipping_option_id)
         except ValueError as e:
+            error_message = str(e)
             logger.error(f"Shipping validation error: {e}")
+
+            stripe.checkout.Session.modify(
+                session['id'],
+                metadata={
+                    "status": "invalid",
+                    "error": error_message
+                }
+            )
+
+            notify_owner_of_invalid_order(session, error_message)
+
             return JsonResponse({'error': str(e)}, status=400)
 
         logger.info("Checkout session completed successfully.")
 
     return JsonResponse({'status': 'success'})
+
+def handle_invalid_order(session, error_message):
+    """
+    Handle invalid orders by marking the order in Stripe's metadata,
+    notifying the owner, and optionally the customer.
+    """
+    # Update session metadata in Stripe
+    try:
+        stripe.checkout.Session.modify(
+            session['id'],
+            metadata={
+                "status": "invalid",
+                "error": error_message
+            }
+        )
+    except Exception as e:
+        logger.error(f"Failed to update Stripe session metadata: {e}")
+
+    # Notify the store owner
+    notify_owner_of_invalid_order(session, error_message)
+
+    # Notify the customer
+    notify_customer_of_invalid_order(session, error_message)
+
+    # Optionally, refund the order
+    refund_invalid_order(session)
+
+def notify_owner_of_invalid_order(session, error_message):
+    # Notify the owner of the invalid order
+    customer_name = session.get('customer_details', {}).get('name', 'Customer')
+    customer_email = session.get('customer_details', {}).get('email', 'N/A')
+    shipping_address = session.get('shipping_details', {}).get('address', {})
+    order_total = session.get('amount_total', 0) / 100  # Convert to dollars
+
+    subject = "Invalid Order Notification"
+    message = (
+        f"An invalid order was placed by {customer_name} ({customer_email}).\n"
+        f"Shipping Address: {shipping_address}\n"
+        f"Order Total: ${order_total:.2f}\n"
+        f"Error: {error_message}"
+        f"Please review the order on the dashboard."
+    )
+
+    send_mail(
+        subject=subject,
+        message=message,
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        recipient_list=[settings.OWNER_EMAIL],
+    )
+
+def notify_customer_of_invalid_order(session, error_message):
+    """
+    Notify the customer about the invalid order and provide resolution steps.
+    """
+    customer_email = session.get('customer_details', {}).get('email', None)
+    if not customer_email:
+        logger.warning("No email address found for the customer. Skipping notification.")
+        return
+
+    customer_name = session.get('customer_details', {}).get('name', 'Customer')
+    order_id = session.get('id', 'Unknown')
+
+    subject = "Issue with Your Order"
+    message = (
+        f"Dear {customer_name},\n\n"
+        f"We noticed an issue with your order (ID: {order_id}):\n"
+        f"{error_message}\n\n"
+        f"Your order cannot proceed with the selected shipping option. "
+        f"We will refund your purchase shortly, or you can contact us to resolve this.\n\n"
+        f"Thank you,\nYour Store Team"
+    )
+
+    send_mail(
+        subject=subject,
+        message=message,
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        recipient_list=[customer_email],
+    )
+
+def refund_invalid_order(session):
+    """
+    Refund the order automatically if it is invalid.
+    """
+    payment_intent_id = session.get('payment_intent', None)
+    if not payment_intent_id:
+        logger.error("No payment intent ID found for the invalid order. Cannot process refund.")
+        return
+
+    try:
+        stripe.Refund.create(payment_intent=payment_intent_id)
+        logger.info(f"Refund issued for payment intent {payment_intent_id}.")
+    except Exception as e:
+        logger.error(f"Failed to refund payment intent {payment_intent_id}: {e}")
