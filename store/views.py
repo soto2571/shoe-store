@@ -628,23 +628,6 @@ def create_checkout_session(request):
         'quantity': 1,
     })
 
-    # Calculate shipping dynamically
-    shipping_info = calculate_shipping_boxes(cart_items)  # Custom function
-    shipping_cost = shipping_info['total_cost']
-    shipping_boxes = shipping_info['boxes']
-
-    # Add shipping line item dynamically
-    line_items.append({
-        'price_data': {
-            'currency': 'usd',
-            'product_data': {
-                'name': f"Shipping ({', '.join(shipping_boxes)})",  # Box names as text
-            },
-            'unit_amount': int(shipping_cost * 100),
-        },
-        'quantity': 1,  # Required field
-    })
-
     shipping_options = [
     {
         'shipping_rate_data': {
