@@ -665,45 +665,61 @@ def create_checkout_session(request):
         return redirect('cart_view')
     
 
+SHIPPING_BOXES = [
+    {"name": "Small Box", "max_weight": 6, "max_volume": 432, "price": 12.00},  # 6 lbs, 12x12x3
+    {"name": "Medium Box", "max_weight": 12, "max_volume": 1728, "price": 20.00},  # 12 lbs, 12x12x12
+    {"name": "Large Box", "max_weight": 20, "max_volume": 4096, "price": 30.00},  # 20 lbs, 16x16x16
+    {"name": "Extra Large Box", "max_weight": 40, "max_volume": 8000, "price": 50.00},  # 40 lbs, 20x20x20
+]
+
+
 def calculate_shipping_boxes(cart_items):
     """
-    Calculates the best shipping boxes for cart items based on weight and volume.
+    Optimized function to pack items into the smallest possible number of boxes.
     """
     total_cost = 0
     boxes_used = []
-    remaining_items = cart_items[:]  # Copy of cart items to track unboxed items
-    predefined_boxes = settings.SHIPPING_BOXES  # Fetch predefined box data
 
-    while remaining_items:
-        # Try to fit items in one of the predefined boxes
-        for box in predefined_boxes:
-            box_weight = 0
-            box_volume = 0
+    # Sort items by largest volume first
+    cart_items.sort(key=lambda x: x['weight'] * (x['length'] * x['width'] * x['height']), reverse=True)
+
+    while cart_items:
+        box_found = False
+
+        # Try each box size to pack the items
+        for box in SHIPPING_BOXES:
+            current_weight = 0
+            current_volume = 0
             items_in_box = []
 
-            for item in remaining_items:
+            # Check if items fit in the current box
+            for item in cart_items:
                 item_weight = item['weight']
                 item_volume = item['length'] * item['width'] * item['height']
 
-                # Check if the item can fit in the current box
-                if (box_weight + item_weight <= box['max_weight'] and
-                    box_volume + item_volume <= box['max_volume']):
-                    box_weight += item_weight
-                    box_volume += item_volume
+                if (current_weight + item_weight <= box['max_weight'] and
+                        current_volume + item_volume <= box['max_volume']):
+                    current_weight += item_weight
+                    current_volume += item_volume
                     items_in_box.append(item)
 
-            # If items were successfully added to a box, update the totals
+            # If items fit into the box
             if items_in_box:
                 total_cost += box['price']
                 boxes_used.append(box['name'])
-                # Remove packed items from remaining_items
-                remaining_items = [item for item in remaining_items if item not in items_in_box]
+                box_found = True
+
+                # Remove packed items
+                for packed_item in items_in_box:
+                    cart_items.remove(packed_item)
+
                 break
-        else:
-            # If no box fits the items, assign an Extra Large Box
-            total_cost += predefined_boxes[-1]['price']
+
+        # If no box can fit the remaining items, use the largest box
+        if not box_found:
+            total_cost += SHIPPING_BOXES[-1]['price']
             boxes_used.append("Extra Large Box")
-            remaining_items = []  # Assume all items fit into the extra-large box
+            cart_items = []  # Assume all remaining items fit
 
     return {"total_cost": total_cost, "boxes": boxes_used}
 
