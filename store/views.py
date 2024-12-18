@@ -438,8 +438,11 @@ def cart_view(request):
     cart = request.session.get('cart', {})
     cart_items = []
 
+    expanded_cart_items = []  # For shipping calculation
     for key, item in cart.items():
         product = Product.objects.get(id=item['product_id'])
+        
+        # Add cart details for display
         cart_items.append({
             'product': product,
             'size': item['size'],
@@ -447,9 +450,33 @@ def cart_view(request):
             'total_price': item['price'] * item['quantity']
         })
 
-    cart_total = sum(item['total_price'] for item in cart_items)
+        # Add items for box calculation
+        expanded_cart_items.append({
+            'quantity': item['quantity'],
+            'weight': product.weight,
+            'length': product.length,
+            'width': product.width,
+            'height': product.height,
+        })
 
-    return render(request, 'store/cart.html', {'cart_items': cart_items, 'cart_total': cart_total})
+    # Calculate shipping cost and boxes
+    shipping_info = calculate_shipping_boxes(expanded_cart_items)
+    shipping_cost = shipping_info['total_cost']
+    shipping_boxes = shipping_info['boxes']
+
+    cart_total = sum(item['total_price'] for item in cart_items)
+    total_with_shipping = cart_total + shipping_cost
+
+    # Save shipping cost for Stripe checkout
+    request.session['shipping_cost'] = float(shipping_cost)
+
+    return render(request, 'store/cart.html', {
+        'cart_items': cart_items,
+        'cart_total': cart_total,
+        'shipping_cost': shipping_cost,
+        'shipping_boxes': shipping_boxes,
+        'total_with_shipping': total_with_shipping,
+    })
 
 def add_to_cart(request, product_id):
     size = request.POST.get('size')  # Get the selected size
@@ -675,52 +702,57 @@ SHIPPING_BOXES = [
 
 def calculate_shipping_boxes(cart_items):
     """
-    Optimized function to pack items into the smallest possible number of boxes.
+    Improved function to efficiently group items and pack them into the smallest number of boxes.
     """
     total_cost = 0
     boxes_used = []
 
-    # Sort items by largest volume first
-    cart_items.sort(key=lambda x: x['weight'] * (x['length'] * x['width'] * x['height']), reverse=True)
+    # Step 1: Expand cart items with weight, volume, and quantity
+    items_to_pack = []
+    for item in cart_items:
+        volume = item['length'] * item['width'] * item['height']
+        if volume <= 0:
+            print(f"Warning: Item has invalid dimensions: {item}. Assigning default volume.")
+            volume = 1  # Assign a small default volume
 
-    while cart_items:
-        box_found = False
+        items_to_pack.append({
+            "weight": item['weight'],
+            "volume": volume,
+            "quantity": item['quantity'],
+        })
 
-        # Try each box size to pack the items
+    print(f"Items to Pack: {items_to_pack}")
+
+    # Step 2: Combine all items into total weight and volume
+    total_weight = sum(item['weight'] * item['quantity'] for item in items_to_pack)
+    total_volume = sum(item['volume'] * item['quantity'] for item in items_to_pack)
+
+    print(f"Total Weight: {total_weight}, Total Volume: {total_volume}")
+
+    # Step 3: Pack items iteratively
+    while total_weight > 0 and total_volume > 0:
         for box in SHIPPING_BOXES:
-            current_weight = 0
-            current_volume = 0
-            items_in_box = []
-
-            # Check if items fit in the current box
-            for item in cart_items:
-                item_weight = item['weight']
-                item_volume = item['length'] * item['width'] * item['height']
-
-                if (current_weight + item_weight <= box['max_weight'] and
-                        current_volume + item_volume <= box['max_volume']):
-                    current_weight += item_weight
-                    current_volume += item_volume
-                    items_in_box.append(item)
-
-            # If items fit into the box
-            if items_in_box:
+            if total_weight <= box['max_weight'] and total_volume <= box['max_volume']:
+                # Items fit in the current box
                 total_cost += box['price']
                 boxes_used.append(box['name'])
-                box_found = True
-
-                # Remove packed items
-                for packed_item in items_in_box:
-                    cart_items.remove(packed_item)
-
+                total_weight = 0  # All items packed
+                total_volume = 0
                 break
 
-        # If no box can fit the remaining items, use the largest box
-        if not box_found:
-            total_cost += SHIPPING_BOXES[-1]['price']
-            boxes_used.append("Extra Large Box")
-            cart_items = []  # Assume all remaining items fit
+        if total_weight > 0 and total_volume > 0:
+            # If items don't fit in any single box, use the largest available box
+            largest_box = SHIPPING_BOXES[-1]
+            total_cost += largest_box['price']
+            boxes_used.append(largest_box['name'])
+            # Subtract the capacity of the largest box from the total
+            total_weight -= largest_box['max_weight']
+            total_volume -= largest_box['max_volume']
+            total_weight = max(total_weight, 0)  # Ensure no negative weight
+            total_volume = max(total_volume, 0)  # Ensure no negative volume
 
+    print(f"\nFinal Total Cost: {total_cost}")
+    print(f"Boxes Used: {boxes_used}")
     return {"total_cost": total_cost, "boxes": boxes_used}
 
     
