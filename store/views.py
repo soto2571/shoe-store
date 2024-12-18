@@ -723,33 +723,43 @@ def calculate_shipping_boxes(cart_items):
 
     print(f"Items to Pack: {items_to_pack}")
 
-    # Step 2: Combine all items into total weight and volume
-    total_weight = sum(item['weight'] * item['quantity'] for item in items_to_pack)
-    total_volume = sum(item['volume'] * item['quantity'] for item in items_to_pack)
+    # Step 2: Pack items iteratively
+    while items_to_pack:
+        total_weight = sum(item['weight'] * item['quantity'] for item in items_to_pack)
+        total_volume = sum(item['volume'] * item['quantity'] for item in items_to_pack)
 
-    print(f"Total Weight: {total_weight}, Total Volume: {total_volume}")
+        print(f"Total Weight: {total_weight}, Total Volume: {total_volume}")
 
-    # Step 3: Pack items iteratively
-    while total_weight > 0 and total_volume > 0:
+        packed = False
         for box in SHIPPING_BOXES:
             if total_weight <= box['max_weight'] and total_volume <= box['max_volume']:
                 # Items fit in the current box
                 total_cost += box['price']
                 boxes_used.append(box['name'])
-                total_weight = 0  # All items packed
-                total_volume = 0
+                items_to_pack.clear()  # All items packed
+                packed = True
                 break
 
-        if total_weight > 0 and total_volume > 0:
+        if not packed:
             # If items don't fit in any single box, use the largest available box
             largest_box = SHIPPING_BOXES[-1]
             total_cost += largest_box['price']
             boxes_used.append(largest_box['name'])
-            # Subtract the capacity of the largest box from the total
-            total_weight -= largest_box['max_weight']
-            total_volume -= largest_box['max_volume']
-            total_weight = max(total_weight, 0)  # Ensure no negative weight
-            total_volume = max(total_volume, 0)  # Ensure no negative volume
+
+            # Pack as many items as possible in the largest box
+            remaining_items = []
+            for item in items_to_pack:
+                max_fit_quantity_by_weight = largest_box['max_weight'] // item['weight']
+                max_fit_quantity_by_volume = largest_box['max_volume'] // item['volume']
+                fit_quantity = min(item['quantity'], max_fit_quantity_by_weight, max_fit_quantity_by_volume)
+
+                if fit_quantity > 0:
+                    item['quantity'] -= fit_quantity
+
+                if item['quantity'] > 0:
+                    remaining_items.append(item)
+
+            items_to_pack = remaining_items  # Restart with remaining items
 
     print(f"\nFinal Total Cost: {total_cost}")
     print(f"Boxes Used: {boxes_used}")
