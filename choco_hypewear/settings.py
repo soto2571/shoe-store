@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,6 +33,15 @@ else:
 
 # Stripe webhook
 STRIPE_WEBHOOK_SECRET = config('STRIPE_WEBHOOK_SECRET')
+
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # Use SMTP backend
+EMAIL_HOST = 'smtp.gmail.com'  # Gmail SMTP server
+EMAIL_PORT = 587  # Port for TLS
+EMAIL_USE_TLS = True  # Use TLS encryption
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')  # Load email user from environment
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  # Load email password from environment
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # Default "from" email for outgoing emails
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,6 +90,14 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'choco_hypewear.wsgi.application'
+
+
+SHIPPING_BOXES = [
+    {"name": "Small Box", "max_weight": 6, "max_volume": 432, "price": 12.00},  # 6 lbs, 12x12x3
+    {"name": "Medium Box", "max_weight": 12, "max_volume": 1728, "price": 20.00},  # 12 lbs, 12x12x12
+    {"name": "Large Box", "max_weight": 20, "max_volume": 4096, "price": 30.00},  # 20 lbs, 16x16x16
+    {"name": "Extra Large Box", "max_weight": 40, "max_volume": 8000, "price": 50.00},  # 40 lbs, 20x20x20
+]
 
 
 # Database

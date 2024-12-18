@@ -16,6 +16,9 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
 from decimal import Decimal, ROUND_HALF_UP
+from django.core.mail import send_mail
+from django.http import JsonResponse
+from math import ceil
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -252,6 +255,7 @@ def owner_dashboard(request):
             }
             for intent in filtered_payment_intents
         ]
+        
 
         # Fetch invalid orders
         invalid_orders = fetch_invalid_orders()
@@ -282,6 +286,9 @@ def format_price(amount):
     return Decimal(amount).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
 
 
+from datetime import datetime
+from decimal import Decimal
+
 def fetch_invalid_orders():
     """
     Fetches invalid orders flagged in Stripe metadata.
@@ -290,33 +297,37 @@ def fetch_invalid_orders():
     invalid_orders = []
 
     try:
-        # Retrieve checkout sessions
-        sessions = stripe.checkout.Session.list(limit=100)  # Adjust limit if needed
+        # Fetch Stripe checkout sessions
+        checkout_sessions = stripe.checkout.Session.list(limit=100)
 
         # Filter invalid sessions
-        for session in sessions['data']:
-            if session['metadata'].get('status') == 'invalid':
-                invalid_orders.append({
-                    'id': session['id'],
-                    'name': session.get('customer_details', {}).get('name', 'N/A'),
-                    'email': session.get('customer_details', {}).get('email', 'N/A'),
-                    'address': ", ".join(
-                        filter(None, [
-                            session['shipping_details']['address'].get('line1', ''),
-                            session['shipping_details']['address'].get('line2', ''),
-                            session['shipping_details']['address'].get('city', ''),
-                            session['shipping_details']['address'].get('state', ''),
-                            session['shipping_details']['address'].get('postal_code', ''),
-                            session['shipping_details']['address'].get('country', ''),
-                        ])
-                    ),
-                    'total': session['amount_total'] / 100,  # Stripe uses cents
-                    'date': datetime.fromtimestamp(session['created']).strftime('%B %d, %Y at %I:%M %p'),
-                    'error_message': session['metadata'].get('error_message', 'Unknown Error'),
-                })
+        invalid_sessions = [
+            session for session in checkout_sessions['data']
+            if session['metadata'].get('status') == 'invalid'
+        ]
 
+        # Map invalid sessions to payment intents for consistent IDs
+        for session in invalid_sessions:
+            invalid_orders.append({
+                'name': session.get('customer_details', {}).get('name', 'N/A'),
+                'address': ", ".join(
+                    filter(None, [
+                        session.get('shipping_details', {}).get('address', {}).get('line1', ''),
+                        session.get('shipping_details', {}).get('address', {}).get('line2', ''),
+                        session.get('shipping_details', {}).get('address', {}).get('city', ''),
+                        session.get('shipping_details', {}).get('address', {}).get('state', ''),
+                        session.get('shipping_details', {}).get('address', {}).get('postal_code', ''),
+                        session.get('shipping_details', {}).get('address', {}).get('country', ''),
+                    ])
+                ) or 'N/A',
+                'email': session.get('customer_details', {}).get('email', 'N/A'),
+                'amount': format_price(Decimal(session.get('amount_total', 0)) / 100),  # Stripe uses cents
+                'date': datetime.fromtimestamp(session.get('created', 0)).strftime('%B %d, %Y at %I:%M %p'),
+                'error_message': session['metadata'].get('error', 'Unknown Error'),
+            })
     except Exception as e:
-        print(f"Error fetching invalid orders: {e}")
+        print(f"Error fetching invalid Stripe orders: {e}")
+        invalid_orders = []
 
     return invalid_orders
 
@@ -542,12 +553,21 @@ def create_checkout_session(request):
 
     line_items = []
     product_total = Decimal(0)  # Keep track of the product total for tax calculation
+    cart_items = []
 
     for key, item in cart.items():
         product = Product.objects.get(id=item['product_id'])
         image_url = request.build_absolute_uri(product.image.url)
         product_price = Decimal(item['price'])
         product_total += product_price * item['quantity']
+
+        cart_items.append({
+            "quantity": item['quantity'],
+            "weight": product.weight,
+            "length": product.length,
+            "width": product.width,
+            "height": product.height,
+        })
 
         # Ensure product price is valid
         if int(product_price * 100) < 1:
@@ -579,6 +599,23 @@ def create_checkout_session(request):
             'unit_amount': int(tax_amount * 100),
         },
         'quantity': 1,
+    })
+
+    # Calculate shipping dynamically
+    shipping_info = calculate_shipping_boxes(cart_items)  # Custom function
+    shipping_cost = shipping_info['total_cost']
+    shipping_boxes = shipping_info['boxes']
+
+    # Add shipping line item dynamically
+    line_items.append({
+        'price_data': {
+            'currency': 'usd',
+            'product_data': {
+                'name': f"Shipping ({', '.join(shipping_boxes)})",  # Box names as text
+            },
+            'unit_amount': int(shipping_cost * 100),
+        },
+        'quantity': 1,  # Required field
     })
 
     shipping_options = [
@@ -618,14 +655,58 @@ def create_checkout_session(request):
             shipping_address_collection={'allowed_countries': ['US', 'PR']},
             shipping_options=shipping_options,  # Add shipping options to the session
             metadata={
-        'shipping_instructions': 'Puerto Rico Standard is only for Puerto Rico addresses. US Standard is only for US addresses.'
-    },
+                'shipping_instructions': 'Puerto Rico Standard is only for Puerto Rico addresses. US Standard is only for US addresses.'
+            },
         )
         return redirect(checkout_session.url, code=303)
     except Exception as e:
         print(f"Error in create_checkout_session: {e}")
         messages.error(request, "Unable to create checkout session. Try again later.")
         return redirect('cart_view')
+    
+
+def calculate_shipping_boxes(cart_items):
+    """
+    Calculates the best shipping boxes for cart items based on weight and volume.
+    """
+    total_cost = 0
+    boxes_used = []
+    remaining_items = cart_items[:]  # Copy of cart items to track unboxed items
+    predefined_boxes = settings.SHIPPING_BOXES  # Fetch predefined box data
+
+    while remaining_items:
+        # Try to fit items in one of the predefined boxes
+        for box in predefined_boxes:
+            box_weight = 0
+            box_volume = 0
+            items_in_box = []
+
+            for item in remaining_items:
+                item_weight = item['weight']
+                item_volume = item['length'] * item['width'] * item['height']
+
+                # Check if the item can fit in the current box
+                if (box_weight + item_weight <= box['max_weight'] and
+                    box_volume + item_volume <= box['max_volume']):
+                    box_weight += item_weight
+                    box_volume += item_volume
+                    items_in_box.append(item)
+
+            # If items were successfully added to a box, update the totals
+            if items_in_box:
+                total_cost += box['price']
+                boxes_used.append(box['name'])
+                # Remove packed items from remaining_items
+                remaining_items = [item for item in remaining_items if item not in items_in_box]
+                break
+        else:
+            # If no box fits the items, assign an Extra Large Box
+            total_cost += predefined_boxes[-1]['price']
+            boxes_used.append("Extra Large Box")
+            remaining_items = []  # Assume all items fit into the extra-large box
+
+    return {"total_cost": total_cost, "boxes": boxes_used}
+
     
 def validate_shipping_option(shipping_address, shipping_option_id):
     if not shipping_option_id:
@@ -753,14 +834,7 @@ def stripe_webhook(request):
         # Ensure both are available
         if not shipping_address or not shipping_option_id:
             logger.error("Incomplete shipping data. Address or option ID is missing.")
-            stripe.checkout.Session.modify(
-                session['id'],
-                metadata={
-                    "status": "invalid",
-                    "error": "Shipping data is incomplete."
-                }
-            )
-            notify_owner_of_invalid_order(session, "Shipping data is incomplete.")
+            handle_invalid_order(session, "Shipping data is incomplete.")
             return JsonResponse({'error': 'Shipping data is incomplete.'}, status=400)
 
         # Validate the shipping option
@@ -770,15 +844,8 @@ def stripe_webhook(request):
             error_message = str(e)
             logger.error(f"Shipping validation error: {e}")
 
-            stripe.checkout.Session.modify(
-                session['id'],
-                metadata={
-                    "status": "invalid",
-                    "error": error_message
-                }
-            )
-
-            notify_owner_of_invalid_order(session, error_message)
+            # Handle invalid order
+            handle_invalid_order(session, error_message)
 
             return JsonResponse({'error': str(e)}, status=400)
 
@@ -788,52 +855,17 @@ def stripe_webhook(request):
 
 def handle_invalid_order(session, error_message):
     """
-    Handle invalid orders by marking the order in Stripe's metadata,
-    notifying the owner, and optionally the customer.
+    Handle invalid orders by notifying the customer about the refund and
+    logging it in the dashboard for the owner.
     """
-    # Update session metadata in Stripe
-    try:
-        stripe.checkout.Session.modify(
-            session['id'],
-            metadata={
-                "status": "invalid",
-                "error": error_message
-            }
-        )
-    except Exception as e:
-        logger.error(f"Failed to update Stripe session metadata: {e}")
-
-    # Notify the store owner
-    notify_owner_of_invalid_order(session, error_message)
-
-    # Notify the customer
+    # Notify the customer via email
     notify_customer_of_invalid_order(session, error_message)
 
     # Optionally, refund the order
     refund_invalid_order(session)
 
-def notify_owner_of_invalid_order(session, error_message):
-    # Notify the owner of the invalid order
-    customer_name = session.get('customer_details', {}).get('name', 'Customer')
-    customer_email = session.get('customer_details', {}).get('email', 'N/A')
-    shipping_address = session.get('shipping_details', {}).get('address', {})
-    order_total = session.get('amount_total', 0) / 100  # Convert to dollars
+    logger.info(f"Invalid order handled: {session['id']}. Customer notified and refund issued.")
 
-    subject = "Invalid Order Notification"
-    message = (
-        f"An invalid order was placed by {customer_name} ({customer_email}).\n"
-        f"Shipping Address: {shipping_address}\n"
-        f"Order Total: ${order_total:.2f}\n"
-        f"Error: {error_message}"
-        f"Please review the order on the dashboard."
-    )
-
-    send_mail(
-        subject=subject,
-        message=message,
-        from_email=settings.DEFAULT_FROM_EMAIL,
-        recipient_list=[settings.OWNER_EMAIL],
-    )
 
 def notify_customer_of_invalid_order(session, error_message):
     """
@@ -845,12 +877,12 @@ def notify_customer_of_invalid_order(session, error_message):
         return
 
     customer_name = session.get('customer_details', {}).get('name', 'Customer')
-    order_id = session.get('id', 'Unknown')
+    order_id = session.get('payment_intent', 'Unknown')
 
     subject = "Issue with Your Order"
     message = (
         f"Dear {customer_name},\n\n"
-        f"We noticed an issue with your order (ID: {order_id}):\n"
+        f"We noticed an issue with your order \n(ID: {order_id}):\n"
         f"{error_message}\n\n"
         f"Your order cannot proceed with the selected shipping option. "
         f"We will refund your purchase shortly, or you can contact us to resolve this.\n\n"
@@ -878,3 +910,5 @@ def refund_invalid_order(session):
         logger.info(f"Refund issued for payment intent {payment_intent_id}.")
     except Exception as e:
         logger.error(f"Failed to refund payment intent {payment_intent_id}: {e}")
+
+

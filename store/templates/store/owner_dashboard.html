@@ -166,37 +166,35 @@
             </div>
         </section>
 
-        <h2>Invalid Orders</h2>
-{% if invalid_orders %}
-    <table>
-        <thead>
-            <tr>
-                <th>Order ID</th>
-                <th>Customer Name</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>Total</th>
-                <th>Date</th>
-                <th>Error</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for order in invalid_orders %}
-                <tr>
-                    <td>{{ order.id }}</td>
-                    <td>{{ order.name }}</td>
-                    <td>{{ order.email }}</td>
-                    <td>{{ order.address }}</td>
-                    <td>${{ order.total }}</td>
-                    <td>{{ order.date }}</td>
-                    <td>{{ order.error_message }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-{% else %}
-    <p>No invalid orders found.</p>
-{% endif %}
+        <h2 class="dashboard-section-title">Invalid Orders</h2>
+        {% if invalid_orders %}
+        <div class="dashboard-invalid-orders">
+            <table class="dashboard-invalid-orders-table">
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Date</th>
+                        <th>Error</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in invalid_orders %}
+                        <tr>
+                            <td>{{ order.name }}</td>
+                            <td>{{ order.email }}</td>
+                            <td>{{ order.address }}</td>
+                            <td>{{ order.date }}</td>
+                            <td>{{ order.error_message }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            <p class="dashboard-no-invalid-orders">No invalid orders found.</p>
+        {% endif %}
         
         <script>
             function showOrderDetails(orderId) {

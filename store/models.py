@@ -13,7 +13,11 @@ class Product(models.Model):
         ('clothing', 'Clothing'),
         ('accessories', 'Accessories'),
     ])
-
+    weight = models.DecimalField(max_digits=5, decimal_places=2, default=0)  # Weight in pounds
+    length = models.DecimalField(max_digits=5, decimal_places=2, default=0)  # Length in inches
+    width = models.DecimalField(max_digits=5, decimal_places=2, default=0)   # Width in inches
+    height = models.DecimalField(max_digits=5, decimal_places=2, default=0)  # Height in inches
+    
     @property
     def total_stock(self):
         return sum(size.stock for size in self.sizes.all())

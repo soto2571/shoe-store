@@ -105,15 +105,22 @@
                 </tr>
             </thead>
             <tbody>
-                {% for form in size_formset %}
-                <tr>
-                    <td>{{ form.size }}</td>
-                    <td>{{ form.price }}</td>
-                    <td>{{ form.stock }}</td>
-                    <td>{{ form.DELETE }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
+              {% for form in size_formset %}
+              <tr>
+                  <td>
+                      {{ form.id }} {# Render the hidden ID field #}
+                      {{ form.size }}
+                  </td>
+                  <td>{{ form.price }}</td>
+                  <td>{{ form.stock }}</td>
+                  <td>
+                      {% if form.instance.pk %}
+                          {{ form.DELETE }} {{ form.DELETE.label_tag }}
+                      {% endif %}
+                  </td>
+              </tr>
+              {% endfor %}
+          </tbody>
         </table>
 
         <button type="submit">Save Changes</button>
