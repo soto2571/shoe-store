@@ -488,6 +488,14 @@ img {
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
 }
 
+@media screen and (max-width: 480px) {
+  .video-button {
+    font-size: 1rem; /* Reduce font size */
+    padding: 0.8rem 1.5rem; /* Reduce padding */
+    border-radius: 20px; /* Adjust border radius */
+  }
+}
+
 /*==================== MAIN SECTION ====================*/
 .main-section {
   background-color: #f5f5f5; /* Neutral background */
