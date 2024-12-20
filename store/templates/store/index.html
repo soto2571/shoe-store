@@ -80,7 +80,7 @@
                         <div class="slider-content">
                             <h2 class="slider-title">Exclusive Collection</h2>
                             <p class="slider-description">Discover the best styles for every occasion.</p>
-                            <a href="/collection" class="slider-button">Shop Now</a>
+                            <a href="{% url 'all_shoes' %}" class="slider-button">Shop Now</a>
                         </div>
                     </div>
                     <!-- Slide 2 -->
@@ -98,7 +98,7 @@
                         <div class="slider-content">
                             <h2 class="slider-title">Latest Arrivals</h2>
                             <p class="slider-description">Don't miss out on our newest styles.</p>
-                            <a href="/new-arrivals" class="slider-button">Discover Now</a>
+                            <a href="{% url 'clothing_page'%}" class="slider-button">Discover Now</a>
                         </div>
                     </div>
                 </div>
@@ -180,14 +180,14 @@
          <div class="main-card">
             <img src="{% static 'img/shirtback.png' %}" alt="Choco Merch" class="main-card__image">
             <p class="main-card__description">Exclusive merchandise for true Choco fans.</p>
-            <a href="#" class="home__button">BUY MERCH</a>
+            <a href="{% url 'clothing_page'%}" class="home__button">BUY MERCH</a>
          </div>
 
          <!-- Buy Shoes -->
          <div class="main-card">
             <img src="{% static 'img/shoeback.png' %}" alt="Buy Shoes" class="main-card__image">
             <p class="main-card__description">Discover the latest and trendiest footwear.</p>
-            <a href="#" class="home__button">BUY SHOES</a>
+            <a href="{% url 'all_shoes' %}" class="home__button">BUY SHOES</a>
          </div>
       </div>
    </section>
@@ -196,11 +196,11 @@
       <section class="video-section">
          <div class="video-container">
              <video autoplay muted loop playsinline class="background-video">
-                 <source src="/static/img/videoYT 2.mov" type="video/mp4">
+                 <source src="/static/img/chocovid.mov" type="video/mp4">
                  Your browser does not support the video tag.
              </video>
              <div class="video-overlay">
-                 <a href="https://www.youtube.com/channel/your-channel-link" target="_blank" class="video-button">Watch on YouTube</a>
+                <a href="https://www.youtube.com/@ChocoHypeWear" target="_blank" class="video-button">Watch on YouTube</a>
              </div>
          </div>
      </section>
@@ -246,15 +246,15 @@
                 <div class="swiper-pagination"></div>
 
                <div class="home__social">
-                  <a href="https://www.facebook.com/" target="_blank" class="home__social-link">
+                  <a href="https://www.facebook.com/share/19YNci3YPQ/?mibextid=wwXIfr" target="_blank" class="home__social-link">
                      <i class="ri-facebook-circle-fill"></i>
                   </a>
 
-                  <a href="https://www.instagram.com/" target="_blank" class="home__social-link">
+                  <a href="https://www.instagram.com/chocohypewear_pr?igsh=bDVhN3pwMW4yNXdn" target="_blank" class="home__social-link">
                      <i class="ri-instagram-fill"></i>
                   </a>
 
-                  <a href="https://www.youtube.com/" target="_blank" class="home__social-link">
+                  <a href="https://www.youtube.com/@ChocoHypeWear" target="_blank" class="home__social-link">
                      <i class="ri-youtube-fill"></i>
                   </a>
 
@@ -316,20 +316,11 @@
                  {% endfor %}
              </div>
      
-             <!-- Pagination Links -->
-             <div class="pagination">
-                 {% if page_obj.has_previous %}
-                 <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link">Previous</a>
-                 {% endif %}
-     
-                 <span class="pagination-current">
-                     Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-                 </span>
-     
-                 {% if page_obj.has_next %}
-                 <a href="?page={{ page_obj.next_page_number }}" class="pagination-link">Next</a>
-                 {% endif %}
-             </div>
+                 <!-- "View All" Button -->
+                <div class="view-all-container">
+                    <a href="{% url 'all_shoes' %}" class="view-all-button">View All Shoes</a>
+                </div>
+             
          </div>
      </section>
 
@@ -362,16 +353,28 @@
 
        <!--==================== NEWSLETTER ====================-->
        <section class="newsletter">
-         <img src="{% static 'img/logoBiginv.png' %}" alt="Newsletter" class="newsletter__img">
-         <div class="container">
-           <h2 class="newsletter__title">Subscribe to Our Newsletter</h2>
-           <p class="newsletter__description">Get the latest updates on new arrivals and special offers.</p>
-           <form class="newsletter__form">
-             <input type="email" class="newsletter__input" placeholder="Enter your email" required>
-             <button type="submit" class="newsletter__button">Subscribe</button>
-           </form>
-         </div>
-       </section>
+        <img src="{% static 'img/logoBiginv.png' %}" alt="Newsletter" class="newsletter__img">
+        <div class="container">
+            <h2 class="newsletter__title">Subscribe to Our Newsletter</h2>
+            <p class="newsletter__description">Get the latest updates on new arrivals and special offers.</p>
+    
+            <!-- Display Messages -->
+            {% if messages %}
+            <div class="newsletter-messages">
+                {% for message in messages %}
+                <p class="{{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+    
+            <!-- Newsletter Form -->
+            <form action="{% url 'subscribe_newsletter' %}" method="POST" class="newsletter__form">
+                {% csrf_token %}
+                <input type="email" name="email" class="newsletter__input" placeholder="Enter your email" required>
+                <button type="submit" class="newsletter__button">Subscribe</button>
+            </form>
+        </div>
+    </section>
 
       <!--==================== FOOTER ====================-->
       <footer class="footer">

@@ -21,7 +21,7 @@
                     {{ product.name }}
                  </h1>
                 
-                <p class="home__description">
+                <p class="home__description_details">
                     Select a size and quantity to add to your cart. <br>
                 </p>
                 
@@ -32,6 +32,14 @@
                     <!-- Size Selection -->
                 <div class="product-sizes">
                     <p class="product-price detalles">Price: $<span id="price-display">{{ product.lowest_price }}</span></p>
+                    <!-- Display Django Messages -->
+                    {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                        <p class="{{ message.tags }}">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
                     <p class="product-size-title">Sizes</p>
                     <div class="size-options">
                         {% for size in product.sizes.all %}
@@ -81,6 +89,30 @@
         </div>
     </section>
     </div>
+
+    <section class="product-slider">
+        <h2 class="slider-title-detail">You May Also Like</h2>
+        <div class="product-slider-container">
+          <div class="product-slider-track">
+            {% for product in recommended_products %}
+            <div class="product-slider-item">
+              <a href="{% url 'product_detail' product.id %}">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <p class="product-slider-item-title">{{ product.name }}</p>
+                <p class="product-slider-item-price">
+                  {% if product.lowest_price %}
+                    ${{ product.lowest_price }}
+                  {% else %}
+                    Price not available
+                  {% endif %}
+                </p>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <a href="{% url 'all_shoes' %}" class="product-shop-all-button">Shop All</a>
+      </section>
 
     <script>
        // Update displayed price based on selected size

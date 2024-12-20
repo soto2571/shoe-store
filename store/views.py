@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Product, ProductSize
+from .models import Product, ProductSize, NewsletterSubscriber
 from .forms import ProductForm, ProductSizeForm
 from django.shortcuts import get_object_or_404
 from django.forms import modelformset_factory
@@ -116,6 +116,78 @@ def clothing_view(request):
 def accessories_view(request):
     accessories_products = Product.objects.filter(product_type='accessories')
     return render(request, 'store/accessories.html', {'products': accessories_products})
+
+def all_shoes(request):
+    # Filter products by product type "shoes"
+    shoe_products = Product.objects.filter(product_type='shoes')
+
+    # Filter by brand
+    brand = request.GET.get('brand')
+    if brand and brand != 'all':
+        shoe_products = shoe_products.filter(brand=brand)
+
+    # Filter by size
+    sizes = request.GET.getlist('size')
+    if sizes:
+        shoe_products = shoe_products.filter(sizes__size__in=sizes).distinct()
+
+    # Sorting logic
+    sort_option = request.GET.get('sort', 'best')  # Default to "best"
+
+    if sort_option == 'low-to-high':
+        shoe_products = shoe_products.annotate(min_price=Min('sizes__price')).order_by('min_price')
+    elif sort_option == 'high-to-low':
+        shoe_products = shoe_products.annotate(max_price=Max('sizes__price')).order_by('-max_price')
+
+    # Filter by price
+    min_price = request.GET.get('min_price')
+    max_price = request.GET.get('max_price')
+    if min_price and max_price:
+        shoe_products = shoe_products.filter(
+            sizes__price__gte=min_price,
+            sizes__price__lte=max_price
+        ).distinct()
+
+    # Populate filters for the sidebar
+    brands = Product.objects.filter(product_type='shoes').values_list('brand', flat=True).distinct()
+    sizes = ProductSize.objects.filter(product__product_type='shoes').values_list('size', flat=True).distinct()
+    price_range = ProductSize.objects.filter(product__product_type='shoes').aggregate(
+        min_price=Min('price'),
+        max_price=Max('price')
+    )
+
+    context = {
+        'products': shoe_products.distinct(),  # Ensure distinct products
+        'brands': brands,
+        'sizes': sizes,
+        'price_range': price_range,
+    }
+
+    return render(request, 'store/all_shoes.html', context)
+
+
+def subscribe_newsletter(request):
+    if request.method == "POST":
+        email = request.POST.get('email')
+        if email:
+            # Check if the email is already subscribed
+            if not NewsletterSubscriber.objects.filter(email=email).exists():
+                NewsletterSubscriber.objects.create(email=email)
+                # Send a confirmation email
+                send_mail(
+                    subject="Thank you for subscribing!",
+                    message="You are now subscribed to our newsletter. Stay tuned for updates!",
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[email],
+                )
+                messages.success(request, "You have successfully subscribed to our newsletter!")
+            else:
+                messages.error(request, "This email is already subscribed!")
+        else:
+            messages.error(request, "Please provide a valid email!")
+    
+    # Redirect back to the same page
+    return redirect(request.META.get('HTTP_REFERER', 'index'))
 
 
 def search_products(request):
@@ -521,6 +593,39 @@ def add_to_cart(request, product_id):
         print(f"Error in add_to_cart: {e}")
         messages.error(request, "Something went wrong. Please try again.")
         return redirect('product_detail', product_id=product_id)
+    
+from random import sample
+
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    # Fetch products excluding the current product
+    related_products = Product.objects.exclude(id=product_id)
+
+    # Calculate the lowest price for each product
+    for item in related_products:
+        item.lowest_price = (
+            item.sizes.order_by('price').first().price if item.sizes.exists() else item.price
+        )
+
+    # Separate products by category
+    recommended_shoes = list(related_products.filter(product_type='shoes'))[:4]
+    recommended_clothing = list(related_products.filter(product_type='clothing'))[:4]
+    recommended_accessories = list(related_products.filter(product_type='accessories'))[:4]
+
+    # Combine recommendations, randomly shuffle, and limit to 12 items
+    combined_recommendations = recommended_shoes + recommended_clothing + recommended_accessories
+    random_recommendations = sample(combined_recommendations, min(len(combined_recommendations), 12))
+
+    # Debugging logs
+    print("Recommended Products:", random_recommendations)
+
+    context = {
+        'product': product,
+        'recommended_products': random_recommendations,
+    }
+
+    return render(request, 'store/product_detail.html', context)
 
 def remove_from_cart(request, product_id):
     size = request.GET.get('size')  # Ensure size is passed to identify the product size
@@ -563,11 +668,6 @@ def clear_cart(request):
     request.session.flush()
     return redirect('index')
 
-### Product Detail ###
-
-def product_detail(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-    return render(request, 'store/product_detail.html', {'product': product})
 
 
 ### Checkout ###
@@ -657,7 +757,7 @@ def create_checkout_session(request):
 
     try:
         checkout_session = stripe.checkout.Session.create(
-            payment_method_types=['card', 'link', 'klarna', 'affirm', 'afterpay_clearpay'],
+            payment_method_types=['card', 'link', 'klarna', 'afterpay_clearpay'],
             line_items=line_items,
             mode='payment',
             success_url=request.build_absolute_uri('/checkout/success/') + "?session_id={CHECKOUT_SESSION_ID}",
