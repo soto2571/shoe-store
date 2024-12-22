@@ -355,7 +355,7 @@ def owner_dashboard(request):
                     subject=subject,
                     body=message,
                     from_email=settings.DEFAULT_FROM_EMAIL,
-                    to=recipient_list,
+                    bcc=recipient_list,
                 )
                 if image:
                     email.attach(image.name, image.read(), image.content_type)

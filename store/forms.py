@@ -25,3 +25,7 @@ class NewsletterForm(forms.Form):
     message = forms.CharField(
         widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Message'}),
     )
+    image = forms.ImageField(
+        required=False,  
+        widget=forms.ClearableFileInput(attrs={'class': 'form-control'}),
+    )
