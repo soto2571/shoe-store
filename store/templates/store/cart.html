@@ -12,7 +12,7 @@
             margin: 80px auto;
             max-width: 1200px;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: hsl(0, 0%, 96%);
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -92,7 +92,7 @@
         }
 
         .checkout-button:hover {
-            background-color: rgb(231, 49, 49);;
+            background-color: rgb(233, 79, 79);;
         }
 
         .keep-shopping {
@@ -123,7 +123,7 @@
     padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid #ff0000;
-    color: #ff4c4c;
+    color: #000000;
     margin-bottom: 0.5rem;
     width: 100%;
     max-width: 300px;
@@ -131,8 +131,8 @@
 
 .footer__newsletter-button {
     padding: 0.5rem 1rem;
-    background-color: #ffff;
-    color: #ff4c4c;
+    background-color: hsl(0, 0%, 96%);
+    color: #000000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -156,6 +156,10 @@
                 height: 25px;
             }
 
+            td p{
+                display: none;
+            }
+
             .checkout-button, .keep-shopping {
                 width: 100%;
                 text-align: center;
@@ -166,9 +170,20 @@
 <body>
     
     <img src="{% static 'img/logoBiginv.png' %}" alt="Newsletter" class="newsletter__img">
+    
 
    <!--------- Cart Items Section ----------->
 <div class="cart-page">
+    <!-- Display Error Messages -->
+{% if messages %}
+<div class="newsletter-messages">
+    {% for message in messages %}
+        {% if "error" in message.tags %}
+            <p class="{{ message.tags }}">{{ message }}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endif %}
     <table>
         <tr>
             <th>Product</th>
@@ -270,18 +285,7 @@
                     <li><a href="{% url 'accessories_page' %}" class="footer__link">Accessories</a></li>
                 </ul>
             </div>
-            <!-- Social Media -->
-            <div class="footer__social">
-                <h3 class="footer__title">Follow Us</h3>
-                <ul class="footer__social-list">
-                    <li><a href="https://www.facebook.com/share/19YNci3YPQ/?mibextid=wwXIfr" target="_blank" class="footer__social-link">
-                        <i class="ri-facebook-circle-fill"></i></a></li>
-                    <li><a href="https://www.instagram.com/chocohypewear_pr?igsh=bDVhN3pwMW4yNXdn" target="_blank" class="footer__social-link">
-                        <i class="ri-instagram-fill"></i></a></li>
-                    <li><a href="https://www.youtube.com/@ChocoHypeWear" target="_blank" class="footer__social-link">
-                        <i class="ri-youtube-fill"></i></a></li>
-                </ul>
-            </div>
+            
         </div>
         <p class="footer__copyright">&copy; 2024 Choco HypeWear. All rights reserved.</p>
     </div>

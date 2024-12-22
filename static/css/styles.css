@@ -1613,7 +1613,7 @@ select {
 }
 
 .quantity-btn:hover {
-  background-color: #ff1313b9; /* Lighter red on hover */
+  background-color: #ffffff; /* Lighter red on hover */
 }
 
 .quantity-input {

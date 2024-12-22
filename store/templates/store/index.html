@@ -386,16 +386,15 @@
                <p class="footer__description">Choco HypeWear is your one-stop shop for premium footwear from top brands.</p>
                <a href="{% url 'login' %}" class="owner-login-link">Staff Login</a>
             </div>
-             <!-- Links -->
-             <div class="footer__links">
-               <h3 class="footer__title">Quick Links</h3>
-               <ul class="footer__list">
-                 <li><a href="#" class="footer__link">Home</a></li>
-                 <li><a href="#" class="footer__link">Shop</a></li>
-                 <li><a href="#" class="footer__link">Contact</a></li>
-                 <li><a href="#" class="footer__link">FAQs</a></li>
-               </ul>
-             </div>
+             <!-- Main Links -->
+            <div class="footer__links">
+                <h3 class="footer__title">Shop Links</h3>
+                <ul class="footer__list">
+                    <li><a href="{% url 'all_shoes' %}" class="footer__link">Footwear</a></li>
+                    <li><a href="{% url 'clothing_page' %}" class="footer__link">Clothes</a></li>
+                    <li><a href="{% url 'accessories_page' %}" class="footer__link">Accessories</a></li>
+                </ul>
+            </div>
              <!-- Social Media -->
              <div class="footer__social">
                <h3 class="footer__title">Follow Us</h3>
