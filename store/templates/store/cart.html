@@ -5,118 +5,323 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}?v={{ STATIC_VERSION }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
     <title>Your Cart</title>
     <style>
-        body {
-            background-color: hsl(0, 0%, 96%);
-            color: #000000;
-            font-family: Arial, sans-serif;
+        .cart-page {
+            margin: 80px auto;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-info {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            margin: 0;
-            height: 100vh;
+            gap: 10px;
         }
 
-        .cart-container {
+        th {
+            text-align: left;
+            padding: 10px;
+            color: #fff;
+            background-color: rgb(231, 49, 49);;
+            font-weight: normal;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        td input {
+            width: 50px;
+            height: 30px;
+            padding: 5px;
             text-align: center;
-            background-color: #1a1a1a;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            width: 90%;
-            max-width: 600px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
         }
 
-        h1, h2 {
-            color: white;
+        td a {
+            color: rgb(231, 49, 49);;
+            font-size: 12px;
+            text-decoration: none;
         }
 
-        .cart-summary {
-            background-color: #fff;
-            color: #000;
-            padding: 1rem;
-            border-radius: 10px;
-            margin-bottom: 1.5rem;
+        td img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
         }
 
-        .item {
+        .total_price {
             display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #ccc;
+            justify-content: flex-end;
+            margin-top: 20px;
         }
 
-        .total {
-            font-size: 1.2rem;
-            font-weight: bold;
+        .total_price table {
+            border-top: 3px solid rgb(231, 49, 49);;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        td:last-child, th:last-child {
             text-align: right;
-            margin-top: 1rem;
         }
 
         .checkout-button {
             display: inline-block;
-            color: #fff;
-            background-color: #4caf50;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: rgb(231, 49, 49);;
+            color: white;
+            font-size: 16px;
             font-weight: bold;
+            border-radius: 5px;
             text-decoration: none;
+            text-align: center;
             transition: background-color 0.3s ease;
-            margin-top: 1rem;
         }
 
         .checkout-button:hover {
-            background-color: #3e8e41;
+            background-color: rgb(231, 49, 49);;
         }
 
-        .shipping-details {
-            margin-top: 1rem;
-            text-align: left;
-            font-size: 1rem;
+        .keep-shopping {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
         }
 
-        .shipping-details p {
-            margin: 0.5rem 0;
+        .keep-shopping:hover {
+            background-color: #555;
+        }
+
+        .footer__newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__newsletter-input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ff0000;
+    color: #ff4c4c;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+.footer__newsletter-button {
+    padding: 0.5rem 1rem;
+    background-color: #ffff;
+    color: #ff4c4c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer__newsletter-button:hover {
+    background-color: #570505;
+    color: #fff
+}
+
+
+        @media only screen and (max-width: 768px) {
+            .cart-info {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            td input {
+                width: 40px;
+                height: 25px;
+            }
+
+            .checkout-button, .keep-shopping {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="cart-container">
-        <h1>Your Cart</h1>
-        <div class="cart-summary">
-            {% if cart_items %}
-                <h2>Cart Items</h2>
-                {% for item in cart_items %}
-                <div class="item">
-                    <span>{{ item.product.name }} (Size: {{ item.size }})</span>
-                    <span>${{ item.total_price }} x {{ item.quantity }}</span>
-                    <a href="{% url 'remove_from_cart' item.product.id %}?size={{ item.size }}" class="remove-button">Remove</a>
-                </div>
-                {% endfor %}
+    
+    <img src="{% static 'img/logoBiginv.png' %}" alt="Newsletter" class="newsletter__img">
 
-                <!-- Shipping Details -->
-                <div class="shipping-details">
-                    <h2>Shipping Details</h2>
-                    <p><strong>Shipping Boxes:</strong> {{ shipping_boxes|join:", " }}</p>
-                    <p><strong>Shipping Cost:</strong> ${{ shipping_cost }}</p>
-                </div>
+   <!--------- Cart Items Section ----------->
+<div class="cart-page">
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
 
-                <!-- Cart Totals -->
-                <div class="total">
-                    Subtotal: ${{ cart_total }} <br>
-                    Shipping: ${{ shipping_cost }} <br>
-                    <strong>Total: ${{ total_with_shipping }}</strong>
-                </div>
+        {% if cart_items %}
+            {% for item in cart_items %}
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        <div>
+                            <p>{{ item.product.name }} (Size: {{ item.size }})</p>
+                            <small>Price: ${{ item.price }}</small>
+                            <br>
+                            <a href="{% url 'remove_from_cart' item.product.id %}?size={{ item.size }}">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <form action="{% url 'update_cart' item.product.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="size" value="{{ item.size }}">
+                        <div class="quantity-container">
+                            <button type="submit" name="quantity" value="{{ item.quantity|add:-1 }}" 
+                                    class="quantity-btn" {% if item.quantity == 1 %}disabled{% endif %}>-</button>
+                            <input 
+                                type="text" 
+                                id="quantity-{{ item.product.id }}-{{ item.size }}" 
+                                value="{{ item.quantity }}" 
+                                class="quantity-input" 
+                                readonly>
+                            <button type="submit" name="quantity" value="{{ item.quantity|add:1 }}" 
+                                    class="quantity-btn">+</button>
+                        </div>
+                    </form>
+                </td>
+                <td>${{ item.total_price }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="3">Your cart is empty.</td>
+            </tr>
+        {% endif %}
+    </table>
 
-                <a href="{% url 'checkout' %}" class="checkout-button">Proceed to Checkout</a>
-            {% else %}
-                <h2>Your Cart is Empty</h2>
-            {% endif %}
-        </div>
-        <a href="{% url 'index' %}" class="checkout-button" style="background-color: #333;">&#8592; Keep Shopping</a>
+    <!--------- Cart Total Section ----------->
+    {% if cart_items %}
+    <div class="total_price">
+        <table>
+            <tr>
+                <td>Subtotal</td>
+                <td>${{ cart_total }}</td>
+            </tr>
+            <tr>
+                <td>Shipping</td>
+                <td>${{ shipping_cost }}</td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td><strong>${{ total_with_shipping }}</strong></td>
+            </tr>
+        </table>
     </div>
+    <a href="{% url 'checkout' %}" class="checkout-button">Proceed to Checkout</a>
+    {% endif %}
+
+    <a href="{% url 'index' %}" class="keep-shopping">&#8592; Keep Shopping</a>
+</div>
+<!--==================== FOOTER ====================-->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            <!-- Store Location -->
+            <div class="footer__location">
+                <h3 class="footer__title">Our Location</h3>
+                <p class="footer__description">Mayaguez Mall, Mayaguez, Puerto Rico</p>
+                <p class="footer__description">Beside JCPenney</p>
+            </div>
+            <!-- Newsletter -->
+            <div class="footer__newsletter">
+                <h3 class="footer__title">Newsletter</h3>
+                <p class="footer__description">Stay updated on new arrivals and offers.</p>
+                <form action="{% url 'subscribe_newsletter' %}" method="POST" class="footer__newsletter-form">
+                    {% csrf_token %}
+                    <input type="email" name="email" class="footer__newsletter-input" placeholder="Enter your email" required>
+                    <button type="submit" class="footer__newsletter-button">Subscribe</button>
+                </form>
+            </div>
+            <!-- Main Links -->
+            <div class="footer__links">
+                <h3 class="footer__title">Shop Links</h3>
+                <ul class="footer__list">
+                    <li><a href="{% url 'all_shoes' %}" class="footer__link">Footwear</a></li>
+                    <li><a href="{% url 'clothing_page' %}" class="footer__link">Clothes</a></li>
+                    <li><a href="{% url 'accessories_page' %}" class="footer__link">Accessories</a></li>
+                </ul>
+            </div>
+            <!-- Social Media -->
+            <div class="footer__social">
+                <h3 class="footer__title">Follow Us</h3>
+                <ul class="footer__social-list">
+                    <li><a href="https://www.facebook.com/share/19YNci3YPQ/?mibextid=wwXIfr" target="_blank" class="footer__social-link">
+                        <i class="ri-facebook-circle-fill"></i></a></li>
+                    <li><a href="https://www.instagram.com/chocohypewear_pr?igsh=bDVhN3pwMW4yNXdn" target="_blank" class="footer__social-link">
+                        <i class="ri-instagram-fill"></i></a></li>
+                    <li><a href="https://www.youtube.com/@ChocoHypeWear" target="_blank" class="footer__social-link">
+                        <i class="ri-youtube-fill"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer__copyright">&copy; 2024 Choco HypeWear. All rights reserved.</p>
+    </div>
+</footer>
 </body>
+<script>
+    function updateCart(productId, size, quantity) {
+        fetch("{% url 'update_cart' 0 %}".replace("0", productId), {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "X-CSRFToken": "{{ csrf_token }}"
+            },
+            body: new URLSearchParams({ size: size, quantity: quantity })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload(); // Reload the page to update cart totals
+            } else {
+                alert(data.message || "Failed to update cart.");
+            }
+        })
+        .catch(error => console.error("Error:", error));
+    }
+
+    function decreaseQuantity(productId, size) {
+        const input = document.getElementById(`quantity-${productId}-${size}`);
+        let quantity = parseInt(input.value);
+        if (quantity > 1) {
+            quantity -= 1;
+            updateCart(productId, size, quantity);
+        }
+    }
+
+    function increaseQuantity(productId, size) {
+        const input = document.getElementById(`quantity-${productId}-${size}`);
+        let quantity = parseInt(input.value);
+        quantity += 1;
+        updateCart(productId, size, quantity);
+    }
+</script>
 </html>

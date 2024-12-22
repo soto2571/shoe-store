@@ -3,117 +3,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/test.css">
-<body>
     <style>
-        .slider-brand {
-            width: 75vw;
-            height: auto;
-            margin: auto;
-            overflow: hidden;
+        .cart-page{
+            margin: 80px auto;
         }
 
-        .slider-brand .slide-track-brand {
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .cart-info{
             display: flex;
-            gap: 10px; /* Space between slides */
-            animation: scroll 80s linear infinite;
-            -webkit-animation: scroll 80s linear infinite;
-            width: calc((200px + 10px) * 18); /* Adjust width to account for gap */
+            flex-wrap: wrap;
         }
 
-        .slider-brand .slide-brand {
-            width: 200px; /* Fixed width for each slide */
-            height: 200px; /* Fixed height for each slide */
-            overflow: hidden; /* Prevents content from spilling out */
+        th{
+            text-align: left;
+            padding: 5px;
+            color: #fff;
+            background-color: #ff523b;
+            font-weight: normal;
+        }
+
+        td{
+            padding: 10px 5px;
+        }
+
+        td input {
+            width: 40px;
+            height: 30px;
+            padding: 5px;
+        }
+
+        td a {
+            color: #ff523b;
+            font-size: 12px;
+        }
+        td img{
+            width: 80px;
+            height: 80px;
+            margin-right: 10px
+        }
+
+        .total_price{
             display: flex;
-            justify-content: center;
-            align-items: center; /* Centers content vertically */
-            background-color: #f5f5f5; /* Optional: Add background color for contrast */
-            border-radius: 10px; /* Optional: Rounded corners for slides */
+            justify-content: flex-end;
         }
 
-        .slider-brand .slide-brand img {
-            width: 100%; /* Ensure image fills the container width */
-            height: 100%; /* Ensure image fills the container height */
-            object-fit: contain; /* Preserve aspect ratio and make sure the whole logo fits */
-            border-radius: 10px; /* Optional: Rounded corners for a cleaner look */
-            background-color: #fff; /* Add a background to improve visibility of logos */
-            padding: 10px; /* Add padding to avoid logos touching edges */
-            box-sizing: border-box; /* Ensures padding doesn't affect image dimensions */
+        .total_price table{
+            border-top: 3px solid #ff523b;
+            width: 100%;
+            max-width: 400px;
         }
 
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-200px * 18));
+        td:last-child{
+            text-align: right;
+        }
+        th:last-child{
+            text-align: right;
+        }
+
+        @media only screen and (max-width: 600px){
+            .cart-info p{
+                display: none;
             }
         }
-
-
-
 
     </style>
-    <div class="slider-brand">
-        <div class="slide-track-brand">
-            <div class="slide-brand">
-                <img src="/static/img/logoBiginv.png" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/nike1.png" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/adidas1.png" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/jordan1.avif" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/kith1.webp" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/bape1.png" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/billio1.png" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/supreme1.png" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/kobe1.png" alt="Logo">
-            </div>
+<body>
 
+<!--------- cart item details --------------->
+<div class="small-contianer cart-page">
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="cart-info">
+                    <img src="static/img/brand2.jpg" alt="">
+                    <div>
+                        <p>Printed Tshirt</p>
+                        <small>Price 50.00</small>
+                        <br>
+                        <a href="">Remove</a>
+                    </div>
+                </div>
+            </td>
+            <td><input type="number" value="1"></td>
+            <td>50.00</td>
 
-            <div class="slide-brand">
-                <img src="/static/img/logoBiginv.png" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/nike1.png" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/adidas1.png" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/jordan1.avif" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/kith1.webp" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/bape1.png" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/billio1.png" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/supreme1.png" alt="Logo">
-            </div>
-            <div class="slide-brand">
-                <img src="/static/img/kobe1.png" alt="Logo">
-            </div>
-        </div>
+        </tr>
+    </table>
+
+    <div class="total_price">
+        <table>
+            <tr>
+                <td>Subtotal</td>
+                <td>200.00</td>
+            </tr>
+            <tr>
+                <td>Tax</td>
+                <td>30.00</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>230.00</td>
+            </tr>
+        </table>
     </div>
+
+</div>
+
 </body>
 </html>

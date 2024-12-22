@@ -514,12 +514,15 @@ def cart_view(request):
     for key, item in cart.items():
         product = Product.objects.get(id=item['product_id'])
         
-        # Add cart details for display
+        # Precompute total price for each item
+        total_price = item['price'] * item['quantity']
+
         cart_items.append({
             'product': product,
             'size': item['size'],
             'quantity': item['quantity'],
-            'total_price': item['price'] * item['quantity']
+            'price': item['price'],
+            'total_price': total_price,  # Pass the precomputed value
         })
 
         # Add items for box calculation
@@ -644,17 +647,34 @@ def remove_from_cart(request, product_id):
 
     return redirect('cart_view')
 
+
 def update_cart(request, product_id):
     if request.method == 'POST':
-        new_quantity = int(request.POST.get('quantity', 0))
-        cart = request.session.get('cart', {})
-        if str(product_id) in cart:
-            if new_quantity > 0:
-                cart[str(product_id)] = new_quantity
-            else:
-                del cart[str(product_id)]
-            request.session['cart'] = cart
+        size = request.POST.get('size')  # Get the size of the product
+        new_quantity = int(request.POST.get('quantity', 0))  # New quantity from the form
         
+        cart = request.session.get('cart', {})
+        key = f"{product_id}-{size}"
+
+        # Check if the product exists in the cart
+        if key in cart:
+            try:
+                # Get the product size object to check the stock
+                product_size = ProductSize.objects.get(product_id=product_id, size=size)
+                if new_quantity > product_size.stock:
+                    messages.error(request, f"Only {product_size.stock} items are available in stock.")
+                elif new_quantity > 0:
+                    cart[key]['quantity'] = new_quantity
+                    messages.success(request, "Cart updated successfully.")
+                else:
+                    del cart[key]
+                    messages.success(request, "Item removed from cart.")
+                request.session['cart'] = cart
+            except ProductSize.DoesNotExist:
+                messages.error(request, "The selected size does not exist.")
+        else:
+            messages.error(request, "Item not found in cart.")
+
         return redirect('cart_view')
     
 def clean_cart(cart):
