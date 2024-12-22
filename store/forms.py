@@ -16,3 +16,12 @@ class ProductSizeForm(forms.ModelForm):
     class Meta:
         model = ProductSize
         fields = ['size', 'price', 'stock']
+
+class NewsletterForm(forms.Form):
+    subject = forms.CharField(
+        max_length=255,
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Subject'}),
+    )
+    message = forms.CharField(
+        widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Message'}),
+    )

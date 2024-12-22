@@ -2357,6 +2357,83 @@ select {
   background-color: #f9f9f9;
 }
 
+/* Newsletter Form Section */
+.dashboard-newsletter {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.dashboard-newsletter-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+.dashboard-newsletter p {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dashboard-newsletter label {
+  font-weight: bold;
+  color: #333333;
+  font-size: 1rem;
+}
+
+.dashboard-newsletter input[type="text"],
+.dashboard-newsletter textarea,
+.dashboard-newsletter input[type="file"] {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  color: #333333;
+}
+
+.dashboard-newsletter input[type="text"]:focus,
+.dashboard-newsletter textarea:focus,
+.dashboard-newsletter input[type="file"]:focus {
+  outline: none;
+  border-color: #27ae60;
+  box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
+}
+
+.dashboard-newsletter textarea {
+  resize: none;
+}
+
+.dashboard-newsletter button[type="submit"] {
+  background-color: #27ae60;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-newsletter button[type="submit"]:hover {
+  background-color: #219150;
+}
+
+.dashboard-newsletter button[type="submit"]:active {
+  background-color: #1e8e48;
+}
+
 
 
 /*=============== BREAKPOINTS ===============*/

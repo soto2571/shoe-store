@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Product, ProductSize, NewsletterSubscriber
-from .forms import ProductForm, ProductSizeForm
+from .forms import ProductForm, ProductSizeForm, NewsletterForm
 from django.shortcuts import get_object_or_404
 from django.forms import modelformset_factory
 from django.contrib import messages
@@ -14,9 +14,9 @@ from decimal import Decimal
 from datetime import datetime, timedelta
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from django.core.mail import send_mail
+from django.core.mail import send_mail, send_mass_mail
 from decimal import Decimal, ROUND_HALF_UP
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from django.http import JsonResponse
 from math import ceil
 
@@ -325,7 +325,7 @@ def owner_dashboard(request):
             }
             for intent in filtered_payment_intents
         ]
-        
+
 
         # Fetch invalid orders
         invalid_orders = fetch_invalid_orders()
@@ -337,6 +337,36 @@ def owner_dashboard(request):
         orders = []
         invalid_orders = []
 
+    form = NewsletterForm()
+
+    if request.method == 'POST':  # Corrected check for POST request
+        form = NewsletterForm(request.POST, request.FILES)
+        if form.is_valid():
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            subscribers = NewsletterSubscriber.objects.all()
+            recipient_list = [subscriber.email for subscriber in subscribers]
+
+            # Get the uploaded image
+            image = request.FILES.get('image')
+
+            try:
+                email = EmailMessage(
+                    subject=subject,
+                    body=message,
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    to=recipient_list,
+                )
+                if image:
+                    email.attach(image.name, image.read(), image.content_type)
+
+                email.send()
+                messages.success(request, "Newsletter sent successfully with an image!")
+            except Exception as e:
+                messages.error(request, f"Error sending newsletter: {e}")
+        else:
+            messages.error(request, "Please correct the errors in the form.")
+
     return render(request, 'store/owner_dashboard.html', {
         'shoes': shoes,
         'clothing': clothing,
@@ -347,7 +377,9 @@ def owner_dashboard(request):
         'filter_option': filter_option,
         'orders': orders,
         'invalid_orders': invalid_orders,  # Pass invalid orders to the template
+        'newsletter_form': form,
     })
+
 
 def format_price(amount):
     """

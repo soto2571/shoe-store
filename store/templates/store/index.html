@@ -349,15 +349,6 @@
             <h2 class="newsletter__title">Subscribe to Our Newsletter</h2>
             <p class="newsletter__description">Get the latest updates on new arrivals and special offers.</p>
     
-            <!-- Display Messages -->
-            {% if messages %}
-            <div class="newsletter-messages">
-                {% for message in messages %}
-                <p class="{{ message.tags }}">{{ message }}</p>
-                {% endfor %}
-            </div>
-            {% endif %}
-    
             <!-- Newsletter Form -->
             <form action="{% url 'subscribe_newsletter' %}" method="POST" class="newsletter__form">
                 {% csrf_token %}

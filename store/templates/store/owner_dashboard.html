@@ -137,6 +137,26 @@
             </table>
         </section>
 
+        <div class="dashboard-newsletter">
+            <h2 class="dashboard-newsletter-title">Send Newsletter</h2>
+            <p>Reach out to your subscribers with the latest updates and promotions!</p>
+            <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              <label for="subject">Subject:</label>
+              <input type="text" name="subject" id="subject" placeholder="Enter email subject" required>
+          
+              <label for="message">Message:</label>
+              <textarea name="message" id="message" rows="5" placeholder="Write your message here" required></textarea>
+          
+              <label for="image">Attach Image:</label>
+              <input type="file" name="image" id="image" accept="image/*">
+          
+              <button type="submit">Send Newsletter</button>
+            </form>
+          </div>
+          <br>
+          <br>
+
         <section class="dashboard-section dashboard-orders">
             <h2 class="dashboard-section-title">Order Details</h2>
             
