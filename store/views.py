@@ -29,6 +29,9 @@ def index(request):
 
     # Order the products to ensure consistent pagination
     products = Product.objects.all().order_by('id')  # Adjust the field to your preference
+    newest_items = Product.objects.order_by('-created_at')[:3]
+    
+
 
     brands = Product.objects.values('brand').exclude(brand__isnull=True).exclude(brand__exact='').distinct()
 
@@ -39,21 +42,16 @@ def index(request):
             else product.price
         )
 
-    # Set up pagination
-    paginator = Paginator(products, 5)  # Show 5 products per page
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-
-    shoes = Product.objects.filter(product_type='shoes')
+    shoes = Product.objects.filter(product_type='shoes')[:10]
     clothing = Product.objects.filter(product_type='clothing')
     accessories = Product.objects.filter(product_type='accessories')
 
     context = {
-        'page_obj': page_obj,
         'brands': brands,
         'shoes': shoes,
         'clothing': clothing,
         'accessories': accessories,
+        'newest_items': newest_items,
     }
     return render(request, 'store/index.html', context)
 

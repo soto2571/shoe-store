@@ -8,6 +8,7 @@ class Product(models.Model):
     brand = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='products/')
+    created_at = models.DateTimeField(auto_now_add=True)  # Automatically set on creation
     product_type = models.CharField(max_length=100, choices=[
         ('shoes', 'Shoes'),
         ('clothing', 'Clothing'),

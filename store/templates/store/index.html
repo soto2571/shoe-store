@@ -205,61 +205,53 @@
          </div>
      </section>
 
-         <!--==================== HOME ====================-->
-         <section class="home">
-            <div class="home__container container">
-               <div class="home__data">
+<!--==================== HOME ====================-->
+<section class="home">
+    <div class="home__container container">
+        <div class="home__data">
+            <h1 class="home__title">
+                NEW <br>
+            </h1>
+            <h1 class="home__title two">
+                IN STORE
+            </h1>
 
-                  <h1 class="home__title">
-                     BEST <br>
-                  </h1>
-                  <h1 class="home__title two">
-                     SELLERS
-                  </h1>
+            <p class="home__description">
+                Discover the latest arrivals in our store! Check out these fresh additions and stay ahead with the newest trends.
+            </p>
+        </div>
 
-                  <p class="home__description">
-                     Discover the best-rated shoes in our store, featuring the latest and hottest items everyone is talking about. 
-                     Don’t miss out on these top picks that combine style, quality, and popularity!
-                  </p>
-               </div>
+        <div class="home__images">
+            <div class="home__circle"></div>
 
-               <div class="home__images">
-                  <div class="home__circle"></div>
-
-                  <div class="home__swiper swiper">
-                     <div class="swiper-wrapper">
-                        <article class="home__article swiper-slide">
-                           <img src="{% static 'img/dunk-low.jpg' %}" alt="image" class="home__shoe">
-                        </article>
-
-                        <article class="home__article swiper-slide">
-                           <img src="{% static 'img/bad-bu.webp' %}" alt="image" class="home__shoe">
-                        </article>
-
-                        <article class="home__article swiper-slide">
-                           <img src="{% static 'img/shoe-2.png' %}" alt="image" class="home__shoe">
-                        </article>
-                     </div>
-               </div>
-
-               <!-- For pagination -->
-                <div class="swiper-pagination"></div>
-
-               <div class="home__social">
-                  <a href="https://www.facebook.com/share/19YNci3YPQ/?mibextid=wwXIfr" target="_blank" class="home__social-link">
-                     <i class="ri-facebook-circle-fill"></i>
-                  </a>
-
-                  <a href="https://www.instagram.com/chocohypewear_pr?igsh=bDVhN3pwMW4yNXdn" target="_blank" class="home__social-link">
-                     <i class="ri-instagram-fill"></i>
-                  </a>
-
-                  <a href="https://www.youtube.com/@ChocoHypeWear" target="_blank" class="home__social-link">
-                     <i class="ri-youtube-fill"></i>
-                  </a>
-
-               </div>
+            <div class="home__swiper swiper">
+                <div class="swiper-wrapper">
+                    {% for product in newest_items %}
+                    <article class="home__article swiper-slide">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="home__shoe">
+                    </article>
+                    {% endfor %}
+                </div>
             </div>
+
+            <!-- For pagination -->
+            <div class="swiper-pagination"></div>
+
+            <div class="home__social">
+                <a href="https://www.facebook.com/share/19YNci3YPQ/?mibextid=wwXIfr" target="_blank" class="home__social-link">
+                    <i class="ri-facebook-circle-fill"></i>
+                </a>
+                <a href="https://www.instagram.com/chocohypewear_pr?igsh=bDVhN3pwMW4yNXdn" target="_blank" class="home__social-link">
+                    <i class="ri-instagram-fill"></i>
+                </a>
+                <a href="https://www.youtube.com/@ChocoHypeWear" target="_blank" class="home__social-link">
+                    <i class="ri-youtube-fill"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+        
          </section>
       </main>
 
@@ -293,36 +285,35 @@
          </div>
       </section>
 
-      <!--==================== SHOES ====================-->
-     
+            <!--==================== SHOES ====================-->
+
       <section class="product-section">
-         <div class="container">
-             <h2 class="section-title">Our Shoe Collection</h2>
-             <div class="product-grid">
-                 {% for product in page_obj %}
-                 <div class="product-card" data-id="{{ product.id }}">
-                     <a href="{% url 'product_detail' product.id %}">
-                         <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
-                     </a>
-                     <h3 class="product-name">{{ product.name }}</h3>
-                     <p class="product-price uno" id="price-{{ product.id }}">
-                         {% if product.lowest_price %}
-                             ${{ product.lowest_price }}
-                         {% else %}
-                             Price not available
-                         {% endif %}
-                     </p>
-                 </div>
-                 {% endfor %}
-             </div>
-     
-                 <!-- "View All" Button -->
-                <div class="view-all-container">
-                    <a href="{% url 'all_shoes' %}" class="view-all-button">View All Shoes</a>
+        <div class="container">
+            <h2 class="section-title">Our Shoe Collection</h2>
+            <div class="product-grid">
+                {% for product in shoes %}
+                <div class="product-card" data-id="{{ product.id }}">
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                    </a>
+                    <h3 class="product-name">{{ product.name }}</h3>
+                    <p class="product-price uno" id="price-{{ product.id }}">
+                        {% if product.lowest_price %}
+                            ${{ product.lowest_price }}
+                        {% else %}
+                            Price not available
+                        {% endif %}
+                    </p>
                 </div>
-             
-         </div>
-     </section>
+                {% endfor %}
+            </div>
+    
+            <!-- "View All" Button -->
+            <div class="view-all-container">
+                <a href="{% url 'all_shoes' %}" class="view-all-button">View All Shoes</a>
+            </div>
+        </div>
+    </section>
 
 <!-- Clothing and Accessories Section -->
 <section class="container-categories">
