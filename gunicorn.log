@@ -1,0 +1,190 @@
+[2024-12-28 14:37:42 -0400] [59186] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['127.0.0.1:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /Users/soto2571/p_projects/shoe-store
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 20
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: gunicorn.log
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: unix:///var/run/syslog
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: choco_hypewear.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x10561eca0>
+  on_reload: <function OnReload.on_reload at 0x10561ede0>
+  when_ready: <function WhenReady.when_ready at 0x10561ef20>
+  pre_fork: <function Prefork.pre_fork at 0x10561f100>
+  post_fork: <function Postfork.post_fork at 0x10561f240>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x10561f380>
+  worker_int: <function WorkerInt.worker_int at 0x10561f4c0>
+  worker_abort: <function WorkerAbort.worker_abort at 0x10561f600>
+  pre_exec: <function PreExec.pre_exec at 0x10561f740>
+  pre_request: <function PreRequest.pre_request at 0x10561f880>
+  post_request: <function PostRequest.post_request at 0x10561f920>
+  child_exit: <function ChildExit.child_exit at 0x10561fa60>
+  worker_exit: <function WorkerExit.worker_exit at 0x10561fba0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x10561fce0>
+  on_exit: <function OnExit.on_exit at 0x10561fe20>
+  ssl_context: <function NewSSLContext.ssl_context at 0x105644040>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-12-28 14:37:42 -0400] [59186] [INFO] Starting gunicorn 23.0.0
+[2024-12-28 14:37:42 -0400] [59186] [DEBUG] Arbiter booted
+[2024-12-28 14:37:42 -0400] [59186] [INFO] Listening at: http://127.0.0.1:8000 (59186)
+[2024-12-28 14:37:42 -0400] [59186] [INFO] Using worker: sync
+[2024-12-28 14:37:42 -0400] [59187] [INFO] Booting worker with pid: 59187
+[2024-12-28 14:37:42 -0400] [59186] [DEBUG] 1 workers
+[2024-12-28 14:38:53 -0400] [59186] [CRITICAL] WORKER TIMEOUT (pid:59187)
+[2024-12-28 18:38:53 +0000] [59187] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+    ~~~~~~~~^^^
+SystemExit: 1
+[2024-12-28 18:38:53 +0000] [59187] [INFO] Worker exiting (pid: 59187)
+[2024-12-28 14:38:53 -0400] [59491] [INFO] Booting worker with pid: 59491
+[2024-12-28 14:40:29 -0400] [59186] [CRITICAL] WORKER TIMEOUT (pid:59491)
+[2024-12-28 18:40:29 +0000] [59491] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+    ~~~~~~~~^^^
+SystemExit: 1
+[2024-12-28 18:40:29 +0000] [59491] [INFO] Worker exiting (pid: 59491)
+[2024-12-28 14:40:29 -0400] [59506] [INFO] Booting worker with pid: 59506
+[2024-12-28 14:43:14 -0400] [59186] [CRITICAL] WORKER TIMEOUT (pid:59506)
+[2024-12-28 18:43:14 +0000] [59506] [ERROR] Error handling request (no URI read)
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 133, in handle
+    req = next(parser)
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/parser.py", line 41, in __next__
+    self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+                ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/message.py", line 259, in __init__
+    super().__init__(cfg, unreader, peer_addr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/message.py", line 60, in __init__
+    unused = self.parse(self.unreader)
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/message.py", line 271, in parse
+    self.get_data(unreader, buf, stop=True)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/message.py", line 262, in get_data
+    data = unreader.read()
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/unreader.py", line 36, in read
+    d = self.chunk()
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+    return self.sock.recv(self.mxchunk)
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+    sys.exit(1)
+    ~~~~~~~~^^^
+SystemExit: 1
+[2024-12-28 18:43:14 +0000] [59506] [INFO] Worker exiting (pid: 59506)
+[2024-12-28 14:43:14 -0400] [59854] [INFO] Booting worker with pid: 59854
+[2024-12-28 14:44:50 -0400] [59186] [INFO] Handling signal: int
+[2024-12-28 18:44:51 +0000] [59854] [INFO] Worker exiting (pid: 59854)
+[2024-12-28 14:44:51 -0400] [59186] [INFO] Shutting down: Master

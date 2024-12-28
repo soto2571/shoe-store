@@ -261,7 +261,7 @@ def accessories_view(request):
 
 ### Owner ###
 def owner_required(user):
-    return user.groups.filter(name='Owner').exists()
+    return user.is_superuser or user.groups.filter(name='Owner').exists()
 
 
 @login_required

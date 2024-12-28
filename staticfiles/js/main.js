@@ -66,7 +66,7 @@ const productGrid = document.getElementById('product-grid');
 const productCards = Array.from(productGrid.children); // Get all product cards
 
 // Initially hide all but the first 10 products
-const initialCount = 10;
+const initialCount = 2;
 productCards.forEach((card, index) => {
   if (index >= initialCount) {
     card.style.display = 'none';
@@ -96,6 +96,8 @@ showMoreButton.addEventListener('click', () => {
   }
 });
 
+
+
 /*=============== PRODUCT SIZE SELECT ===============*/
 function updatePrice(form, productId) {
   const priceDisplay = document.getElementById(`price-${productId}`);
@@ -106,4 +108,3 @@ function updatePrice(form, productId) {
       priceDisplay.textContent = `$${parseFloat(selectedPrice).toFixed(2)}`;
   }
 }
-
