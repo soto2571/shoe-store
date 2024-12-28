@@ -19,6 +19,7 @@ from decimal import Decimal, ROUND_HALF_UP
 from django.core.mail import send_mail, EmailMessage
 from django.http import JsonResponse
 from math import ceil
+from random import sample
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -344,8 +345,16 @@ def owner_dashboard(request):
         if form.is_valid():
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
-            subscribers = NewsletterSubscriber.objects.all()
-            recipient_list = [subscriber.email for subscriber in subscribers]
+            recipient_count = int(request.POST.get('recipient_count', 0))
+            subscribers = list(NewsletterSubscriber.objects.all())
+            
+            # If the recipient count exceeds the number of subscribers, send to all
+            if recipient_count > len(subscribers):
+                selected_subscribers = subscribers
+            else:
+                selected_subscribers = sample(subscribers, recipient_count)
+
+            recipient_list = [subscriber.email for subscriber in selected_subscribers]
 
             # Get the uploaded image
             image = request.FILES.get('image')
@@ -361,7 +370,7 @@ def owner_dashboard(request):
                     email.attach(image.name, image.read(), image.content_type)
 
                 email.send()
-                messages.success(request, "Newsletter sent successfully with an image!")
+                messages.success(request, "Newsletter sent successfully!")
             except Exception as e:
                 messages.error(request, f"Error sending newsletter: {e}")
         else:
