@@ -46,7 +46,7 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # Default "from" email for outgoing emails
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://shoe-store-dqrq.onrender.com/', 'www.yourdomain.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['shoe-store-dqrq.onrender.com', 'www.yourdomain.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
