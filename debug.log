@@ -1,0 +1,1349 @@
+Watching for file changes with StatReloader
+Waiting for apps ready_event.
+Apps ready_event triggered. Sending autoreload_started signal.
+Watching dir /Users/soto2571/p_projects/shoe-store/store/templates with glob **/*.
+Watching dir /Users/soto2571/p_projects/shoe-store/locale with glob **/*.mo.
+Watching dir /Users/soto2571/p_projects/shoe-store/store/locale with glob **/*.mo.
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/structures.py first seen with mtime 1735390626.9651299
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_invoice_rendering_template_service.py first seen with mtime 1735390628.0683892
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_tax_rate.py first seen with mtime 1735390628.0795693
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/utils.py first seen with mtime 1735390627.434444
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/charset_normalizer/constant.py first seen with mtime 1735390626.9349785
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/climate/__init__.py first seen with mtime 1735390628.1024833
+File /Users/soto2571/p_projects/shoe-store/store/admin.py first seen with mtime 1735390430.508074
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/postgresql/psycopg_any.py first seen with mtime 1735390627.4388912
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/re/_compiler.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/_billing_service.py first seen with mtime 1735390628.1407506
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/copyreg.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/decorators.py first seen with mtime 1735390627.1521764
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/error.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/decimal.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/utils.py first seen with mtime 1735390627.0502868
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/getpass.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/bisect.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/_transaction.py first seen with mtime 1735390628.1345468
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_blake2.cpython-313-darwin.so first seen with mtime 1728280548.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/checkout/__init__.py first seen with mtime 1735390628.1018162
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/signing.py first seen with mtime 1735390627.4241352
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/staticfiles/utils.py first seen with mtime 1735390627.4227464
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/staticfiles/checks.py first seen with mtime 1735390627.422179
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/psycopg2/extensions.py first seen with mtime 1735404311.9414217
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/_calculation_line_item_service.py first seen with mtime 1735390628.1336873
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/treasury/_inbound_transfer_service.py first seen with mtime 1735390628.137771
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/reprlib.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_credit_balance_transaction_service.py first seen with mtime 1735390628.1002223
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/fields/generated.py first seen with mtime 1735390627.4439065
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/filters/tokens.py first seen with mtime 1735390626.7363596
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/idna/package_data.py first seen with mtime 1735390626.896436
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/_amount.py first seen with mtime 1735390628.1406746
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_radar_service.py first seen with mtime 1735390628.074964
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/treasury/_outbound_transfer_service.py first seen with mtime 1735390628.1379933
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/climate/_supplier_service.py first seen with mtime 1735390628.1030295
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_outbound_transfer_service.py first seen with mtime 1735390628.1396663
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/encoder.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_card.py first seen with mtime 1735390628.1266074
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/checks.py first seen with mtime 1735390627.0492601
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/cache/__init__.py first seen with mtime 1735390627.424474
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_received_credit_service.py first seen with mtime 1735390628.139857
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/staticfiles/management/__init__.py first seen with mtime 1735390627.4228947
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/mime/multipart.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_transaction.py first seen with mtime 1735390628.1305604
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/templatetags/__init__.py first seen with mtime 1735390627.1200836
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sites/shortcuts.py first seen with mtime 1735390627.3972692
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/queues.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_quote.py first seen with mtime 1735390628.0746255
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_setup_attempt.py first seen with mtime 1735390628.0761037
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/storage/handler.py first seen with mtime 1735390627.4281824
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/regex_helper.py first seen with mtime 1735390627.4649293
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/messages/storage/base.py first seen with mtime 1735390627.312623
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/dateformat.py first seen with mtime 1735390627.4624858
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_base_address.py first seen with mtime 1735390628.060785
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/filters/output.py first seen with mtime 1735390626.7361088
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_oauth_service.py first seen with mtime 1735390628.070351
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/cookies.py first seen with mtime 1735390626.9642382
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/middleware/cache.py first seen with mtime 1735390627.4561355
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/ast.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/locks.py first seen with mtime 1735390627.427352
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/i18n.py first seen with mtime 1735390627.4669685
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/certifi/__init__.py first seen with mtime 1735390626.9505558
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/__init__.py first seen with mtime 1735390626.9633675
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/management/__init__.py first seen with mtime 1735390627.182811
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/PIL/__init__.py first seen with mtime 1735390626.761768
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/messages/constants.py first seen with mtime 1735390627.3120515
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/servers/__init__.py first seen with mtime 1735390627.4339726
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/zlib.cpython-313-darwin.so first seen with mtime 1728280563.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_listable_api_resource.py first seen with mtime 1735390628.0696406
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/issuing/_card_service.py first seen with mtime 1735390628.137165
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/handlers/base.py first seen with mtime 1735390627.4286087
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/charset_normalizer/utils.py first seen with mtime 1735390626.9344347
+File /Users/soto2571/p_projects/shoe-store/store/apps.py first seen with mtime 1735390430.50814
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/__init__.py first seen with mtime 1735390627.4345245
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/staticfiles/management/commands/__init__.py first seen with mtime 1735390627.4229789
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/urls/__init__.py first seen with mtime 1735390627.4609246
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/mime/nonmultipart.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_tasks.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/quopri.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/_refund_service.py first seen with mtime 1735390628.136436
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_http_client.py first seen with mtime 1735390628.0673845
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_subscription_item_service.py first seen with mtime 1735390628.0781775
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_test_helpers.py first seen with mtime 1735390628.0798862
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/typing_extensions.py first seen with mtime 1735390626.7232208
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/formatter.py first seen with mtime 1735390626.73458
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/url.py first seen with mtime 1735390626.687139
+File /Users/soto2571/p_projects/shoe-store/choco_hypewear/settings.py first seen with mtime 1735423288.2243643
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/_core_service.py first seen with mtime 1735390628.1408217
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/metadata/__init__.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/queue.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/radar/_early_fraud_warning_service.py first seen with mtime 1735390628.1319678
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/encodings/utf_8.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/oauth_error.py first seen with mtime 1735390628.082053
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/psycopg2/_range.py first seen with mtime 1735404311.9402254
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/coroutines.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sessions/base_session.py first seen with mtime 1735390627.36529
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/response.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/serializers/json.py first seen with mtime 1735390627.4335074
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/defaults.py first seen with mtime 1735390627.466844
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_multipart_data_generator.py first seen with mtime 1735390628.070071
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/issuing/_transaction_service.py first seen with mtime 1735390628.1373744
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_review.py first seen with mtime 1735390628.0757418
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/urls/converters.py first seen with mtime 1735390627.4612122
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/timeouts.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/messages/__init__.py first seen with mtime 1735390627.3118029
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/fields/__init__.py first seen with mtime 1735390627.4437199
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/retry.py first seen with mtime 1735390626.6865854
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/financial_connections/_transaction.py first seen with mtime 1735390628.1063676
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/selector_events.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/fnmatch.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_refund.py first seen with mtime 1735390628.0750563
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/_confirmation_token_service.py first seen with mtime 1735390628.1361823
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/contentmanager.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/dateparse.py first seen with mtime 1735390627.4625847
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/logging/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/_calculation_line_item.py first seen with mtime 1735390628.1335866
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/exceptions.py first seen with mtime 1735390627.4578164
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/trsock.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_financial_account_features.py first seen with mtime 1735390628.1388874
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/array.cpython-313-darwin.so first seen with mtime 1728280560.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/client.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_credit_reversal.py first seen with mtime 1735390628.1384008
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/templatetags/admin_modify.py first seen with mtime 1735390627.1203225
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_product_feature.py first seen with mtime 1735390628.0741003
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_mandate.py first seen with mtime 1735390628.069885
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_socket.cpython-313-darwin.so first seen with mtime 1728280556.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/generic/list.py first seen with mtime 1735390627.468495
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/security/csrf.py first seen with mtime 1735390627.426892
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/constants.py first seen with mtime 1735390627.4422402
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/__init__.py first seen with mtime 1735390628.0574236
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/climate/_order_service.py first seen with mtime 1735390628.1026876
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/functions/window.py first seen with mtime 1735390627.4453697
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/psycopg2/_psycopg.cpython-313-darwin.so first seen with mtime 1735404311.9408038
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/connection.py first seen with mtime 1735390627.462202
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/apps/__init__.py first seen with mtime 1735390628.0992725
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/apps.py first seen with mtime 1735390627.0491467
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/contenttypes/models.py first seen with mtime 1735390627.1852121
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/forms/boundfield.py first seen with mtime 1735390627.4467547
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/financial_connections/_session_service.py first seen with mtime 1735390628.106241
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/contenttypes/__init__.py first seen with mtime 1735390627.184655
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_request_options.py first seen with mtime 1735390628.0753949
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/__init__.py first seen with mtime 1735390627.1513197
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/parse.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_setup_intent_service.py first seen with mtime 1735390628.0765672
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/storage/__init__.py first seen with mtime 1735390627.4279077
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_decimal.cpython-313-darwin.so first seen with mtime 1728280551.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing_portal/_session_service.py first seen with mtime 1735390628.1017134
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/conf/urls/__init__.py first seen with mtime 1735390627.0486822
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/inspect.py first seen with mtime 1735390627.4641159
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/_opcode_metadata.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shutil.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/utils.py first seen with mtime 1735390627.4435377
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/caches.py first seen with mtime 1735390627.4256678
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/postgresql/features.py first seen with mtime 1735390627.4385986
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/engine.py first seen with mtime 1735390627.4577434
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/climate/_order.py first seen with mtime 1735390628.1025784
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_token.py first seen with mtime 1735390628.1298466
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/functions/text.py first seen with mtime 1735390627.445283
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/base/introspection.py first seen with mtime 1735390627.4353917
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing_portal/__init__.py first seen with mtime 1735390628.1013553
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_transfer.py first seen with mtime 1735390628.0804691
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/postgresql/client.py first seen with mtime 1735390627.4384265
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/terminal/_configuration.py first seen with mtime 1735390628.1352248
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/types.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/subprocess.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/base/creation.py first seen with mtime 1735390627.4352024
+File /Users/soto2571/p_projects/shoe-store/store/urls.py first seen with mtime 1735390430.5125155
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/shortcuts.py first seen with mtime 1735390626.9955683
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_promotion_code.py first seen with mtime 1735390628.0743878
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/handlers/exception.py first seen with mtime 1735390627.4287114
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/validators.py first seen with mtime 1735390627.4242525
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/_colorize.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/request.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/financial_connections/_session.py first seen with mtime 1735390628.1061082
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/resources/_common.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/functions/__init__.py first seen with mtime 1735390627.4447825
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_review_service.py first seen with mtime 1735390628.075841
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_tax_deducted_at_source.py first seen with mtime 1735390628.079266
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_invoice.py first seen with mtime 1735390628.067799
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/http/__init__.py first seen with mtime 1735390627.4554882
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/traceback.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/timezone.py first seen with mtime 1735390627.4655666
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/staggered.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_random.cpython-313-darwin.so first seen with mtime 1728280555.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_debit_reversal_service.py first seen with mtime 1735390628.138711
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_uuid.cpython-313-darwin.so first seen with mtime 1728280559.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/events/_v1_billing_meter_error_report_triggered_event.py first seen with mtime 1735390628.1045492
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/__init__.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/streams.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextlib.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_requestor_options.py first seen with mtime 1735390628.0754733
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/sql/constants.py first seen with mtime 1735390627.4457479
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/staticfiles/__init__.py first seen with mtime 1735390627.4219902
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/termcolors.py first seen with mtime 1735390627.4651382
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/message.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/deletion.py first seen with mtime 1735390627.4424245
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/decorators/csrf.py first seen with mtime 1735390627.467483
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_login_link.py first seen with mtime 1735390628.0697649
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_credit_note_preview_lines_service.py first seen with mtime 1735390628.063286
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pickle.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/handlers/wsgi.py first seen with mtime 1735390627.4288394
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/zoneinfo/_common.py first seen with mtime 1728279723.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/difflib.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_inbound_transfer_service.py first seen with mtime 1735390628.1392677
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_stripe_client.py first seen with mtime 1735390628.077542
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_financial_account_features_service.py first seen with mtime 1735390628.1389852
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/tree.py first seen with mtime 1735390627.4656763
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/gzip.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/treasury/_outbound_payment_service.py first seen with mtime 1735390628.1378865
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/loaders/cached.py first seen with mtime 1735390627.4593353
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/entitlements/_active_entitlement_summary.py first seen with mtime 1735390628.103927
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/_test_clock.py first seen with mtime 1735390628.1366293
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/fields/mixins.py first seen with mtime 1735390627.444078
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/aggregates.py first seen with mtime 1735390627.4419963
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/forms/forms.py first seen with mtime 1735390627.4469776
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/html/entities.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_app_info.py first seen with mtime 1735390628.059087
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/forwarding/__init__.py first seen with mtime 1735390628.1066918
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/templatetags/log.py first seen with mtime 1735390627.1206877
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/base/operations.py first seen with mtime 1735390627.43549
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_zoneinfo.cpython-313-darwin.so first seen with mtime 1728280559.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/__init__.py first seen with mtime 1735390627.4255009
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/tokens.py first seen with mtime 1735390627.15293
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/encodings/aliases.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_credit_note_line_item_service.py first seen with mtime 1735390628.0631883
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/staticfiles/apps.py first seen with mtime 1735390627.422105
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/charset_normalizer/cd.py first seen with mtime 1735390626.9352856
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/adapters.py first seen with mtime 1735390626.9637387
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/forwarding/_request_service.py first seen with mtime 1735390628.1071553
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/terminal/_configuration_service.py first seen with mtime 1735390628.1353242
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_cardholder_service.py first seen with mtime 1735390628.1277187
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_scproxy.cpython-313-darwin.so first seen with mtime 1728280555.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_ephemeral_key.py first seen with mtime 1735390628.0656695
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/widgets.py first seen with mtime 1735390627.0503838
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_dispute_service.py first seen with mtime 1735390628.0653698
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/sql/where.py first seen with mtime 1735390627.4462414
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_mandate_service.py first seen with mtime 1735390628.0699806
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_alert.py first seen with mtime 1735390628.0996678
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/__init__.py first seen with mtime 1735390627.434208
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/radar/_value_list.py first seen with mtime 1735390628.1320713
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/urls.py first seen with mtime 1735390627.426425
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/transports.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/decorators.py first seen with mtime 1735390627.4628327
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_funding_instructions.py first seen with mtime 1735390628.0672674
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/forms.py first seen with mtime 1735390627.1522708
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/contenttypes/forms.py first seen with mtime 1735390627.1851153
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/asgiref/__init__.py first seen with mtime 1735390626.9545112
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/conf/__init__.py first seen with mtime 1735390626.9960456
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_source.py first seen with mtime 1735390628.0770288
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/html.py first seen with mtime 1735390627.4636521
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/defaultfilters.py first seen with mtime 1735390627.4574962
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/_policybase.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/core/_event_destination_service.py first seen with mtime 1735390628.142189
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/messages/storage/__init__.py first seen with mtime 1735390627.312527
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_topup_service.py first seen with mtime 1735390628.0803747
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/engine/__init__.py first seen with mtime 1735390626.7352335
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/PIL/_version.py first seen with mtime 1735390626.757699
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/management/__init__.py first seen with mtime 1735390627.4298313
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/html/parser.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_subscription_item_usage_record_summary_service.py first seen with mtime 1735390628.0786202
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/sites.py first seen with mtime 1735390627.0500808
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_pickle.cpython-313-darwin.so first seen with mtime 1728280554.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/mime/text.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_charge_service.py first seen with mtime 1735390628.0614796
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/taskgroups.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/charset_normalizer/md__mypyc.cpython-313-darwin.so first seen with mtime 1735390626.9347801
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/module_loading.py first seen with mtime 1735390627.4647305
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_file_link.py first seen with mtime 1735390628.0667222
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_tax_id_service.py first seen with mtime 1735390628.0794728
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/deconstruct.py first seen with mtime 1735390627.4627314
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/signals.py first seen with mtime 1735390627.152833
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_posixsubprocess.cpython-313-darwin.so first seen with mtime 1728280555.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/context.py first seen with mtime 1735390627.4573028
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/financial_connections/_account_service.py first seen with mtime 1735390628.105861
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/hashers.py first seen with mtime 1735390627.1523635
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/connection.py first seen with mtime 1735390626.686218
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/base64mime.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/storage/memory.py first seen with mtime 1735390627.4282787
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_stripe_service.py first seen with mtime 1735390628.0777907
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/forms/__init__.py first seen with mtime 1735390627.446653
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/connectionpool.py first seen with mtime 1735390626.683906
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/psycopg2/_ipaddress.py first seen with mtime 1735404311.9403105
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_charge.py first seen with mtime 1735390628.0613742
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/templatetags/base.py first seen with mtime 1735390627.120609
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/forms/utils.py first seen with mtime 1735390627.4473937
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/database.py first seen with mtime 1735390627.4257505
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/filters/reindent.py first seen with mtime 1735390626.736217
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/psycopg2/errors.py first seen with mtime 1735404311.9415083
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/psycopg2/extras.py first seen with mtime 1735404311.9398847
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/identity/_verification_report_service.py first seen with mtime 1735390628.1076865
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/base/base.py first seen with mtime 1735390627.4350314
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/_list_object.py first seen with mtime 1735390628.1413352
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/core/__init__.py first seen with mtime 1735390628.1420894
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/collections/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/templatetags/static.py first seen with mtime 1735390627.4598649
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/security/base.py first seen with mtime 1735390627.4268098
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_personalization_design.py first seen with mtime 1735390628.1288576
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/cache/backends/locmem.py first seen with mtime 1735390627.425161
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/tasks.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/decorators/common.py first seen with mtime 1735390627.4674058
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_balance_transaction.py first seen with mtime 1735390628.0604806
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/response.py first seen with mtime 1735390626.6846938
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/wsgiref/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_api_version.py first seen with mtime 1735390628.0590134
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/billing/_meter_event_adjustment.py first seen with mtime 1735390628.1416154
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/urls/resolvers.py first seen with mtime 1735390627.4613829
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/parser.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/resources/readers.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/numbers.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer_session.py first seen with mtime 1735390628.0646858
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/calendar.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/resources/abc.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_apple_pay_domain.py first seen with mtime 1735390628.0591877
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_tax_rate_service.py first seen with mtime 1735390628.07967
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/_compression.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_invoice_line_item_service.py first seen with mtime 1735390628.0681942
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_error.py first seen with mtime 1735390628.0658698
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/exceptions.py first seen with mtime 1735390626.9643626
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/base/client.py first seen with mtime 1735390627.4351113
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/terminal/__init__.py first seen with mtime 1735390628.1351182
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/headerregistry.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/serializers/python.py first seen with mtime 1735390627.4337049
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/engine/filter_stack.py first seen with mtime 1735390626.7353127
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_price.py first seen with mtime 1735390628.073833
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/apps.py first seen with mtime 1735390627.1515026
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_meter_event_adjustment.py first seen with mtime 1735390628.1007297
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/request.py first seen with mtime 1735390626.686403
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_price_service.py first seen with mtime 1735390628.0739183
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_test_helpers_service.py first seen with mtime 1735390628.0799565
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/__init__.py first seen with mtime 1735390628.125681
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_lzma.cpython-313-darwin.so first seen with mtime 1728280553.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/translation.py first seen with mtime 1735390627.426312
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/sigma/__init__.py first seen with mtime 1735390628.1330116
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/models.py first seen with mtime 1735390627.049807
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_card_service.py first seen with mtime 1735390628.1271002
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/lexer.py first seen with mtime 1735390626.734802
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/PIL/Image.py first seen with mtime 1735390626.76732
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_balance_service.py first seen with mtime 1735390628.0603664
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_file_service.py first seen with mtime 1735390628.066961
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/paginator.py first seen with mtime 1735390627.4238856
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/dataclasses.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_hashlib.cpython-313-darwin.so first seen with mtime 1728280552.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/staticfiles/finders.py first seen with mtime 1735390627.4222963
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_sigma_service.py first seen with mtime 1735390628.0768392
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/exceptions.py first seen with mtime 1735390627.4402802
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/mimetypes.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_subscription_service.py first seen with mtime 1735390628.0790193
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/apps/registry.py first seen with mtime 1735390626.9959044
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_encode.py first seen with mtime 1735390628.065455
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/utils.py first seen with mtime 1735390627.4585383
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_account_session.py first seen with mtime 1735390628.0585053
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_nested_resource_class_methods.py first seen with mtime 1735390628.0701547
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/exceptions.py first seen with mtime 1735390627.4237688
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/locale.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_subscription.py first seen with mtime 1735390628.0779612
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_meter_event_summary_service.py first seen with mtime 1735390628.101125
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/backends/django.py first seen with mtime 1735390627.4588203
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/indexes.py first seen with mtime 1735390627.4427433
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/postgresql/base.py first seen with mtime 1735390627.438347
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/grp.cpython-313-darwin.so first seen with mtime 1728280561.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer_cash_balance_service.py first seen with mtime 1735390628.0638895
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_reserve_transaction.py first seen with mtime 1735390628.075551
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_webhook_endpoint.py first seen with mtime 1735390628.0814629
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/loaders/app_directories.py first seen with mtime 1735390627.459191
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/treasury/_received_debit_service.py first seen with mtime 1735390628.1381836
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/certifi/core.py first seen with mtime 1735390626.9516914
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/middleware/__init__.py first seen with mtime 1735390627.4560091
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/identity/_verification_session_service.py first seen with mtime 1735390628.124262
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_webhook_endpoint_service.py first seen with mtime 1735390628.0815544
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/messages/apps.py first seen with mtime 1735390627.3119617
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/issuing/_personalization_design_service.py first seen with mtime 1735390628.1372733
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/staticfiles/management/commands/runserver.py first seen with mtime 1735390627.4232504
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_multibytecodec.cpython-313-darwin.so first seen with mtime 1728280554.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/engine/grouping.py first seen with mtime 1735390626.7354293
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer_balance_transaction_service.py first seen with mtime 1735390628.0638058
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/manager.py first seen with mtime 1735390627.4429674
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/logging/handlers.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_connect_collection_transfer.py first seen with mtime 1735390628.062481
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/events.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/mime/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_usage_record_summary.py first seen with mtime 1735390628.0809696
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/billing/_meter_event_service.py first seen with mtime 1735390628.1417687
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_apple_pay_domain_service.py first seen with mtime 1735390628.0592928
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/idna/intranges.py first seen with mtime 1735390626.8963397
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/proxy.py first seen with mtime 1735390626.6862948
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_file_link_service.py first seen with mtime 1735390628.066838
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/http2/__init__.py first seen with mtime 1735390626.6857765
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/_weakrefset.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/financial_connections/_account_owner_service.py first seen with mtime 1735390628.1053414
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/unix_events.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/views.py first seen with mtime 1735390627.1536903
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_outbound_payment.py first seen with mtime 1735390628.1393661
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/__init__.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/gettext.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_line_item.py first seen with mtime 1735390628.0694284
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/__init__.py first seen with mtime 1735390627.4400713
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/management/base.py first seen with mtime 1735390627.4299352
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/decorators/debug.py first seen with mtime 1735390627.4675848
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/format_helpers.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/_abc.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pprint.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_confirmation_token.py first seen with mtime 1735390628.0618868
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/ddl_references.py first seen with mtime 1735390627.4346457
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/identity/_verification_report.py first seen with mtime 1735390628.1075606
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/weakref.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/__init__.py first seen with mtime 1735390628.1382966
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/_registration.py first seen with mtime 1735390628.134077
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_verify_mixin.py first seen with mtime 1735390628.081216
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/cache/backends/__init__.py first seen with mtime 1735390627.4246395
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/generic/dates.py first seen with mtime 1735390627.4682019
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_capability.py first seen with mtime 1735390628.0610259
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_shipping_rate_service.py first seen with mtime 1735390628.0767655
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/logging/config.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_account_link.py first seen with mtime 1735390628.057969
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payment_intent.py first seen with mtime 1735390628.0708506
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/urls/exceptions.py first seen with mtime 1735390627.4612832
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/climate/_product.py first seen with mtime 1735390628.1027808
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_expandable_field.py first seen with mtime 1735390628.0664883
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/apps/_secret_service.py first seen with mtime 1735390628.0994737
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/configparser.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_futures.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/readers.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_account_service.py first seen with mtime 1735390628.0584068
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/_calculation_service.py first seen with mtime 1735390628.1339293
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/radar/_value_list_item_service.py first seen with mtime 1735390628.1322868
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_bisect.cpython-313-darwin.so first seen with mtime 1728280548.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/cache/backends/filebased.py first seen with mtime 1735390627.4250712
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_authorization_service.py first seen with mtime 1735390628.1263673
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/idna/idnadata.py first seen with mtime 1735390626.8956392
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/connection.py first seen with mtime 1735390626.6837375
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_transaction_entry_service.py first seen with mtime 1735390628.1403675
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/__init__.py first seen with mtime 1735390627.4569385
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/financial_connections/_account_owner.py first seen with mtime 1735390628.1050766
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/security/__init__.py first seen with mtime 1735390627.4266777
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_topup.py first seen with mtime 1735390628.0802765
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/_compat_pickle.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer_funding_instructions_service.py first seen with mtime 1735390628.0642145
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_account_external_account_service.py first seen with mtime 1735390628.0578673
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/_header_value_parser.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/identity/__init__.py first seen with mtime 1735390628.1073303
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/cli.py first seen with mtime 1735390626.7343943
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/graphlib.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/keywords.py first seen with mtime 1735390626.734696
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/zipfile/_path/__init__.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_contextvars.cpython-313-darwin.so first seen with mtime 1728280550.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/models.py first seen with mtime 1735390626.9647572
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_shipping_rate.py first seen with mtime 1735390628.0766711
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/postgresql/introspection.py first seen with mtime 1735390627.438706
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/binascii.cpython-313-darwin.so first seen with mtime 1728280560.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/treasury/__init__.py first seen with mtime 1735390628.1376588
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_queue.cpython-313-darwin.so first seen with mtime 1728280555.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/functions/comparison.py first seen with mtime 1735390627.4448915
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/transaction.py first seen with mtime 1735390627.4343166
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/radar/_value_list_item.py first seen with mtime 1735390628.1321793
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/templatetags/__init__.py first seen with mtime 1735390627.4595413
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_credit_note_line_item.py first seen with mtime 1735390628.0631158
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_api_requestor.py first seen with mtime 1735390628.0588448
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/fields.py first seen with mtime 1735390626.6842787
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/app_info.py first seen with mtime 1735390628.081696
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/http.py first seen with mtime 1735390627.4640286
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/stringprep.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/struct.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/billing/_meter_event.py first seen with mtime 1735390628.1415374
+File /Users/soto2571/p_projects/shoe-store/store/views.py first seen with mtime 1735405997.4211423
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_credit_balance_summary_service.py first seen with mtime 1735390628.1000185
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_account_login_link_service.py first seen with mtime 1735390628.0581293
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/backends/__init__.py first seen with mtime 1735390627.4586186
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_quote_line_item_service.py first seen with mtime 1735390628.0747995
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/_event_destination.py first seen with mtime 1735390628.1412544
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/billing/_meter_event_session.py first seen with mtime 1735390628.1418364
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/exceptions.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/management/color.py first seen with mtime 1735390627.4300058
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/filters/__init__.py first seen with mtime 1735390626.735809
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/handlers/__init__.py first seen with mtime 1735390627.428423
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/_encoded_words.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/charset_normalizer/legacy.py first seen with mtime 1735390626.93388
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py first seen with mtime 1735390627.457172
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_dispute.py first seen with mtime 1735390628.1278663
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/contrib/__init__.py first seen with mtime 1735390626.6847785
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing_portal/_session.py first seen with mtime 1735390628.1016147
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/charset_normalizer/md.cpython-313-darwin.so first seen with mtime 1735390626.9350805
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/validators.py first seen with mtime 1735390627.153098
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/billing/_meter_event_stream_service.py first seen with mtime 1735390628.1419806
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/datastructures.py first seen with mtime 1735390627.4623792
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_debit_reversal.py first seen with mtime 1735390628.138614
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/translation/trans_real.py first seen with mtime 1735390627.4663699
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/reporting/_report_run_service.py first seen with mtime 1735390628.132726
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_util.py first seen with mtime 1735390628.0810688
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_outbound_payment_service.py first seen with mtime 1735390628.1394696
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/reporting/__init__.py first seen with mtime 1735390628.1325161
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer_balance_transaction.py first seen with mtime 1735390628.063701
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer_session_service.py first seen with mtime 1735390628.0648062
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/mime/message.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_ssl.cpython-313-darwin.so first seen with mtime 1728280556.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/hmac.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/__init__.py first seen with mtime 1735390627.4664996
+File /Users/soto2571/p_projects/shoe-store/store/forms.py first seen with mtime 1735390430.508198
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/__init__.py first seen with mtime 1735390627.0490026
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_subscription_item.py first seen with mtime 1735390628.0780895
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_climate_service.py first seen with mtime 1735390628.0617216
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/decoder.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/storage/base.py first seen with mtime 1735390627.4280107
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_singleton_api_resource.py first seen with mtime 1735390628.0769112
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_bz2.cpython-313-darwin.so first seen with mtime 1728280548.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_list_object.py first seen with mtime 1735390628.0695357
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/cookies.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_credit_grant_service.py first seen with mtime 1735390628.1004293
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_account_person_service.py first seen with mtime 1735390628.0582478
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_invoice_service.py first seen with mtime 1735390628.0685906
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payment_method_configuration_service.py first seen with mtime 1735390628.0730004
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/forms/renderers.py first seen with mtime 1735390627.447285
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/radar/__init__.py first seen with mtime 1735390628.1317039
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_application_fee.py first seen with mtime 1735390628.0595012
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/asgiref/current_thread_executor.py first seen with mtime 1735390626.9548128
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/issuing/_authorization_service.py first seen with mtime 1735390628.1370587
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/asgiref/local.py first seen with mtime 1735390626.95492
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing_portal/_configuration_service.py first seen with mtime 1735390628.101531
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/utils.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/entitlements/_active_entitlement.py first seen with mtime 1735390628.1037548
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/hashable.py first seen with mtime 1735390627.4635465
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_country_spec_service.py first seen with mtime 1735390628.0626645
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_source_transaction_service.py first seen with mtime 1735390628.0774384
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/fields/proxy.py first seen with mtime 1735390627.4441493
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_tax_code.py first seen with mtime 1735390628.0791175
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/entitlements/_feature.py first seen with mtime 1735390628.1040525
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/mime/base.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/numberformat.py first seen with mtime 1735390627.4648159
+(0.003) 
+            SELECT
+                c.relname,
+                CASE
+                    WHEN c.relispartition THEN 'p'
+                    WHEN c.relkind IN ('m', 'v') THEN 'v'
+                    ELSE 't'
+                END,
+                obj_description(c.oid, 'pg_class')
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('f', 'm', 'p', 'r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid)
+        ; args=None; alias=default
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/messages/api.py first seen with mtime 1735390627.3118825
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/base/schema.py first seen with mtime 1735390627.4356315
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/__init__.py first seen with mtime 1735390626.9953537
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/financial_connections/_account.py first seen with mtime 1735390628.104992
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/enums.py first seen with mtime 1735390627.4425008
+File /Users/soto2571/p_projects/shoe-store/choco_hypewear/urls.py first seen with mtime 1735407399.0919867
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/sysconfig/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/urls/base.py first seen with mtime 1735390627.4610286
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/sql/subqueries.py first seen with mtime 1735390627.446144
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_meter_event_adjustment_service.py first seen with mtime 1735390628.100816
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_transaction_entry.py first seen with mtime 1735390628.1402698
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_plan_service.py first seen with mtime 1735390628.0737393
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/charset.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/html/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/encoding.py first seen with mtime 1735390627.4631019
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/math.cpython-313-darwin.so first seen with mtime 1728280561.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_product_service.py first seen with mtime 1735390628.0742905
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/threading.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/sql/query.py first seen with mtime 1735390627.4460404
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/urllib/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/operations/__init__.py first seen with mtime 1735390627.4414117
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/_sysconfigdata__darwin_darwin.py first seen with mtime 1728279724.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/_os.py first seen with mtime 1735390627.4616098
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/zipfile/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/operations/base.py first seen with mtime 1735390627.441509
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_dispute.py first seen with mtime 1735390628.06523
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_physical_bundle_service.py first seen with mtime 1735390628.1297095
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/_collections.py first seen with mtime 1735390626.6833515
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/urls/conf.py first seen with mtime 1735390627.4611235
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_plan.py first seen with mtime 1735390628.0736551
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_application_fee_service.py first seen with mtime 1735390628.0598993
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/constraints.py first seen with mtime 1735390627.4423366
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_tax_id.py first seen with mtime 1735390628.0793679
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/functional.py first seen with mtime 1735390627.4634554
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/deprecation.py first seen with mtime 1735390627.4629312
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/contextvars.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/storage/mixins.py first seen with mtime 1735390627.428351
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/http/response.py first seen with mtime 1735390627.4559267
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_product.py first seen with mtime 1735390628.074017
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/dispatch/__init__.py first seen with mtime 1735390627.4463596
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_oauth.py first seen with mtime 1735390628.0702682
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_balance_transaction_service.py first seen with mtime 1735390628.0606008
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payment_method_domain.py first seen with mtime 1735390628.0730824
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_client_options.py first seen with mtime 1735390628.061646
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_received_credit.py first seen with mtime 1735390628.1397512
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/exceptions.py first seen with mtime 1735390626.6841621
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/library.py first seen with mtime 1735390627.4580314
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/debug.py first seen with mtime 1735390627.466734
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/__init__.py first seen with mtime 1735390628.1360795
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_source_transaction.py first seen with mtime 1735390628.0773547
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/duration.py first seen with mtime 1735390627.4630013
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/locks.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/resources/_adapters.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_transaction_service.py first seen with mtime 1735390628.1404688
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_refund_service.py first seen with mtime 1735390628.075168
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payout.py first seen with mtime 1735390628.073371
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/_version.py first seen with mtime 1735390626.6835897
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_quote_computed_upfront_line_items_service.py first seen with mtime 1735390628.0747204
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/shlex.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/argparse.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sites/requests.py first seen with mtime 1735390627.3971994
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/storage/filesystem.py first seen with mtime 1735390627.428114
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/re/_parser.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/__init__.py first seen with mtime 1735390628.1405818
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/copy.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/financial_connections/_account_ownership.py first seen with mtime 1735390628.1056845
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/cache/backends/base.py first seen with mtime 1735390627.424765
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payout_service.py first seen with mtime 1735390628.073474
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/wsgiref/handlers.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer.py first seen with mtime 1735390628.063593
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/security/sessions.py first seen with mtime 1735390627.4269662
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_reporting_service.py first seen with mtime 1735390628.0752454
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/encodings/idna.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/compat.py first seen with mtime 1735390626.9641018
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_asyncio.cpython-313-darwin.so first seen with mtime 1728280548.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/hashlib.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/core/_event_service.py first seen with mtime 1735390628.142267
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer_cash_balance_transaction.py first seen with mtime 1735390628.0640051
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/checkout/_session.py first seen with mtime 1735390628.1020362
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/base.py first seen with mtime 1735390627.4421637
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_subprocess.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_exchange_rate_service.py first seen with mtime 1735390628.0664005
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/__init__.py first seen with mtime 1735390627.4270875
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/templatetags/i18n.py first seen with mtime 1735390627.4597058
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_bank_account.py first seen with mtime 1735390628.0607057
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pkgutil.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/__init__.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/futures.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/response.py first seen with mtime 1735390627.4583015
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payment_link.py first seen with mtime 1735390628.0723572
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_application_fee_refund.py first seen with mtime 1735390628.059647
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/mail/utils.py first seen with mtime 1735390627.4291463
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/loader_tags.py first seen with mtime 1735390627.4582016
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/resources/_functional.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/decorators/cache.py first seen with mtime 1735390627.467248
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/token.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/contenttypes/management/__init__.py first seen with mtime 1735390627.212228
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/__init__.py first seen with mtime 1735390626.7341943
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/wsgiref/simple_server.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/terminal/_reader_service.py first seen with mtime 1735390628.137561
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/charset_normalizer/__init__.py first seen with mtime 1735390626.934211
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/version.py first seen with mtime 1735390627.4657593
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_tax_code_service.py first seen with mtime 1735390628.079191
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_token.py first seen with mtime 1735390628.080058
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/autoreload.py first seen with mtime 1735390627.4619389
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/_base_connection.py first seen with mtime 1735390626.6831946
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socket.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/_settings.py first seen with mtime 1735390628.1343138
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/move.py first seen with mtime 1735390627.42743
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/platform.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_usage_record.py first seen with mtime 1735390628.0808947
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/checkout/_session_service.py first seen with mtime 1735390628.1023128
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_meter_event_summary.py first seen with mtime 1735390628.1009967
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/_transaction_service.py first seen with mtime 1735390628.134981
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/contenttypes/admin.py first seen with mtime 1735390627.1847627
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_ephemeral_key_service.py first seen with mtime 1735390628.0657616
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_promotion_code_service.py first seen with mtime 1735390628.074487
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer_tax_id_service.py first seen with mtime 1735390628.0649228
+(0.001) SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"; args=(); alias=default
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/functions/datetime.py first seen with mtime 1735390627.444984
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_credit_reversal_service.py first seen with mtime 1735390628.1385007
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_outbound_transfer.py first seen with mtime 1735390628.1395674
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/messages.py first seen with mtime 1735390627.4259276
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/utils.py first seen with mtime 1735390627.4411972
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_meter.py first seen with mtime 1735390628.1005456
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer_payment_source_service.py first seen with mtime 1735390628.064437
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_alert_triggered.py first seen with mtime 1735390628.099848
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/_transaction_line_item_service.py first seen with mtime 1735390628.1348627
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/loader.py first seen with mtime 1735390627.4581108
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/terminal/_reader.py first seen with mtime 1735390628.1358314
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/__future__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/templatetags/l10n.py first seen with mtime 1735390627.459772
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/sql.py first seen with mtime 1735390626.7349105
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lzma.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/generic/base.py first seen with mtime 1735390627.4681008
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_identity_service.py first seen with mtime 1735390628.0674775
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/sigma/_scheduled_query_run.py first seen with mtime 1735390628.133114
+File /Users/soto2571/p_projects/shoe-store/manage.py first seen with mtime 1735390430.443215
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/servers/basehttp.py first seen with mtime 1735390627.4340954
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/functions/math.py first seen with mtime 1735390627.4450877
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/cookiejar.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/smartif.py first seen with mtime 1735390627.4584308
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/encoders.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/engine/statement_splitter.py first seen with mtime 1735390626.7355099
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/utils.py first seen with mtime 1735390627.4348233
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/billing/_meter_event_adjustment_service.py first seen with mtime 1735390628.141695
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/mail/message.py first seen with mtime 1735390627.4290736
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/serializers/base.py first seen with mtime 1735390627.4333253
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/psycopg2/sql.py first seen with mtime 1735404311.9416351
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/json/scanner.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/linecache.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer_cash_balance_transaction_service.py first seen with mtime 1735390628.0641098
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/_request_methods.py first seen with mtime 1735390626.6834905
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/_test_clock_service.py first seen with mtime 1735390628.1367364
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/constants.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_invoice_line_item.py first seen with mtime 1735390628.0680952
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/idna/__init__.py first seen with mtime 1735390626.8952212
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/wait.py first seen with mtime 1735390626.6873162
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/secrets.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/re/_constants.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/threads.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/fields/related_lookups.py first seen with mtime 1735390627.4445531
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/conf/global_settings.py first seen with mtime 1735390626.9961514
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_application.py first seen with mtime 1735390628.0593693
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/select.cpython-313-darwin.so first seen with mtime 1728280562.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/generator.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/base_user.py first seen with mtime 1735390627.151721
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_transaction.py first seen with mtime 1735390628.140169
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_transaction_service.py first seen with mtime 1735390628.1309958
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/http/cookie.py first seen with mtime 1735390627.4555972
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_exchange_rate.py first seen with mtime 1735390628.066292
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_meter_service.py first seen with mtime 1735390628.1012447
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/admin.py first seen with mtime 1735390627.1514275
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payment_intent_service.py first seen with mtime 1735390628.0711486
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/forms/fields.py first seen with mtime 1735390627.4468768
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/financial_connections/__init__.py first seen with mtime 1735390628.1048791
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/poolmanager.py first seen with mtime 1735390626.6844647
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/ssltransport.py first seen with mtime 1735390626.6869051
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/resources/__init__.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/zoneinfo/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/model_checks.py first seen with mtime 1735390627.4260466
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sites/__init__.py first seen with mtime 1735390627.396531
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/PIL/ExifTags.py first seen with mtime 1735390626.7601457
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/conf/urls/static.py first seen with mtime 1735390627.0488288
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/lookups.py first seen with mtime 1735390627.4428587
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/apps/_secret.py first seen with mtime 1735390628.099375
+File /Users/soto2571/p_projects/shoe-store/store/models.py first seen with mtime 1735390430.5107856
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/entitlements/_active_entitlement_service.py first seen with mtime 1735390628.103837
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/warnings.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/dispatch/dispatcher.py first seen with mtime 1735390627.446454
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/climate/_product_service.py first seen with mtime 1735390628.102854
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_subscription_schedule.py first seen with mtime 1735390628.0787551
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/state.py first seen with mtime 1735390627.4411035
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_credit_balance_transaction.py first seen with mtime 1735390628.100124
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/contenttypes/views.py first seen with mtime 1735390627.1853828
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/log.py first seen with mtime 1735390627.464528
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_account_link_service.py first seen with mtime 1735390628.058052
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/dis.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/__init__.py first seen with mtime 1735390627.4235718
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/cache/utils.py first seen with mtime 1735390627.4245534
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/dates.py first seen with mtime 1735390627.4626598
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/translation/__init__.py first seen with mtime 1735390627.466004
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/keyword.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/_terminal_service.py first seen with mtime 1735390628.1365216
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/compatibility/django_4_0.py first seen with mtime 1735390627.4266036
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/utils.py first seen with mtime 1735390626.7351136
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/migration.py first seen with mtime 1735390627.4406571
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_received_debit_service.py first seen with mtime 1735390628.140068
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/operations/special.py first seen with mtime 1735390627.4417808
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/sql/__init__.py first seen with mtime 1735390627.4454992
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_quote_service.py first seen with mtime 1735390628.074891
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/__init__.py first seen with mtime 1735390628.0995827
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/termios.cpython-313-darwin.so first seen with mtime 1728280562.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/checkout/_session_line_item_service.py first seen with mtime 1735390628.1021373
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/asyncio.py first seen with mtime 1735390627.4618428
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/query.py first seen with mtime 1735390627.4432554
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/signals.py first seen with mtime 1735390627.443461
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/treasury/_received_credit_service.py first seen with mtime 1735390628.1380944
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/crypto.py first seen with mtime 1735390627.4622777
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer_payment_method_service.py first seen with mtime 1735390628.0643232
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/base/validation.py first seen with mtime 1735390627.4357138
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/text.py first seen with mtime 1735390627.4652793
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/messages/utils.py first seen with mtime 1735390627.3123565
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/backends/base.py first seen with mtime 1735390627.4587207
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_heapq.cpython-313-darwin.so first seen with mtime 1728280552.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_personalization_design_service.py first seen with mtime 1735390628.1292129
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/string.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_tax_service.py first seen with mtime 1735390628.079747
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/wsgiref/headers.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/operations/models.py first seen with mtime 1735390627.4416854
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/functools.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_token_service.py first seen with mtime 1735390628.1300535
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/temp.py first seen with mtime 1735390627.4275088
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_confirmation_token_service.py first seen with mtime 1735390628.0620866
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/certs.py first seen with mtime 1735390626.9640205
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_json.cpython-313-darwin.so first seen with mtime 1728280553.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/glob.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/postgresql/operations.py first seen with mtime 1735390627.4388099
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_transfer_service.py first seen with mtime 1735390628.080669
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/resources/_itertools.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/handlers/asgi.py first seen with mtime 1735390627.4285238
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/api.py first seen with mtime 1735390626.9638357
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/cache.py first seen with mtime 1735390627.4620261
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/_treasury_service.py first seen with mtime 1735390628.136821
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_account.py first seen with mtime 1735390628.0576475
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/contenttypes/fields.py first seen with mtime 1735390627.1850388
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_event.py first seen with mtime 1735390628.066061
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/opcode.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/zipfile/_path/glob.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/wsgi.py first seen with mtime 1735390627.4243398
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/exceptions.py first seen with mtime 1735390627.0494144
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_event_service.py first seen with mtime 1735390628.0661716
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/fcntl.cpython-313-darwin.so first seen with mtime 1728280560.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payment_link_line_item_service.py first seen with mtime 1735390628.0724506
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/apps/config.py first seen with mtime 1735390626.99581
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/mail/__init__.py first seen with mtime 1735390627.42898
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/staticfiles/handlers.py first seen with mtime 1735390627.4223897
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/lorem_ipsum.py first seen with mtime 1735390627.4646432
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/tokenize.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/signals.py first seen with mtime 1735390627.4347196
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/protocols.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_credit_grant.py first seen with mtime 1735390628.1003158
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/checks.py first seen with mtime 1735390627.1518226
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/views/autocomplete.py first seen with mtime 1735390627.1208818
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/contenttypes/apps.py first seen with mtime 1735390627.184857
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/inspect.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_api_resource.py first seen with mtime 1735390628.0589416
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/entitlements/_feature_service.py first seen with mtime 1735390628.104167
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_meter_event_service.py first seen with mtime 1735390628.1008942
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/views/main.py first seen with mtime 1735390627.12106
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/mixins.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/fields/reverse_related.py first seen with mtime 1735390627.4446568
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/asgiref/sync.py first seen with mtime 1735390626.9551828
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/radar/_early_fraud_warning.py first seen with mtime 1735390628.1318483
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/log.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/status_codes.py first seen with mtime 1735390626.9650538
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/tokens.py first seen with mtime 1735390626.735019
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/terminal/_connection_token_service.py first seen with mtime 1735390628.1355014
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/templatetags/admin_urls.py first seen with mtime 1735390627.1205232
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_invoice_item.py first seen with mtime 1735390628.0679185
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/staticfiles/views.py first seen with mtime 1735390627.4228194
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/apps/__init__.py first seen with mtime 1735390626.9956927
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/encodings/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/billing/_meter_event_session_service.py first seen with mtime 1735390628.1419072
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing_portal/_configuration.py first seen with mtime 1735390628.1014457
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/iterators.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/loaders/__init__.py first seen with mtime 1735390627.4591072
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_setup_attempt_service.py first seen with mtime 1735390628.076189
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_struct.cpython-313-darwin.so first seen with mtime 1728280557.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/reporting/_report_run.py first seen with mtime 1735390628.1326268
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/operator.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/timeout.py first seen with mtime 1735390626.687025
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socketserver.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/query_utils.py first seen with mtime 1735390627.4433782
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/ssl_match_hostname.py first seen with mtime 1735390626.68679
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/__init__.py first seen with mtime 1735390627.4615247
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_account_session_service.py first seen with mtime 1735390628.0586011
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/terminal/_location_service.py first seen with mtime 1735390628.135721
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/decorators.py first seen with mtime 1735390627.0493383
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/financial_connections/_transaction_service.py first seen with mtime 1735390628.106486
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/http/multipartparser.py first seen with mtime 1735390627.4557142
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/templates.py first seen with mtime 1735390627.4262264
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_invoice_rendering_template.py first seen with mtime 1735390628.0682845
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/decouple.py first seen with mtime 1735390626.679079
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/async_checks.py first seen with mtime 1735390627.425581
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/http/request.py first seen with mtime 1735390627.455824
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_entitlements_service.py first seen with mtime 1735390628.0655458
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_dispute_service.py first seen with mtime 1735390628.1279674
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/events/_v1_billing_meter_no_meter_found_event.py first seen with mtime 1735390628.1046531
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/uploadedfile.py first seen with mtime 1735390627.4276104
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/datetime.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_custom_method.py first seen with mtime 1735390628.0634513
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/generic/edit.py first seen with mtime 1735390627.468399
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payment_method.py first seen with mtime 1735390628.0727246
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/entitlements/__init__.py first seen with mtime 1735390628.1036465
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/files.py first seen with mtime 1735390627.4258435
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/postgresql/creation.py first seen with mtime 1735390627.438502
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_version.py first seen with mtime 1735390628.0812821
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/_internal_utils.py first seen with mtime 1735390626.9636285
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_authorization.py first seen with mtime 1735390628.1260536
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_credit_note_service.py first seen with mtime 1735390628.06337
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/_event.py first seen with mtime 1735390628.1409214
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/_issuing_service.py first seen with mtime 1735390628.1363537
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/bz2.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_token_service.py first seen with mtime 1735390628.0801535
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_search_result_object.py first seen with mtime 1735390628.0759308
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_subscription_item_usage_record_service.py first seen with mtime 1735390628.078274
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/wsgiref/util.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/terminal/__init__.py first seen with mtime 1735390628.137482
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/formats.py first seen with mtime 1735390627.463346
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/packages.py first seen with mtime 1735390626.9648411
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/base.py first seen with mtime 1735390627.4271917
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_invoice_item_service.py first seen with mtime 1735390628.0680053
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/templatetags/cache.py first seen with mtime 1735390627.4596238
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/uuid.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/filepost.py first seen with mtime 1735390626.6843655
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/images.py first seen with mtime 1735390627.4272714
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_error_object.py first seen with mtime 1735390628.0659628
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_coupon_service.py first seen with mtime 1735390628.062842
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/functions/mixins.py first seen with mtime 1735390627.445169
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/hooks.py first seen with mtime 1735390626.9646382
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_transfer_reversal_service.py first seen with mtime 1735390628.080572
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/exceptions.py first seen with mtime 1735390626.7344809
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_customer_service.py first seen with mtime 1735390628.0645626
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_financial_account_service.py first seen with mtime 1735390628.1390731
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/management/commands/runserver.py first seen with mtime 1735390627.4316256
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/metadata/_collections.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/decorators/__init__.py first seen with mtime 1735390627.46714
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_setup_intent.py first seen with mtime 1735390628.0763922
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_meter_event.py first seen with mtime 1735390628.1006498
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/fields/json.py first seen with mtime 1735390627.4439962
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/generic/__init__.py first seen with mtime 1735390627.4679873
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sessions/__init__.py first seen with mtime 1735390627.365103
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/textwrap.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/base/__init__.py first seen with mtime 1735390627.4349172
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/postgresql/__init__.py first seen with mtime 1735390627.4382226
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_account_capability_service.py first seen with mtime 1735390628.0577774
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/fields/files.py first seen with mtime 1735390627.4438143
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/base/features.py first seen with mtime 1735390627.4352934
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/fields/related_descriptors.py first seen with mtime 1735390627.4444172
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_request_metrics.py first seen with mtime 1735390628.07532
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/psycopg2/_json.py first seen with mtime 1735404311.9397457
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_subscription_schedule_service.py first seen with mtime 1735390628.0788753
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/policy.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/__init__.py first seen with mtime 1735390626.6830344
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/sigma/_scheduled_query_run_service.py first seen with mtime 1735390628.1332147
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_api_mode.py first seen with mtime 1735390628.0587523
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/selectors.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_file.py first seen with mtime 1735390628.0666084
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_balance.py first seen with mtime 1735390628.0602741
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/base64.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/models.py first seen with mtime 1735390627.1526449
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payment_link_service.py first seen with mtime 1735390628.0725775
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/__init__.py first seen with mtime 1735390627.44189
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/charset_normalizer/version.py first seen with mtime 1735390626.933787
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/tempfile.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_any_iterator.py first seen with mtime 1735390628.0586798
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/forwarding/_request.py first seen with mtime 1735390628.1068249
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/terminal/_reader_service.py first seen with mtime 1735390628.1359353
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/filters/aligned_indent.py first seen with mtime 1735390626.735922
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_card.py first seen with mtime 1735390628.0611248
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/translation/reloader.py first seen with mtime 1735390627.4660833
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sessions/apps.py first seen with mtime 1735390627.3652048
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/_calculation.py first seen with mtime 1735390628.1334538
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_financial_account.py first seen with mtime 1735390628.138802
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_invoice_upcoming_lines_service.py first seen with mtime 1735390628.0692391
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/ipaddress.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/_parseaddr.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_checkout_service.py first seen with mtime 1735390628.0615563
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_issuing_service.py first seen with mtime 1735390628.069341
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/templatetags/tz.py first seen with mtime 1735390627.4599564
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/sslproto.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/sessions.py first seen with mtime 1735390626.9649477
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/header.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/v2/billing/__init__.py first seen with mtime 1735390628.1414542
+File /Users/soto2571/p_projects/shoe-store/choco_hypewear/__init__.py first seen with mtime 1735390430.4424107
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/password_validation.py first seen with mtime 1735390627.1527593
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_apps_service.py first seen with mtime 1735390628.0601487
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_deletable_api_resource.py first seen with mtime 1735390628.065016
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/_registration_service.py first seen with mtime 1735390628.1341908
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/server.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/choices.py first seen with mtime 1735390627.4621234
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/__init__.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/metadata/_meta.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/psycopg2/__init__.py first seen with mtime 1735404311.9412894
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/metadata/_functools.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/metadata/_itertools.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/zoneinfo/_tzpath.py first seen with mtime 1728279723.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_alert_service.py first seen with mtime 1735390628.099769
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/http/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/issuing/__init__.py first seen with mtime 1735390628.136947
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/registry.py first seen with mtime 1735390627.4261334
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/loaders/base.py first seen with mtime 1735390627.4592595
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/timesince.py first seen with mtime 1735390627.465425
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_financial_connections_service.py first seen with mtime 1735390628.0670528
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/ipv6.py first seen with mtime 1735390627.4641945
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/radar/_value_list_service.py first seen with mtime 1735390628.1323955
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/management/commands/__init__.py first seen with mtime 1735390627.4303215
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/identity/_verification_session.py first seen with mtime 1735390628.1079319
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/charset_normalizer/api.py first seen with mtime 1735390626.9343135
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/helpers.py first seen with mtime 1735390627.0496867
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/signal.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_credit_note.py first seen with mtime 1735390628.063021
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/re/_casefix.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payment_method_domain_service.py first seen with mtime 1735390628.073184
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/urls/utils.py first seen with mtime 1735390627.4614592
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_treasury_service.py first seen with mtime 1735390628.0807436
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/utils.py first seen with mtime 1735390626.9652345
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/ssl.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/http2/probe.py first seen with mtime 1735390626.685998
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/importlib/abc.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/utils/safestring.py first seen with mtime 1735390627.4650166
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/response.py first seen with mtime 1735390626.6864834
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payment_method_service.py first seen with mtime 1735390628.0732815
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/unicodedata.cpython-313-darwin.so first seen with mtime 1728280562.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_createable_api_resource.py first seen with mtime 1735390628.0629137
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/ssl_.py first seen with mtime 1735390626.686686
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/sql/datastructures.py first seen with mtime 1735390627.4458613
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_cash_balance.py first seen with mtime 1735390628.0612004
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_opcode.cpython-313-darwin.so first seen with mtime 1728280554.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/charset_normalizer/models.py first seen with mtime 1735390626.93401
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/climate/_supplier.py first seen with mtime 1735390628.1029515
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_inbound_transfer.py first seen with mtime 1735390628.1391668
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/__version__.py first seen with mtime 1735390626.9634545
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_stripe_response.py first seen with mtime 1735390628.0777156
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/forms/models.py first seen with mtime 1735390627.4472
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_stripe_object.py first seen with mtime 1735390628.0776327
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_source_mandate_notification.py first seen with mtime 1735390628.077133
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/filters.py first seen with mtime 1735390627.0495024
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sessions/models.py first seen with mtime 1735390627.3655262
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/__init__.py first seen with mtime 1735390626.6861057
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_physical_bundle.py first seen with mtime 1735390628.1295066
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/defaulttags.py first seen with mtime 1735390627.4576392
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_v2_services.py first seen with mtime 1735390628.0811439
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/_osx_support.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/forms/formsets.py first seen with mtime 1735390627.4470713
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py first seen with mtime 1728279722.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/lib-dynload/_datetime.cpython-313-darwin.so first seen with mtime 1728280551.0
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/random.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_person.py first seen with mtime 1735390628.0735657
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/_settings_service.py first seen with mtime 1735390628.1344361
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/issuing/_cardholder.py first seen with mtime 1735390628.1274948
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/middleware/csrf.py first seen with mtime 1735390627.4564753
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_billing_portal_service.py first seen with mtime 1735390628.0608664
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_updateable_api_resource.py first seen with mtime 1735390628.0808167
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/templatetags/admin_list.py first seen with mtime 1735390627.1202104
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/filters/others.py first seen with mtime 1735390626.7360256
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/options.py first seen with mtime 1735390627.443089
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_discount.py first seen with mtime 1735390628.0651107
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/options.py first seen with mtime 1735390627.0499747
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/fields/related.py first seen with mtime 1735390627.4442866
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_source_service.py first seen with mtime 1735390628.0772479
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_coupon.py first seen with mtime 1735390628.062749
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/generic/detail.py first seen with mtime 1735390627.4682982
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/uploadhandler.py first seen with mtime 1735390627.427719
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_product_feature_service.py first seen with mtime 1735390628.0741944
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/actions.py first seen with mtime 1735390627.0490777
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/contenttypes/checks.py first seen with mtime 1735390627.1849344
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/reporting/_report_type.py first seen with mtime 1735390628.1328328
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/requests/auth.py first seen with mtime 1735390626.9639459
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/expressions.py first seen with mtime 1735390627.4426353
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/backends/postgresql/schema.py first seen with mtime 1735390627.4389958
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/_markupbase.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/__init__.py first seen with mtime 1735390628.133322
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_reversal.py first seen with mtime 1735390628.0756302
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/events/__init__.py first seen with mtime 1735390628.104311
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/billing/_credit_balance_summary.py first seen with mtime 1735390628.09994
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_webhook.py first seen with mtime 1735390628.081355
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/signals.py first seen with mtime 1735390627.4239929
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/conf/locale/__init__.py first seen with mtime 1735390626.9968545
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/idna/core.py first seen with mtime 1735390626.8955002
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_application_fee_refund_service.py first seen with mtime 1735390628.0597804
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/static.py first seen with mtime 1735390627.4670575
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/re/__init__.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/serializers/__init__.py first seen with mtime 1735390627.4332266
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_forwarding_service.py first seen with mtime 1735390628.067143
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_searchable_api_resource.py first seen with mtime 1735390628.0760036
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_payment_method_configuration.py first seen with mtime 1735390628.0728812
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/sqlparse/filters/right_margin.py first seen with mtime 1735390626.736291
+File /Users/soto2571/p_projects/shoe-store/store/__init__.py first seen with mtime 1735390430.5066586
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/loaders/filesystem.py first seen with mtime 1735390627.4594066
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/test_helpers/_customer_service.py first seen with mtime 1735390628.1362703
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_country_spec.py first seen with mtime 1735390628.062584
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/heapq.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/forms/widgets.py first seen with mtime 1735390627.447515
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/terminal/_connection_token.py first seen with mtime 1735390628.1354156
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/checks/compatibility/__init__.py first seen with mtime 1735390627.4265084
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/urllib3/util/util.py first seen with mtime 1735390626.6872141
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/autoreload.py first seen with mtime 1735390627.4570186
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/quoprimime.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/tax/_transaction_line_item.py first seen with mtime 1735390628.1347585
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/feedparser.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/views/__init__.py first seen with mtime 1735390627.120769
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/email/errors.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/__init__.py first seen with mtime 1735390627.0488927
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/typing.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_terminal_service.py first seen with mtime 1735390628.0798163
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/reporting/_report_type_service.py first seen with mtime 1735390628.1329083
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/operations/fields.py first seen with mtime 1735390627.4415884
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/terminal/_location.py first seen with mtime 1735390628.1356049
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/core/files/utils.py first seen with mtime 1735390627.427797
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/_billing_service.py first seen with mtime 1735390628.0609446
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/stripe/treasury/_received_debit.py first seen with mtime 1735390628.1399593
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/views/csrf.py first seen with mtime 1735390627.4666133
+File /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/enum.py first seen with mtime 1728279722.0
+File /Users/soto2571/p_projects/shoe-store/store/templates/store first seen with mtime 1735390430.5122633
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/product_detail.html first seen with mtime 1735390430.512028
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/search_results.html first seen with mtime 1735390430.5122418
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/index.html first seen with mtime 1735390430.511714
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/add_product.html first seen with mtime 1735390430.511048
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/clothing.html first seen with mtime 1735390430.5115418
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/all_shoes.html first seen with mtime 1735390430.5112176
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/test.html first seen with mtime 1735390430.5122924
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/owner_dashboard.html first seen with mtime 1735392601.801933
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/owner_login.html first seen with mtime 1735390430.5119183
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/add_sizes.html first seen with mtime 1735390430.5111113
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/edit_product.html first seen with mtime 1735390430.5115986
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/products_by_brand.html first seen with mtime 1735390430.512124
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/cart.html first seen with mtime 1735390430.5113564
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/checkout_success.html first seen with mtime 1735390430.5114565
+File /Users/soto2571/p_projects/shoe-store/store/templates/store/accessories.html first seen with mtime 1735390430.510957
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/PIL/_util.py first seen with mtime 1735390626.7649524
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/whitenoise/__init__.py first seen with mtime 1735404076.0781605
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/messages/middleware.py first seen with mtime 1735390627.3122067
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/middleware/clickjacking.py first seen with mtime 1735390627.4562218
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/contenttypes/migrations/0001_initial.py first seen with mtime 1735390627.2125592
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/whitenoise/string_utils.py first seen with mtime 1735404076.079102
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/middleware.py first seen with mtime 1735390627.1524649
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/graph.py first seen with mtime 1735390627.440466
+File /Users/soto2571/p_projects/shoe-store/store/migrations/0002_productsize.py first seen with mtime 1735390430.5083523
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/backends.py first seen with mtime 1735390627.151617
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/PIL/_typing.py first seen with mtime 1735390626.7572384
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/__init__.py first seen with mtime 1735390627.1842556
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/0011_update_proxy_permissions.py first seen with mtime 1735390627.1840987
+File /Users/soto2571/p_projects/shoe-store/store/migrations/0008_product_weight.py first seen with mtime 1735390430.5086515
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sessions/migrations/__init__.py first seen with mtime 1735390627.3953097
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sessions/backends/db.py first seen with mtime 1735390627.366329
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sessions/migrations/0001_initial.py first seen with mtime 1735390627.3952737
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sessions/middleware.py first seen with mtime 1735390627.3654518
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sessions/exceptions.py first seen with mtime 1735390627.3653717
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/0003_alter_user_email_max_length.py first seen with mtime 1735390627.1833317
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/PIL/_deprecate.py first seen with mtime 1735390626.7607257
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/middleware/security.py first seen with mtime 1735390627.4568152
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py first seen with mtime 1735390627.4456615
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/0009_alter_user_last_name_max_length.py first seen with mtime 1735390627.1838233
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/PIL/ImageMode.py first seen with mtime 1735390626.7551134
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/0012_alter_user_first_name_max_length.py first seen with mtime 1735390627.1842122
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/contenttypes/migrations/0002_remove_content_type_name.py first seen with mtime 1735390627.2126482
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/migrations/0003_logentry_add_action_flag_choices.py first seen with mtime 1735390627.101613
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/PIL/TiffTags.py first seen with mtime 1735390626.7646968
+File /Users/soto2571/p_projects/shoe-store/store/migrations/0001_initial.py first seen with mtime 1735390430.5082893
+File /Users/soto2571/p_projects/shoe-store/store/migrations/0005_remove_product_description_product_brand.py first seen with mtime 1735390430.5085082
+File /Users/soto2571/p_projects/shoe-store/store/migrations/0011_product_created_at.py first seen with mtime 1735390430.5088296
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/migrations/0001_initial.py first seen with mtime 1735390627.101463
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/PIL/_binary.py first seen with mtime 1735390626.7670865
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/0006_require_contenttypes_0002.py first seen with mtime 1735390627.1835876
+File /Users/soto2571/p_projects/shoe-store/store/migrations/0007_remove_product_category_product_product_type.py first seen with mtime 1735390430.5086024
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/loader.py first seen with mtime 1735390627.440555
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/0001_initial.py first seen with mtime 1735390627.1831765
+File /Users/soto2571/p_projects/shoe-store/store/migrations/0010_newslettersubscriber.py first seen with mtime 1735390430.508785
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/middleware/common.py first seen with mtime 1735390627.456364
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/staticfiles/storage.py first seen with mtime 1735390627.4225056
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/whitenoise/middleware.py first seen with mtime 1735404076.0787365
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sessions/backends/base.py first seen with mtime 1735390627.3658662
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/contenttypes/migrations/__init__.py first seen with mtime 1735390627.2126775
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/executor.py first seen with mtime 1735390627.440367
+File /Users/soto2571/p_projects/shoe-store/store/migrations/__init__.py first seen with mtime 1735390430.508848
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/migrations/__init__.py first seen with mtime 1735390627.1016438
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sessions/backends/__init__.py first seen with mtime 1735390627.365704
+File /Users/soto2571/p_projects/shoe-store/store/migrations/0006_remove_product_price.py first seen with mtime 1735390430.5085547
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/PIL/_imaging.cpython-313-darwin.so first seen with mtime 1735390626.758634
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/0002_alter_permission_name_max_length.py first seen with mtime 1735390627.1832557
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/0008_alter_user_username_max_length.py first seen with mtime 1735390627.1837506
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/whitenoise/responders.py first seen with mtime 1735404076.0788848
+File /Users/soto2571/p_projects/shoe-store/store/migrations/0003_productsize_stock.py first seen with mtime 1735390430.5084145
+File /Users/soto2571/p_projects/shoe-store/store/migrations/0004_remove_product_stock.py first seen with mtime 1735390430.5084586
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/admin/migrations/0002_logentry_remove_auto_add.py first seen with mtime 1735390627.1015372
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/0007_alter_validators_add_error_messages.py first seen with mtime 1735390627.1836734
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/whitenoise/media_types.py first seen with mtime 1735404076.078562
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/0004_alter_user_username_opts.py first seen with mtime 1735390627.1834047
+File /Users/soto2571/p_projects/shoe-store/choco_hypewear/wsgi.py first seen with mtime 1735390430.4429524
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/db/migrations/recorder.py first seen with mtime 1735390627.440894
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/0005_alter_user_last_login_null.py first seen with mtime 1735390627.1834953
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/migrations/0010_alter_group_name_max_length.py first seen with mtime 1735390627.1838999
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/whitenoise/base.py first seen with mtime 1735404076.0783255
+File /Users/soto2571/p_projects/shoe-store/store/migrations/0009_product_height_product_length_product_width_and_more.py first seen with mtime 1735390430.508737
+(0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > '2024-12-28T22:03:00.156090+00:00'::timestamptz AND "django_session"."session_key" = 'bhqyz5sl8x8sobq85zd9la5pw1lc4cj0') LIMIT 21; args=(datetime.datetime(2024, 12, 28, 22, 3, 0, 156090, tzinfo=datetime.timezone.utc), 'bhqyz5sl8x8sobq85zd9la5pw1lc4cj0'); alias=default
+(0.001) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" ORDER BY "store_product"."id" ASC; args=(); alias=default
+(0.004) SELECT 1 AS "a" FROM "store_productsize" WHERE "store_productsize"."product_id" = 1 LIMIT 1; args=(1, 1); alias=default
+(0.001) SELECT "store_productsize"."id", "store_productsize"."product_id", "store_productsize"."size", "store_productsize"."price", "store_productsize"."stock" FROM "store_productsize" WHERE "store_productsize"."product_id" = 1 ORDER BY "store_productsize"."price" ASC LIMIT 1; args=(1,); alias=default
+(0.000) SELECT 1 AS "a" FROM "store_productsize" WHERE "store_productsize"."product_id" = 2 LIMIT 1; args=(1, 2); alias=default
+(0.000) SELECT "store_productsize"."id", "store_productsize"."product_id", "store_productsize"."size", "store_productsize"."price", "store_productsize"."stock" FROM "store_productsize" WHERE "store_productsize"."product_id" = 2 ORDER BY "store_productsize"."price" ASC LIMIT 1; args=(2,); alias=default
+(0.000) SELECT 1 AS "a" FROM "store_productsize" WHERE "store_productsize"."product_id" = 3 LIMIT 1; args=(1, 3); alias=default
+(0.000) SELECT "store_productsize"."id", "store_productsize"."product_id", "store_productsize"."size", "store_productsize"."price", "store_productsize"."stock" FROM "store_productsize" WHERE "store_productsize"."product_id" = 3 ORDER BY "store_productsize"."price" ASC LIMIT 1; args=(3,); alias=default
+(0.000) SELECT DISTINCT "store_product"."brand" FROM "store_product" WHERE (NOT ("store_product"."brand" IS NULL) AND NOT ("store_product"."brand" = '')) LIMIT 21; args=('',); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" WHERE "store_product"."product_type" = 'shoes' LIMIT 10; args=('shoes',); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" WHERE "store_product"."product_type" = 'clothing' LIMIT 21; args=('clothing',); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" WHERE "store_product"."product_type" = 'accessories' LIMIT 21; args=('accessories',); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" ORDER BY "store_product"."created_at" DESC LIMIT 3; args=(); alias=default
+Exception while resolving variable 'STATIC_VERSION' in template 'store/index.html'.
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'STATIC_VERSION'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'STATIC_VERSION'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'STATIC_VERSION'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [STATIC_VERSION] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x107703e20>>, 'request': <WSGIRequest: GET '/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x107701300>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x107701300>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'brands': <QuerySet [{'brand': 'Nike'}, {'brand': 'New Balance'}, {'brand': 'Adidas'}]>, 'shoes': <QuerySet [<Product: Response X Bad Bunny>, <Product: Dunk Low UNC>, <Product: 550 Whiite Green>]>, 'clothing': <QuerySet []>, 'accessories': <QuerySet []>, 'newest_items': <QuerySet [<Product: 550 Whiite Green>, <Product: Dunk Low UNC>, <Product: Response X Bad Bunny>]>}]
+(0.000) SELECT DISTINCT "store_product"."brand" FROM "store_product" WHERE (NOT ("store_product"."brand" IS NULL) AND NOT ("store_product"."brand" = '')) LIMIT 21; args=('',); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" WHERE "store_product"."product_type" = 'shoes' LIMIT 10; args=('shoes',); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" WHERE "store_product"."product_type" = 'clothing' LIMIT 21; args=('clothing',); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" WHERE "store_product"."product_type" = 'accessories' LIMIT 21; args=('accessories',); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" ORDER BY "store_product"."created_at" DESC LIMIT 3; args=(); alias=default
+Exception while resolving variable 'query' in template 'store/index.html'.
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'query'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'query'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'query'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [query] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x107703e20>>, 'request': <WSGIRequest: GET '/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x107701300>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x107701300>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'brands': <QuerySet [{'brand': 'Nike'}, {'brand': 'New Balance'}, {'brand': 'Adidas'}]>, 'shoes': <QuerySet [<Product: Response X Bad Bunny>, <Product: Dunk Low UNC>, <Product: 550 Whiite Green>]>, 'clothing': <QuerySet []>, 'accessories': <QuerySet []>, 'newest_items': <QuerySet [<Product: 550 Whiite Green>, <Product: Dunk Low UNC>, <Product: Response X Bad Bunny>]>}]
+(0.000) SELECT DISTINCT "store_product"."brand" FROM "store_product" WHERE (NOT ("store_product"."brand" IS NULL) AND NOT ("store_product"."brand" = '')) LIMIT 21; args=('',); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" WHERE "store_product"."product_type" = 'shoes' LIMIT 10; args=('shoes',); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" WHERE "store_product"."product_type" = 'clothing' LIMIT 21; args=('clothing',); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" WHERE "store_product"."product_type" = 'accessories' LIMIT 21; args=('accessories',); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" ORDER BY "store_product"."created_at" DESC LIMIT 3; args=(); alias=default
+Exception while resolving variable 'query' in template 'store/index.html'.
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'query'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+                                            ~~~~~~~^
+        type(current), bit
+        ^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+AttributeError: type object 'RequestContext' has no attribute 'query'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+                      ~~~^^^^^
+ValueError: invalid literal for int() with base 10: 'query'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )  # missing attribute
+    ^
+django.template.base.VariableDoesNotExist: Failed lookup for key [query] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x107703e20>>, 'request': <WSGIRequest: GET '/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x107701300>>, 'perms': PermWrapper(<SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x107701300>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'brands': <QuerySet [{'brand': 'Nike'}, {'brand': 'New Balance'}, {'brand': 'Adidas'}]>, 'shoes': <QuerySet [<Product: Response X Bad Bunny>, <Product: Dunk Low UNC>, <Product: 550 Whiite Green>]>, 'clothing': <QuerySet []>, 'accessories': <QuerySet []>, 'newest_items': <QuerySet [<Product: 550 Whiite Green>, <Product: Dunk Low UNC>, <Product: Response X Bad Bunny>]>}]
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" ORDER BY "store_product"."created_at" DESC LIMIT 3; args=(); alias=default
+(0.000) SELECT "store_product"."id", "store_product"."brand", "store_product"."name", "store_product"."image", "store_product"."created_at", "store_product"."product_type", "store_product"."weight", "store_product"."length", "store_product"."width", "store_product"."height" FROM "store_product" WHERE "store_product"."product_type" = 'shoes' LIMIT 10; args=('shoes',); alias=default
+(0.000) SELECT "store_productsize"."id", "store_productsize"."product_id", "store_productsize"."size", "store_productsize"."price", "store_productsize"."stock" FROM "store_productsize" WHERE "store_productsize"."product_id" = 1; args=(1,); alias=default
+(0.000) SELECT "store_productsize"."id", "store_productsize"."product_id", "store_productsize"."size", "store_productsize"."price", "store_productsize"."stock" FROM "store_productsize" WHERE "store_productsize"."product_id" = 1; args=(1,); alias=default
+(0.000) SELECT "store_productsize"."id", "store_productsize"."product_id", "store_productsize"."size", "store_productsize"."price", "store_productsize"."stock" FROM "store_productsize" WHERE "store_productsize"."product_id" = 2; args=(2,); alias=default
+(0.000) SELECT "store_productsize"."id", "store_productsize"."product_id", "store_productsize"."size", "store_productsize"."price", "store_productsize"."stock" FROM "store_productsize" WHERE "store_productsize"."product_id" = 2; args=(2,); alias=default
+(0.000) SELECT "store_productsize"."id", "store_productsize"."product_id", "store_productsize"."size", "store_productsize"."price", "store_productsize"."stock" FROM "store_productsize" WHERE "store_productsize"."product_id" = 3; args=(3,); alias=default
+(0.000) SELECT "store_productsize"."id", "store_productsize"."product_id", "store_productsize"."size", "store_productsize"."price", "store_productsize"."stock" FROM "store_productsize" WHERE "store_productsize"."product_id" = 3; args=(3,); alias=default
+"GET / HTTP/1.1" 200 18948
+"GET /static/css/styles.css?v= HTTP/1.1" 304 0
+"GET /static/css/swiper-bundle.min.css HTTP/1.1" 304 0
+"GET /static/img/slider11.jpg HTTP/1.1" 304 0
+"GET /static/img/logoBiginv.png HTTP/1.1" 304 0
+"GET /static/img/logos.png HTTP/1.1" 304 0
+"GET /static/js/main.js HTTP/1.1" 304 0
+"GET /static/img/slider3.webp HTTP/1.1" 304 0
+"GET /static/js/swiper-bundle.min.js HTTP/1.1" 304 0
+"GET /static/img/slider1.jpg HTTP/1.1" 304 0
+"GET /static/img/nike1.png HTTP/1.1" 304 0
+"GET /static/img/jordan1.avif HTTP/1.1" 304 0
+"GET /static/img/adidas1.png HTTP/1.1" 304 0
+"GET /static/img/kith1.webp HTTP/1.1" 304 0
+"GET /static/img/bape1.png HTTP/1.1" 304 0
+"GET /static/img/billio1.png HTTP/1.1" 304 0
+"GET /static/img/shirtback.png HTTP/1.1" 304 0
+"GET /static/img/supreme1.png HTTP/1.1" 304 0
+"GET /static/img/kobe1.png HTTP/1.1" 304 0
+"GET /static/img/shoeback.png HTTP/1.1" 304 0
+"GET /static/img/newbalance.jpg HTTP/1.1" 304 0
+"GET /static/img/nikeadd.jpg HTTP/1.1" 304 0
+"GET /static/img/adiadd.webp HTTP/1.1" 304 0
+"GET /static/img/kithback.webp HTTP/1.1" 304 0
+"GET /static/img/accessoriesback.jpg HTTP/1.1" 304 0
+"GET /media/products/new-balance-550-white-green_vWQqu4Y.png HTTP/1.1" 200 16815
+"GET /media/products/bad-bu_p6Tjnxf_dbL6EoC.webp HTTP/1.1" 200 23250
+"GET /media/products/dunk-low_z0jP1jr_vQkKLAJ.jpg HTTP/1.1" 200 46824
+"GET /static/img/chocovid.mov HTTP/1.1" 304 0
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/auth/context_processors.py first seen with mtime 1735390627.1520762
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/messages/storage/fallback.py first seen with mtime 1735390627.3128037
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/messages/storage/cookie.py first seen with mtime 1735390627.3127298
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/template/context_processors.py first seen with mtime 1735390627.4573882
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/sessions/serializers.py first seen with mtime 1735390627.3656182
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/messages/storage/session.py first seen with mtime 1735390627.312879
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/conf/locale/en/formats.py first seen with mtime 1735390627.0055692
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/conf/locale/en/__init__.py first seen with mtime 1735390627.0054717
+File /Users/soto2571/p_projects/shoe-store/venv/lib/python3.13/site-packages/django/contrib/messages/context_processors.py first seen with mtime 1735390627.3121283
