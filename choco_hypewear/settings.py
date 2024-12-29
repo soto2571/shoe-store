@@ -196,7 +196,7 @@ TEMPLATES[0]['OPTIONS']['debug'] = True
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = 'var/www/media/'
+MEDIA_ROOT = '/var/www/media/'
 
 
 
