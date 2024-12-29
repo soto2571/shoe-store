@@ -44,7 +44,7 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  # Load email password from 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # Default "from" email for outgoing emails
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['shoe-store-dqrq.onrender.com', '127.0.0.1', 'localhost']
 
@@ -196,7 +196,7 @@ TEMPLATES[0]['OPTIONS']['debug'] = True
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media/'
+MEDIA_ROOT = 'var/www/media/'
 
 
 
