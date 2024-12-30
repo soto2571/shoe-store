@@ -510,6 +510,10 @@ def edit_product(request, pk):
 
         if product_form.is_valid() and size_formset.is_valid():
             product = product_form.save()
+
+            if product.image:
+                print(f"Image save to: {product.image.path}")
+                print(f"Image URL: {product.image.url}")
            
             # Update sizes and stock
             instances = size_formset.save(commit=False)
