@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # DEBUG setting from .env file
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 # Stripe keys based on the DEBUG flag
 if DEBUG:
@@ -44,7 +44,7 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  # Load email password from 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER  # Default "from" email for outgoing emails
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['shoe-store-dqrq.onrender.com', '127.0.0.1', 'localhost']
 
@@ -72,6 +72,8 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'choco_hypewear.urls'
 
