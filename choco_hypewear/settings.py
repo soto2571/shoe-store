@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # DEBUG setting from .env file
-DEBUG = config('DEBUG', default=True, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 # Stripe keys based on the DEBUG flag
 if DEBUG:
@@ -73,8 +73,6 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-
-
 ROOT_URLCONF = 'choco_hypewear.urls'
 
 TEMPLATES = [
@@ -110,25 +108,9 @@ SHIPPING_BOXES = [
 
 import dj_database_url
 
-DEBUG = config('DEBUG', default=False, cast=bool)
-
-if DEBUG:
-    # Local development database
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': config('DB_NAME', default='myprojectdb'),
-            'USER': config('DB_USER', default='soto2571'),
-            'PASSWORD': config('DB_PASSWORD', default='123456789'),
-            'HOST': config('DB_HOST', default='localhost'),
-            'PORT': config('DB_PORT', default='5432'),
-        }
-    }
-else:
-    # Production database (Render)
-    DATABASES = {
-        'default': dj_database_url.config(default=config('DATABASE_URL'))
-    }
+DATABASES = {
+    'default': dj_database_url.config(default=config('DATABASE_URL'))
+}
 
 
 # Password validation
@@ -198,7 +180,7 @@ TEMPLATES[0]['OPTIONS']['debug'] = True
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = '/var/www/media/'
+MEDIA_ROOT = BASE_DIR / 'media/'
 
 
 
