@@ -108,21 +108,8 @@ SHIPPING_BOXES = [
 
 import dj_database_url
 
-if DEBUG:
-    # Local development database
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': config('DB_NAME', default='myprojectdb'),
-            'USER': config('DB_USER', default='soto2571'),
-            'PASSWORD': config('DB_PASSWORD', default='123456789'),
-            'HOST': config('DB_HOST', default='localhost'),
-            'PORT': config('DB_PORT', default='5432'),
-        }
-    }
-else:
-    # Production database (Render)
-    DATABASES = {
+
+DATABASES = {
         'default': dj_database_url.config(default=config('DATABASE_URL'))
     }
 
