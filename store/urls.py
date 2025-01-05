@@ -4,11 +4,6 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 
-def create_superuser(request):
-    if not User.objects.filter(username="admin").exists():
-        User.objects.create_superuser("admin", "admin@example.com", "adminpassword")
-        return HttpResponse("Superuser created successfully.")
-    return HttpResponse("Superuser already exists.")
 
 
 urlpatterns = [
@@ -35,5 +30,4 @@ urlpatterns = [
     path('stripe-webhook/', views.stripe_webhook, name='stripe_webhook'),
     path('all-shoes', views.all_shoes, name="all_shoes"),
     path('subscribe-newsletter/', views.subscribe_newsletter, name='subscribe_newsletter'),
-    path("create-superuser/", create_superuser),
 ]
