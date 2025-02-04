@@ -287,33 +287,44 @@
 
             <!--==================== SHOES ====================-->
 
-      <section class="product-section">
-        <div class="container">
-            <h2 class="section-title">Our Shoe Collection</h2>
-            <div class="product-grid">
-                {% for product in shoes %}
-                <div class="product-card" data-id="{{ product.id }}">
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
-                    </a>
-                    <h3 class="product-name">{{ product.name }}</h3>
-                    <p class="product-price uno" id="price-{{ product.id }}">
-                        {% if product.lowest_price %}
-                            ${{ product.lowest_price }}
-                        {% else %}
-                            Price not available
-                        {% endif %}
-                    </p>
+            <section class="product-section">
+                <div class="container">
+                    <h2 class="section-title">Our Shoe Collection</h2>
+                    <div class="product-grid">
+                        <!-- Static Product 1 -->
+                        <div class="product-card" data-id="1">
+                            <a href="/product/1/">
+                                <img src="/static/img/dunk-low.jpg" alt="Nike Air Max" class="product-image">
+                            </a>
+                            <h3 class="product-name">Nike Air Max</h3>
+                            <p class="product-price uno" id="price-1">$99.99</p>
+                        </div>
+            
+                        <!-- Static Product 2 -->
+                        <div class="product-card" data-id="2">
+                            <a href="/product/2/">
+                                <img src="/static//img/shoe-2.png" alt="Adidas Ultra Boost" class="product-image">
+                            </a>
+                            <h3 class="product-name">Adidas Ultra Boost</h3>
+                            <p class="product-price uno" id="price-2">$129.99</p>
+                        </div>
+            
+                        <!-- Static Product 3 -->
+                        <div class="product-card" data-id="3">
+                            <a href="/product/3/">
+                                <img src="/static/img/bad-bu.webp" alt="Puma Running Shoes" class="product-image">
+                            </a>
+                            <h3 class="product-name">Puma Running Shoes</h3>
+                            <p class="product-price uno" id="price-3">$89.99</p>
+                        </div>
+                    </div>
+            
+                    <!-- "View All" Button -->
+                    <div class="view-all-container">
+                        <a href="/all-shoes/" class="view-all-button">View All Shoes</a>
+                    </div>
                 </div>
-                {% endfor %}
-            </div>
-    
-            <!-- "View All" Button -->
-            <div class="view-all-container">
-                <a href="{% url 'all_shoes' %}" class="view-all-button">View All Shoes</a>
-            </div>
-        </div>
-    </section>
+            </section>
 
 <!-- Clothing and Accessories Section -->
 <section class="container-categories">
